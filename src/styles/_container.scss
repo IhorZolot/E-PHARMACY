@@ -1,0 +1,25 @@
+@import './breakpoints.scss';
+
+.container {
+  margin: 0 auto;
+  padding: 18px 20px;
+}
+
+@media screen and (min-width: $breakpoint-mobile) {
+  .container {
+    width: $breakpoint-mobile;
+  }
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
+  .container {
+    width: $breakpoint-tablet;
+    padding: 20px 30px;
+  }
+}
+
+@media screen and (min-width: $breakpoint-desktop) {
+  .container {
+    width: $breakpoint-desktop;
+  }
+}
