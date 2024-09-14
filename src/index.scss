@@ -1,4 +1,4 @@
-@import  './styles/sharedStyles.scss';
+@import './styles/sharedStyles.scss';
 
 @font-face {
   font-family: 'Inter';
@@ -30,7 +30,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   font-style: normal;
-  background-color: $bgColor;
+  background-color: $background-color;
   overflow-y: hidden;
 }
 

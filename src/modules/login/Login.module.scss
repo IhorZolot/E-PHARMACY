@@ -1,0 +1,21 @@
+@import  'sharedStyles';
+
+.loginSection {
+  min-height: 100vh;
+  width: 100%;
+}
+.titleSection {
+  font-weight: $font-weight-bold;
+  color: $text-color-main;
+  font-size: 28px;
+  font-family: $font-family;
+  margin-bottom: 15px;
+  img {
+    width: 95px;
+    height: 93px;
+    transform: translate(210px, 5px);
+  }
+  span {
+    color: $main-color;
+  }
+}
