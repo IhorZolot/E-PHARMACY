@@ -1,11 +1,13 @@
 import './App.scss'
-import LoginPage from './pages/LoginPage'
+// import {LoginPage} from './pages/LoginPage'
+import { ShopPage } from './pages/ShopPage'
 
 function App() {
 
   return (
     <>
-     <LoginPage/>
+     {/* <LoginPage/> */}
+     <ShopPage/>
     </>
   )
 }
