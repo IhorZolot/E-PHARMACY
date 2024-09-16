@@ -1,19 +1,23 @@
+import clsx from 'clsx'
+
 import LogoType from './components/LogoType'
 import { OverlayLoginPage } from './components/OverlayLoginPage'
 import WhitePill from '../../assets/icons/WhitePill.svg'
 import styles from './Login.module.scss'
-import clsx from 'clsx'
+import { AccountLink } from './components/AccountLink'
 
 const Login = () => {
   return (
-    <div className={clsx(styles.loginSection, styles.container    )}>
+    <div className={clsx(styles.loginSection, styles.container )}>
       <LogoType/>
-      <div className={styles.titleSection}>
+      <div >
+        <div className={styles.titleSection}>
         <img src={WhitePill} alt='LogoPill'/>
-        <p>Your medication, delivered Say goodbye to all <span>your healthcare</span> worries with us</p>
+        <h1>Your medication, delivered Say goodbye to all <span>your healthcare</span> worries with us</h1>
         </div>
-      
+        </div>
       <div>Form Register</div>
+      <AccountLink/>
       <OverlayLoginPage/>
 
     </div>
