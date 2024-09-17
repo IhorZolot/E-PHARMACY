@@ -1,0 +1,15 @@
+@import 'sharedStyles';
+
+.burger {
+  background-color: transparent;
+  
+  svg {
+    transition: fill 0.3s ease, transform 0.3s ease; 
+  }
+  &:hover {
+    svg {
+      fill: rgb(9, 71, 91); 
+      transform: scale(1.1); 
+    }
+  }
+}

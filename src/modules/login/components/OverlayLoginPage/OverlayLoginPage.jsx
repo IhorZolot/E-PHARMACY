@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import SpriteSVG from '../../../../assets/icons/spriteSVG';
+import SpriteSVG from '../../../../assets/icons/SpriteSVG';
 import styles from './OverlayLoginPage.module.scss';
 
 const OverlayLoginPage = () => {

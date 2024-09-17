@@ -1,0 +1,1 @@
+export {default as ProductShop} from './ProductShop.jsx'

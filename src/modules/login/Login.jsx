@@ -1,10 +1,10 @@
 import clsx from 'clsx'
 
-import LogoType from './components/LogoType'
 import { OverlayLoginPage } from './components/OverlayLoginPage'
 import WhitePill from '../../assets/icons/WhitePill.svg'
 import styles from './Login.module.scss'
 import { AccountLink } from './components/AccountLink'
+import LogoType from '../../shared/LogoType'
 
 const Login = () => {
   return (

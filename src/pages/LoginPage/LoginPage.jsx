@@ -1,9 +1,11 @@
 import { Login } from '../../modules/login'
 
 const LoginPage = () => {
-  return (
-   <Login/>
-  )
+	return (
+		<>
+			<Login />
+		</>
+	)
 }
 
 export default LoginPage

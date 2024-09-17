@@ -1,4 +1,4 @@
-import MedLogo from '../../../../assets/icons/MedLogo.svg'
+import MedLogo from '../../../../src/assets/icons/MedLogo.svg'
 import styles from './LogoType.module.scss'
 
 const LogoType = () => {
