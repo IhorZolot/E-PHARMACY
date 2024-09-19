@@ -1,0 +1,40 @@
+@import 'sharedStyles';
+
+.drugButtonSector {
+	display: flex;
+	gap: 5px;
+	border-bottom: 1px solid rgba(29, 30, 33, 0.12);
+	margin-bottom: 6px;
+	padding-bottom: 16px;
+
+	button {
+    position: relative;
+		background-color: transparent;
+		border: none;
+		font-family: var(--font-family);
+		font-weight: $font-weight-regular;
+		font-size: $font-size-sm;
+		line-height: 129%;
+		color: $text-button-color;
+		&:hover,
+		&:active {
+			color: $text-color-main;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			width: 0px;
+			height: 2px;
+			left: 0;
+			bottom: -2px;
+			background-color: #007bff;
+			transition: width 0.3s ease;
+		}
+		&:hover::after,
+		&.active::after {
+			width: 100%;
+		}
+	}
+}
+
+

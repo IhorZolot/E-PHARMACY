@@ -1,6 +1,6 @@
 import linksData from '../../../../shared/Data/side-link-data'
 
-const SideBar = () => {
+const NavBar = () => {
   return (
     <div>
       {linksData.map((item, index) =>(
@@ -10,4 +10,4 @@ const SideBar = () => {
   )
 }
 
-export default SideBar
+export default NavBar

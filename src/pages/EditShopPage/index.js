@@ -1,0 +1,1 @@
+export {default as EditShopPage} from './EditShopPage.jsx'

@@ -1,20 +1,18 @@
-import { CreateShopForm } from './components/CreateShopForm'
-import { EditShopForm } from './components/EditShopForm'
-import { ImageShop } from './components/ImageShop'
-import {TitleShop} from './components/TitleShop'
-
+import Button from '../../shared/components/Button/Button'
+import DrugButtonSector from './components/DrugButtonSector/DrugButtonSector'
+import TitleMedShop from './components/TitleMedShop/TitleMedShop'
 import styles from './Shop.module.scss'
 
 const Shop = () => {
 	return (
-		<div className={styles.shopSection}>
-			<div className={styles.titleFormSection}>
-			<TitleShop />
-			<CreateShopForm />
-      <EditShopForm/>
-			</div>
-			<ImageShop/>
-		</div>
+		<div >
+      <TitleMedShop/>
+      <div className={styles.sectorButtons}>
+      <Button className={styles.buttonEdit} >Edit data</Button>
+      <Button className={styles.buttonAdd} >Add medicine</Button>
+      </div>
+      <DrugButtonSector/>
+    </div>
 	)
 }
 

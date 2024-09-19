@@ -1,0 +1,45 @@
+@import 'sharedStyles';
+
+.titleMedShop {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  h2 {
+    font-weight: $font-weight-bold;
+    font-size:$font-size-xxxl;
+    line-height: 114%;
+    color: $text-color-main;
+    margin-bottom:10px;
+  }
+  p {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight:$font-weight-regular;
+  font-size:$font-size-sm;
+  line-height: 129%;
+  color: $text-color-main;
+  span{
+    color: $text-button-color;
+    font-weight:$font-weight-regular;
+    font-size:$font-size-sm;
+    line-height: 129%;
+    margin-right: 6px;
+  }
+  }
+}
+.mapAdnPhone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}   
+.sectorMap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.spanMap {
+  color: $text-button-color;
+    font-weight:$font-weight-regular;
+    font-size:$font-size-sm;
+    line-height: 129%;
+}
