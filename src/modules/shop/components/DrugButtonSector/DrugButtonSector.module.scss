@@ -4,8 +4,8 @@
 	display: flex;
 	gap: 5px;
 	border-bottom: 1px solid rgba(29, 30, 33, 0.12);
-	margin-bottom: 6px;
-	padding-bottom: 16px;
+	margin-bottom: 30px;
+	padding-bottom: 14px;
 
 	button {
     position: relative;
@@ -26,9 +26,9 @@
 			width: 0px;
 			height: 2px;
 			left: 0;
-			bottom: -2px;
-			background-color: #007bff;
-			transition: width 0.3s ease;
+			bottom: -14px;
+			background-color: $main-color;
+			transition:  0.3s ease;
 		}
 		&:hover::after,
 		&.active::after {

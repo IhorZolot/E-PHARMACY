@@ -1,5 +1,13 @@
 export const SpriteSVG = ({ name }) => {
 	switch (name) {
+		case 'search':
+			return (
+				<svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.333 12.667A5.333 5.333 0 1 0 7.333 2a5.333 5.333 0 0 0 0 10.667ZM14 14l-2.9-2.9" stroke="#1D1E21" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+			)
+			case 'filter':
+			return (
+				<svg width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.83 1.75H1.165l4.667 5.518v3.815l2.333 1.167V7.268l4.667-5.518Z" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+			)
 		case 'burger':
 			return (
 				<svg width='32' height='26' fill='none' xmlns='http://www.w3.org/2000/svg'>

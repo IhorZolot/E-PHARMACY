@@ -1,5 +1,5 @@
+import { SpriteSVG } from '../../../../assets/icons/spriteSVG'
 import styles from './Burger.module.scss'
-import { SpriteSVG } from '../../../../assets/icons/SpriteSVG'
 
 const Burger = () => {
   return (

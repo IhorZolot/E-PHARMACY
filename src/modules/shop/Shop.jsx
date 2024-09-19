@@ -1,5 +1,6 @@
 import Button from '../../shared/components/Button/Button'
 import DrugButtonSector from './components/DrugButtonSector/DrugButtonSector'
+import { FilterMedicine } from './components/FilterMedicine'
 import TitleMedShop from './components/TitleMedShop/TitleMedShop'
 import styles from './Shop.module.scss'
 
@@ -12,6 +13,7 @@ const Shop = () => {
       <Button className={styles.buttonAdd} >Add medicine</Button>
       </div>
       <DrugButtonSector/>
+      <FilterMedicine/>
     </div>
 	)
 }
