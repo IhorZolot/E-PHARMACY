@@ -1,4 +1,4 @@
-import Medicine from '../../modules/medicine/Medicine'
+import Medicine from '../../modules/medicine'
 
 const MedicinePage = () => {
   return (

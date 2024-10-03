@@ -1,7 +1,9 @@
+import AddFormMedicine from './components/AddFormMedicine/AddFormMedicine'
+
 const Medicine = () => {
   return (
     <div>
-      <h1>Medicine</h1>
+      <AddFormMedicine/>
     </div>
   )
 }

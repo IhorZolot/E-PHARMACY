@@ -2,9 +2,7 @@ import { Shop } from '../../modules/shop'
 
 const ShopPage = () => {
   return (
-    <>
      <Shop/>
-    </>
      
   )
 }

@@ -1,0 +1,14 @@
+@import 'sharedStyles';
+
+.detailsCard {
+  border-radius: 27px;
+  background-color: $text-white-color;
+  padding: 20px;
+max-width: 335px;
+max-height: 783px;
+}
+.detailsButtonBox{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}

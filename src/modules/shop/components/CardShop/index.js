@@ -1,0 +1,1 @@
+export {default as CardShop} from './CardShop.jsx'
