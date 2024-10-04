@@ -1,9 +1,13 @@
 import AddFormMedicine from './components/AddFormMedicine/AddFormMedicine'
+import DelFormMedicine from './components/DelFormMedicine/DelFormMedicine'
+import EditFormMedicine from './components/EditFormMedicine/EditFormMedicine'
 
 const Medicine = () => {
   return (
     <div>
-      <AddFormMedicine/>
+      {/* <AddFormMedicine/> */}
+      {/* <EditFormMedicine/> */}
+      <DelFormMedicine/>
     </div>
   )
 }

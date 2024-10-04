@@ -1,0 +1,59 @@
+@use '../ModalButton/mixins.scss' as m;
+@import 'sharedStyles';
+
+.delFormMedicineBox {
+	display: flex;
+	flex-direction: column;
+	border-radius: 20px;
+	padding: 40px 20px;
+	width: 335px;
+	height: 435px;
+	background: $text-white-color;
+	align-items: center;
+	h2 {
+		font-weight: $font-weight-bold;
+		font-size: 20px;
+		line-height: 140%;
+		color: $text-color-main;
+		margin-bottom: 8px;
+	}
+	p {
+		font-weight: $font-weight-regular;
+		font-size: $font-size-xs;
+		line-height: 150%;
+		color: $text-color-main;
+    margin-bottom: 28px;
+	}
+	img {
+		margin-bottom: 20px;
+	}
+  h3 {
+    font-weight: $font-weight-bold;
+    font-size: $font-size-md;
+    line-height: 129%;
+    color: $text-color-main;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  span {
+    font-weight: $font-weight-regular;
+    font-size: $font-size-xs;
+    line-height: 129%;
+    color: $placeholder-color;
+    display: block;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+}
+
+.delButtonBox{
+  display: flex;
+  gap: 10px;
+}
+.confirmButton {
+	@include m.button($main-color, $background-color, 13px 28px);
+}
+.cancelButton {
+	@include m.button($bg-color-button, $text-button-cancel-color, 13px 46px);
+}
