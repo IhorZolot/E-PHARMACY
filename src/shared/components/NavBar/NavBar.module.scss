@@ -1,0 +1,18 @@
+@import 'sharedStyles';
+
+.navBar {
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	gap: 40px;
+	padding: 0 10px;
+	margin-bottom: 60px;
+	li {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		font-weight: $font-weight-bold;
+		font-size: $font-size-sm;
+		line-height: 129%;
+	}
+}

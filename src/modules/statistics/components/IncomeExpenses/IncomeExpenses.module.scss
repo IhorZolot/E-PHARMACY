@@ -5,7 +5,7 @@
   border-radius: 8px;
   max-width: 335px;
   max-height: 511px;
-	background: #fff;
+	background: $text-white-color;
   
 
 	h2 {
@@ -13,10 +13,10 @@
 		border: 0px solid rgba(29, 30, 33, 0.08);
 		border-radius: 8px 8px 0 0;
 		background: #e7f1ed;
-		font-weight: 600;
-		font-size: 16px;
+		font-weight: $font-weight-bold;
+		font-size: $font-size-md;
 		line-height: 125%;
-		color: #1d1e21;
+		color: $text-color-main;
 		padding: 16px 20px;
 	}
 }
@@ -51,14 +51,14 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 117%;
-  color: rgba(29, 30, 33, 0.4);
+  color: $text-button-cancel-color;
 }
 
 .tableBody {
   font-weight: 500;
 font-size: 12px;
 line-height: 117%;
-color: #1d1e21;
+color: $text-color-main;
 }
 
 

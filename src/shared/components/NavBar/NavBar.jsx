@@ -1,12 +1,13 @@
-import linksData from '../../../../shared/Data/side-link-data'
+import linksData from '../../data/side-link-data'
+import styles from './NavBar.module.scss'
 
 const NavBar = () => {
   return (
-    <div>
+    <ul className={styles.navBar}>
       {linksData.map((item, index) =>(
-        <span key={index}>{item.name}</span>
+        <li key={index}>{item.name}</li>
       ))}
-    </div>
+    </ul>
   )
 }
 

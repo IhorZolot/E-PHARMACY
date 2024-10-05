@@ -6,20 +6,20 @@
 	gap: 10px;
 	margin-bottom: 20px;
 	li {
-		border: 1px solid rgba(29, 30, 33, 0.1);
+		border: 1px solid $bg-color-button;
 		border-radius: 8px;
 		padding: 14px;
 		width: 157px;
 		height: 98px;
-		background: #fff;
+		background: $text-white-color;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     p{
-      font-weight: 600;
-font-size: 16px;
+      font-weight: $font-weight-bold;
+font-size: $font-size-md;
 line-height: 125%;
-color: #1d1e21;
+color: $text-color-main;
 padding-left: 7px;
     }
 	}
@@ -34,7 +34,7 @@ padding-left: 7px;
     font-weight: 400;
     font-size: 12px;
     line-height: 117%;
-    color: rgba(29, 30, 33, 0.4);
+    color: $text-button-cancel-color;
   }
 
 }

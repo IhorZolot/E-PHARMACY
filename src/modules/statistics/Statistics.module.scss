@@ -1,13 +1,13 @@
 @import 'sharedStyles';
 
-.statisticsSection{
-    padding: 40px 10px ;
+.statisticsSection {
+	padding: 40px 10px;
 }
 
 .statisticsTitle {
-    font-weight: 600;
-font-size: 28px;
-line-height: 114%;
-color: #1d1e21;
-margin-bottom: 20px;
+	font-weight: $font-weight-bold;
+	font-size: $font-size-xxxl;
+	line-height: 114%;
+	color: $text-color-main;
+	margin-bottom: 20px;
 }

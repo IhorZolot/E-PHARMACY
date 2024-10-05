@@ -5,7 +5,7 @@ import Header from './modules/header/Header'
 // import { MedicinePage } from './pages/MedicinePage'
 // import {LoginPage} from './pages/LoginPage'
 // import { ShopPage } from './pages/ShopPage'
-import { StatisticsPage } from './pages/StatisticsPage'
+// import { StatisticsPage } from './pages/StatisticsPage'
 
 function App() {
 
@@ -15,7 +15,7 @@ function App() {
      {/* <LoginPage/> */}
      {/* <ShopPage/> */}
      {/* <MedicinePage/> */}
-     <StatisticsPage/>
+     {/* <StatisticsPage/> */}
      <Footer/>
     </>
   )
