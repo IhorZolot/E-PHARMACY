@@ -5,7 +5,7 @@ import styles from './Statistics.module.scss'
 
 const Statistics = () => {
   return (
-    <div >
+    <div className={styles.statisticsSection} >
       <h1 className={styles.statisticsTitle}>Statistics</h1>
       <StatisticsBox/>
       <RecentCustomers/>

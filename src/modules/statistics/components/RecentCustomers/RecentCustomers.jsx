@@ -3,7 +3,7 @@ const RecentCustomers = () => {
   const headers = ['Name', 'Email', 'Spent', 'Phone', 'Address'];
   return (
     <div className={styles.recentCustomers}>
-      <h1>Recent Customers</h1>
+      <h2>Recent Customers</h2>
       <table className={styles.table}>
         <thead className={styles.tableHeader}>
           <tr>
