@@ -1,0 +1,40 @@
+@import 'sharedStyles';
+
+.statisticsBox {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-bottom: 20px;
+	li {
+		border: 1px solid rgba(29, 30, 33, 0.1);
+		border-radius: 8px;
+		padding: 14px;
+		width: 157px;
+		height: 98px;
+		background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    p{
+      font-weight: 600;
+font-size: 16px;
+line-height: 125%;
+color: #1d1e21;
+padding-left: 7px;
+    }
+	}
+	
+}
+
+.sector{
+  display: flex;
+  gap: 14px;
+  padding: 6px;;
+  span{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 117%;
+    color: rgba(29, 30, 33, 0.4);
+  }
+
+}

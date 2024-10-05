@@ -9,15 +9,15 @@ import styles from './Shop.module.scss'
 const Shop = () => {
 	return (
 		<div >
-      {/* <TitleMedShop/>
-      <div className={styles.sectorButtons}>
-      <Button className={styles.buttonEdit} >Edit data</Button>
-      <Button className={styles.buttonAdd} >Add medicine</Button>
-      </div>
+      {/* <TitleMedShop/> */}
+      {/* <div className={styles.sectorButtons}> */}
+      {/* <Button className={styles.buttonEdit} >Edit data</Button> */}
+      {/* <Button className={styles.buttonAdd} >Add medicine</Button> */}
+      {/* </div> */}
       <DrugButtonSector/>
-      <FilterMedicine/> */}
+      <FilterMedicine/>
       <CardShop/>
-      {/* <DetailsCard/> */}
+      <DetailsCard/>
     </div>
 	)
 }

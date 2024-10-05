@@ -1,0 +1,61 @@
+@import 'sharedStyles';
+
+.recentCustomers {
+	border: 1px solid rgba(29, 30, 33, 0.1);
+	border-radius: 8px;
+	max-width: 439px;
+	max-height: 460px;
+	background: #fff;
+
+	h1 {
+		display: block;
+		border: 0px solid rgba(29, 30, 33, 0.08);
+		border-radius: 8px 8px 0 0;
+		background: #e7f1ed;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 125%;
+		color: #1d1e21;
+		padding: 16px 20px;
+	}
+}
+.table {
+  background : $text-white-color;
+  border-radius: 8px;
+  border-collapse: collapse;
+  width: 100%;
+  height: 100%;
+}
+.table th,
+.table td {
+  border: 1px solid rgba(29, 30, 33, 0.1);
+  padding: 15px 10px;
+}
+.table th:first-child,
+.table td:first-child {
+  border-left: none;
+}
+.table th:last-child,
+.table td:last-child {
+  border-right: none;
+}
+.table td {
+  border-bottom: none;
+}
+.table th {
+  border-top: none;
+}
+
+.tableHeader {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 117%;
+  color: rgba(29, 30, 33, 0.4);
+}
+
+.tableBody {
+  font-weight: 500;
+font-size: 12px;
+line-height: 117%;
+color: #1d1e21;
+}
