@@ -27,7 +27,7 @@ font-size: $font-size-xs;
 line-height: 150%;
 letter-spacing: -0.02em;
 text-align: center;
-color: #$main-color;
+color: $main-color;
 &:hover {
   background: $main-color-active;
   color: $text-white-color;
