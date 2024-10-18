@@ -1,4 +1,5 @@
-@use '../ModalButton/mixins.scss' as m;
+@use '../ModalButton//mixinsModalButton.scss' as m;
+
 @import 'sharedStyles';
 
 .editFormMedicine {
@@ -91,8 +92,8 @@
 	margin-top: 20px;
 }
 .submitButton {
-	@include m.button($main-color, $background-color, 13px 28px);
+	@include m.modalButton($main-color, $background-color, 13px 28px);
 }
 .cancelButton {
-	@include m.button($bg-color-button, $text-button-cancel-color, 13px 46px);
+	@include m.modalButton($bg-color-button, $text-button-cancel-color, 13px 46px);
 }

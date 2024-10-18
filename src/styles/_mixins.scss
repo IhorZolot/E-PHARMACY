@@ -1,3 +1,8 @@
+@mixin flexCenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
 @mixin button($bg-color, $text-color, $padding) {
 	border-radius: 60px;
@@ -15,6 +20,3 @@
 		background-color: darken($bg-color, 10%);
 	}
 }
-
-
-

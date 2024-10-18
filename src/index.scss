@@ -1,37 +1,36 @@
 @import './styles/sharedStyles.scss';
 
 @font-face {
-  font-family: 'Inter';
-  src: url('/src/assets/fonts/Inter-SemiBold.ttf') format('woff2');
-  font-weight: $font-weight-bold;
-  font-style: normal;
-  font-display: swap;
-  font-variation-settings: 'slnt' 0;
+	font-family: 'Inter';
+	src: url('/src/assets/fonts/Inter-SemiBold.ttf') format('woff2');
+	font-weight: $font-weight-bold;
+	font-style: normal;
+	font-display: swap;
+	font-variation-settings: 'slnt' 0;
 }
 @font-face {
-  font-family: 'Inter';
-  src: url('/src/assets/fonts/Inter-Medium.ttf') format('woff2');
-  font-weight: $font-weight-medium;
-  font-style: normal;
-  font-display: swap;
-  font-variation-settings: 'slnt' 0;
+	font-family: 'Inter';
+	src: url('/src/assets/fonts/Inter-Medium.ttf') format('woff2');
+	font-weight: $font-weight-medium;
+	font-style: normal;
+	font-display: swap;
+	font-variation-settings: 'slnt' 0;
 }
 @font-face {
-  font-family: 'Inter';
-  src: url('/src/assets/fonts/Inter-Regular.ttf') format('woff2');
-  font-weight: $font-weight-regular;
-  font-style: normal;
-  font-display: swap;
-  font-variation-settings: 'slnt' 0;
+	font-family: 'Inter';
+	src: url('/src/assets/fonts/Inter-Regular.ttf') format('woff2');
+	font-weight: $font-weight-regular;
+	font-style: normal;
+	font-display: swap;
+	font-variation-settings: 'slnt' 0;
 }
 body {
-  font-family: Inter, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-  font-style: normal;
-  background-color: $background-color;
-  overflow-y: hidden;
+	font-family: Inter, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+	font-style: normal;
+	background-color: $background-color;
 }
 
 p,
@@ -41,28 +40,28 @@ h3,
 h4,
 h5,
 h6 {
-  padding: 0;
-  margin: 0;
+	padding: 0;
+	margin: 0;
 }
 
 img {
-  display: block;
+	display: block;
 }
 
 ul,
 li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 button {
-  border: none;
-  &:hover {
-    cursor: pointer;
-  }
+	border: none;
+	&:hover {
+		cursor: pointer;
+	}
 }
