@@ -1,8 +1,7 @@
+import { Login } from '../../modules/login'
 
 const RegisterPage = () => {
-  return (
-    <div>RegisterPage</div>
-  )
+	return <Login />
 }
 
 export default RegisterPage

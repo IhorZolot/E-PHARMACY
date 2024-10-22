@@ -1,8 +1,7 @@
+import { CreateShopForm } from '../../modules/shop/components/CreateShopForm'
 
 const CreateShopPage = () => {
-  return (
-    <div>CreateShopPage</div>
-  )
+	return <CreateShopForm />
 }
 
 export default CreateShopPage

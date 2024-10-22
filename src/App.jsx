@@ -7,14 +7,16 @@ import { StatisticsPage } from './pages/StatisticsPage'
 import NotFoundPage from './pages/NotFoundPage'
 import SharedLayout from './shared/components/SharedLayout/SharedLayout'
 import RegisterPage from './pages/RegisterPage/RegisterPage'
+import CreateShopPage from './pages/CreateShopPage/CreateShopPage'
+import EditShopPage from './pages/EditShopPage/EditShopPage'
 
 function App() {
 	return (
 		<>
 			<nav style={{ display: 'flex', gap: '20px' }}>
-				<Link to='/'>Home</Link>
 				<Link to='/login'>Login</Link>
 				<Link to='/register'>Register</Link>
+				<Link to='/'>CreateShop</Link>
 				<Link to='/medicine'>Medicine</Link>
 				<Link to='/statistic'>Statistic</Link>
 			</nav>
@@ -24,7 +26,10 @@ function App() {
 				<Route path='/register' element={<RegisterPage />} />
 
 				<Route exact path='/' element={<SharedLayout />}>
-					<Route index element={<ShopPage />} />
+					<Route index element={<CreateShopPage />} />
+					<Route path='/shop/create' element={<CreateShopPage />} />
+					<Route path='/shop/:id' element={<ShopPage />} />
+					<Route path='/shop/:id/update' element={<EditShopPage />} />
 					<Route path='/medicine' element={<MedicinePage />} />
 					<Route path='/statistic' element={<StatisticsPage />} />
 					<Route path='*' element={<NotFoundPage />} />
