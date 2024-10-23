@@ -3,15 +3,15 @@ import { ImageShop } from './components/ImageShop'
 import { TitleShop } from './components/TitleShop'
 import styles from './Shop.module.scss'
 const CreateShop = () => {
-  return (
-    <div className={styles.shopSection}>
+	return (
+		<div className={styles.shopSection}>
 			<div className={styles.titleFormSection}>
-			<TitleShop />
-			<CreateShopForm />
+				<TitleShop />
+				<CreateShopForm />
 			</div>
-			<ImageShop/>
+			<ImageShop />
 		</div>
-  )
+	)
 }
 
 export default CreateShop

@@ -1,19 +1,18 @@
 @import 'sharedStyles';
 
 .shopTitle {
-  margin-bottom: 30px;
-  h2 {
-    font-weight: $font-weight-bold;
-    font-size: $font-size-xl;
-    line-height: 140%;
-    color: $text-color-main;
-    margin-bottom: 10px;
-  }
-  p {
-    font-weight: $font-weight-regular;
-    font-size: $font-size-sm;
-    line-height: 129%;
-    color: $text-second-color;
-  }
- 
+	margin-bottom: 30px;
+	h2 {
+		font-weight: $font-weight-bold;
+		font-size: $font-size-xl;
+		line-height: 114%;
+		color: $text-color-main;
+		margin-bottom: 10px;
+	}
+	p {
+		font-weight: $font-weight-regular;
+		font-size: $font-size-sm;
+		line-height: 125%;
+		color: $text-second-color;
+	}
 }

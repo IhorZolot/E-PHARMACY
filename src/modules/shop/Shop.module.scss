@@ -1,50 +1,50 @@
 @import 'sharedStyles';
 
 .shopSection {
-	min-height: 100vh;
-	border-radius: 27px;
-	background-color: $text-white-color;
 	max-width: 335px;
-	max-height: 914px;
-  padding: 40px 20px;
+	margin-bottom: 20px;
 }
 .titleFormSection {
+	max-width: 335px;
+	padding: 40px 20px;
+	background-color: $text-white-color;
+	border-radius: 27px;
 	margin-bottom: 20px;
 }
 
 .sectorButtons {
-  display: flex;
-  gap: 5px;
-  margin-bottom: 30px;
+	display: flex;
+	gap: 5px;
+	margin-bottom: 30px;
 }
 .buttonEdit {
-  border: 1.15px solid #f1f1f1;
-  border-radius: 30px;
-  padding: 10px 24px;
-  background: $button-color-edit;
-font-weight: $font-weight-regular;
-font-size: $font-size-xs;
-line-height: 150%;
-letter-spacing: -0.02em;
-text-align: center;
-color: $main-color;
-&:hover {
-  background: $main-color-active;
-  color: $text-white-color;
-}
+	border: 1.15px solid #f1f1f1;
+	border-radius: 30px;
+	padding: 10px 24px;
+	background: $button-color-edit;
+	font-weight: $font-weight-regular;
+	font-size: $font-size-xs;
+	line-height: 150%;
+	letter-spacing: -0.02em;
+	text-align: center;
+	color: $main-color;
+	&:hover {
+		background: $main-color-active;
+		color: $text-white-color;
+	}
 }
 .buttonAdd {
-  border: 1.15px solid #f1f1f1;
-  border-radius: 30px;
-  padding: 10px 24px;
-  background: $main-color;
-  font-weight: $font-weight-regular;
-font-size: $font-size-xs;
-line-height: 150%;
-letter-spacing: -0.02em;
-text-align: center;
-color: $background-color;
-  &:hover {
-    background: $main-color-active;
-  }
+	border: 1.15px solid #f1f1f1;
+	border-radius: 30px;
+	padding: 10px 24px;
+	background: $main-color;
+	font-weight: $font-weight-regular;
+	font-size: $font-size-xs;
+	line-height: 150%;
+	letter-spacing: -0.02em;
+	text-align: center;
+	color: $background-color;
+	&:hover {
+		background: $main-color-active;
+	}
 }

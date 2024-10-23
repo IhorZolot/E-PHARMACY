@@ -1,8 +1,7 @@
+import { EditShop } from '../../modules/shop'
 
 const EditShopPage = () => {
-  return (
-    <div>EditShopPage</div>
-  )
+	return <EditShop />
 }
 
 export default EditShopPage

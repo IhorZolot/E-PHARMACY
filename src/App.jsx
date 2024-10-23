@@ -17,6 +17,8 @@ function App() {
 				<Link to='/login'>Login</Link>
 				<Link to='/register'>Register</Link>
 				<Link to='/'>CreateShop</Link>
+				<Link to='/shop/edit'>EditShop</Link>
+				<Link to='/shop/:id'>Shop</Link>
 				<Link to='/medicine'>Medicine</Link>
 				<Link to='/statistic'>Statistic</Link>
 			</nav>
@@ -28,6 +30,7 @@ function App() {
 				<Route exact path='/' element={<SharedLayout />}>
 					<Route index element={<CreateShopPage />} />
 					<Route path='/shop/create' element={<CreateShopPage />} />
+					<Route path='/shop/edit' element={<EditShopPage />} />
 					<Route path='/shop/:id' element={<ShopPage />} />
 					<Route path='/shop/:id/update' element={<EditShopPage />} />
 					<Route path='/medicine' element={<MedicinePage />} />
