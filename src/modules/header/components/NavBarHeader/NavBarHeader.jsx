@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import linksData from '../../../../shared/Data/side-link-data'
+import linksData from 'shared/data/side-link-data'
 import styles from './NavBarHeader.module.scss'
 // import UnionMenu from '../../../../assets/icons/UnionMenu.svg'
 
