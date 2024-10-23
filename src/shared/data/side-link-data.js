@@ -1,13 +1,16 @@
 const linksData = [
-  {
-    name: 'Shop',
-  },          
-  {
-    name: 'Medicine',
-  },
-  {
-    name: 'Statistics',
-  },
+	{
+		path: '/shop/:id',
+		name: 'Shop',
+	},
+	{
+		path: '/medicine',
+		name: 'Medicine',
+	},
+	{
+		path: '/statistic',
+		name: 'Statistics',
+	},
 ]
 
 export default linksData
