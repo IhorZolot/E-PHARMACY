@@ -1,4 +1,4 @@
-import { SpriteSVG } from '../../../../assets/icons/SpriteSVG'
+import { SpriteSVG } from 'assets/icons/SpriteSVG'
 import styles from './StatisticsBox.module.scss'
 
 const StatisticsBox = () => {
@@ -28,9 +28,9 @@ const StatisticsBox = () => {
 				<li key={index}>
 					<div className={styles.sector}>
 						<SpriteSVG name={item.icon} />
-					<span>{item.title}</span>
+						<span>{item.title}</span>
 					</div>
-						<p>{item.count}</p>
+					<p>{item.count}</p>
 				</li>
 			))}
 		</ul>

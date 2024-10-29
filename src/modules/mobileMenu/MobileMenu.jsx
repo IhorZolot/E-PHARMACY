@@ -1,4 +1,4 @@
-import { SpriteSVG } from '../../assets/icons/SpriteSVG'
+import { SpriteSVG } from 'assets/icons/SpriteSVG'
 import { LogoutButton } from '../header/components/LogoutButton'
 import { MobileBar } from './components/MobileBar'
 import styles from './MobileMenu.module.scss'

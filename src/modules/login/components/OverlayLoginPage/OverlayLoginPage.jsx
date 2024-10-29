@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import styles from './OverlayLoginPage.module.scss'
-import { SpriteSVG } from '../../../../assets/icons/SpriteSVG'
+import { SpriteSVG } from 'assets/icons/SpriteSVG'
 
 const OverlayLoginPage = () => {
 	const [screenWidth, setScreenWidth] = useState(window.innerWidth)
