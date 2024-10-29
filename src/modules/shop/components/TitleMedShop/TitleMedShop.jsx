@@ -1,4 +1,4 @@
-import { SpriteSVG } from 'assets/icons/spriteSVG'
+import { SpriteSVG } from '@assets/icons/spriteSVG'
 import styles from './TitleMedShop.module.scss'
 
 const TitleMedShop = () => {

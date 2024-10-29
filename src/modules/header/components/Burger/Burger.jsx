@@ -1,4 +1,4 @@
-import { SpriteSVG } from 'assets/icons/SpriteSVG'
+import { SpriteSVG } from '@assets/icons/spriteSVG'
 import styles from './Burger.module.scss'
 
 const Burger = ({ openModal }) => {

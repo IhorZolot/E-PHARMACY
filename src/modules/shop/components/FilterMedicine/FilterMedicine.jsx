@@ -1,4 +1,4 @@
-import { SpriteSVG } from 'assets/icons/spriteSVG'
+import { SpriteSVG } from '@assets/icons/spriteSVG'
 import styles from './FilterMedicine.module.scss'
 const selectCategory = [
 	{ id: 1, name: 'Category 1' },

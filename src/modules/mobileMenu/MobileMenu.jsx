@@ -1,4 +1,4 @@
-// import { SpriteSVG } from 'assets/icons/SpriteSVG'
+import { SpriteSVG } from '@assets/icons/spriteSVG'
 import { LogoutButton } from '../header/components/LogoutButton'
 import { MobileBar } from './components/MobileBar'
 import styles from './MobileMenu.module.scss'
@@ -6,9 +6,9 @@ import styles from './MobileMenu.module.scss'
 const MobileMenu = ({ onClose }) => {
 	return (
 		<div className={styles.mobileMenu}>
-			{/* <button className={styles.closeModal} onClick={onClose}>
+			<button className={styles.closeModal} onClick={onClose}>
 				<SpriteSVG name='closeModal' />
-			</button> */}
+			</button>
 			<MobileBar onClose={onClose} />
 			<LogoutButton onClose={onClose} />
 		</div>

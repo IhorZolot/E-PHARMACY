@@ -1,6 +1,6 @@
-import { SpriteSVG } from 'assets/icons/SpriteSVG'
+import { SpriteSVG } from '@assets/icons/spriteSVG'
 import styles from './EditFormMedicine.module.scss'
-import twoPills from 'assets/icons/twoPills.png'
+import twoPills from '@assets/icons/twoPills.png'
 import ModalButton from '../ModalButton/ModalButton'
 const EditFormMedicine = () => {
 	return (
