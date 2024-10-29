@@ -1,14 +1,17 @@
+import { Link } from 'react-router-dom'
 import linksData from '../../data/side-link-data'
 import styles from './NavBar.module.scss'
 
 const NavBar = () => {
-  return (
-    <ul className={styles.navBar}>
-      {linksData.map((item, index) =>(
-        <li key={index}>{item.name}</li>
-      ))}
-    </ul>
-  )
+	return (
+		<nav className={styles.navBar}>
+			{linksData.map((link, index) => (
+				<Link key={index} to={link.path} className={styles.navBarLink}>
+					{link.name}
+				</Link>
+			))}
+		</nav>
+	)
 }
 
 export default NavBar

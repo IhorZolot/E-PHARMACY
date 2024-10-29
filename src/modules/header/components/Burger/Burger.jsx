@@ -1,12 +1,12 @@
-import { SpriteSVG } from '../../../../assets/icons/spriteSVG'
+import { SpriteSVG } from '../../../../assets/icons/SpriteSVG'
 import styles from './Burger.module.scss'
 
-const Burger = () => {
-  return (
-    <button className={styles.burger}>
-      <SpriteSVG name='burger'  />
-    </button>
-  )
+const Burger = ({ openModal }) => {
+	return (
+		<button className={styles.burger} onClick={openModal}>
+			<SpriteSVG name='burger' />
+		</button>
+	)
 }
 
 export default Burger

@@ -3,16 +3,22 @@
 .navBar {
 	display: flex;
 	align-items: center;
-	justify-content: left;
+	justify-content: flex-start;
 	gap: 40px;
-	padding: 0 10px;
 	margin-bottom: 60px;
-	li {
-		display: flex;
-		align-items: center;
-		gap: 10px;
-		font-weight: $font-weight-bold;
-		font-size: $font-size-sm;
-		line-height: 129%;
+	transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navBarLink {
+	align-items: center;
+	gap: 10px;
+	font-weight: $font-weight-bold;
+	font-size: $font-size-sm;
+	line-height: 129%;
+	text-decoration: none;
+	color: inherit;
+	transition: color 0.3s ease, background-color 0.3s ease;
+	&:hover {
+		color: $text-button-color;
 	}
 }

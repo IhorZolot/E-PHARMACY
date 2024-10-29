@@ -9,6 +9,7 @@ export default defineConfig({
 			'@': '/src',
 			sharedStyles: '/src/styles/sharedStyles.scss',
 			shared: '/src/shared',
+			assets: '/src/assets',
 		},
 	},
 	css: {

@@ -1,8 +1,10 @@
 import styles from './LogoutButton.module.scss'
-const LogoutButton = () => {
-  return (
-    <button className={styles.logoutButton}>Log out</button>
-  )
+const LogoutButton = ({ onClose }) => {
+	return (
+		<button className={styles.logoutButton} onClick={onClose}>
+			Log out
+		</button>
+	)
 }
 
 export default LogoutButton
