@@ -3,13 +3,13 @@ import DelFormMedicine from './components/DelFormMedicine/DelFormMedicine'
 import EditFormMedicine from './components/EditFormMedicine/EditFormMedicine'
 
 const Medicine = () => {
-  return (
-    <div>
-      {/* <AddFormMedicine/> */}
-      {/* <EditFormMedicine/> */}
-      <DelFormMedicine/>
-    </div>
-  )
+	return (
+		<>
+			{/* <AddFormMedicine />
+			<EditFormMedicine />
+			<DelFormMedicine /> */}
+		</>
+	)
 }
 
 export default Medicine

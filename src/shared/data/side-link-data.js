@@ -1,6 +1,6 @@
 const linksData = [
 	{
-		path: '/shop/:id',
+		path: '/',
 		name: 'Shop',
 	},
 	{

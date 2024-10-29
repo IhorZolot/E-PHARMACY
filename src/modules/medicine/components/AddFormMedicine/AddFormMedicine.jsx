@@ -3,7 +3,7 @@ import styles from './AddFormMedicine.module.scss'
 import twoPills from '@assets/icons/twoPills.png'
 import ModalButton from '../ModalButton/ModalButton'
 
-const AddFormMedicine = () => {
+const AddFormMedicine = ({ onClose }) => {
 	return (
 		<form className={styles.addFormMedicine}>
 			<h2>Add medicine to store</h2>
@@ -30,7 +30,7 @@ const AddFormMedicine = () => {
 				<ModalButton className={styles.submitButton} type='submit'>
 					Add medicine
 				</ModalButton>
-				<ModalButton className={styles.cancelButton} type='reset'>
+				<ModalButton onClick={onClose} className={styles.cancelButton} type='reset'>
 					Cancel
 				</ModalButton>
 			</div>

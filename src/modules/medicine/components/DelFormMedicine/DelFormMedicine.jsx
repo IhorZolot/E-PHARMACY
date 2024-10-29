@@ -4,7 +4,7 @@ import styles from './DelFormMedicine.module.scss'
 const DelFormMedicine = () => {
 	return (
 		<div className={styles.delFormMedicineBox}>
-			<h2>Delete medicine</h2>
+			<h2>Confirm deletion</h2>
 			<p> Are you sure you want to delete this item?</p>
 			<div>
 				<img src={twoPills} alt='twoPills' />

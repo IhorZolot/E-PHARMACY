@@ -22,7 +22,6 @@
 }
 
 .inputSearch {
-	position: relative;
 	width: 100%;
 }
 
@@ -41,9 +40,7 @@
 	}
 }
 .iconInput {
-	position: absolute;
-	right: 257px;
-	top: 16px;
+	transform: translate(310px, -30px);
 }
 .filterButton {
 	display: flex;

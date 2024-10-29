@@ -1,14 +1,14 @@
 const mobileLinksData = [
 	{
-		path: '/shop/:id',
+		path: '/',
 		name: 'Home',
 	},
 	{
-		path: '/medicine',
+		path: '/shop/:id',
 		name: 'Medicine store',
 	},
 	{
-		path: '/statistic',
+		path: '/medicine',
 		name: 'Medicine',
 	},
 ]

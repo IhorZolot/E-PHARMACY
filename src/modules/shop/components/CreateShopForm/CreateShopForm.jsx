@@ -40,7 +40,6 @@ const CreateShopForm = () => {
 					<label htmlFor='no'>No</label>
 				</div>
 			</div>
-
 			<button>Create account</button>
 		</form>
 	)
