@@ -1,10 +1,7 @@
 import { Shop } from '../../modules/shop'
 
 const ShopPage = () => {
-  return (
-     <Shop/>
-     
-  )
+	return <Shop />
 }
 
 export default ShopPage
