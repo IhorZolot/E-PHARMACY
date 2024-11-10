@@ -1,4 +1,6 @@
-// export const fetchProducts = async () => {
-// 	const { data } = await API.get('/products')
-// 	return data
-// }
+import { API } from '../../config/adminConfig'
+
+export const fetchStatistics = async () => {
+	const { data } = await API.get('/statistics')
+	return data
+}

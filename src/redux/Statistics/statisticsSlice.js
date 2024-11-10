@@ -13,15 +13,20 @@ const statisticsSlice = createSlice({
 	initialState,
 	selectors: {},
 	reducers: {
-		// setCounts(state, action) {
-		// 	state.counts = action.payload
-		// },
-		// setStatisticsCustomer(state, action) {
-		// 	state.statisticsCustomer = action.payload
-		// },
-		// setStatisticsIncomeExpenses(state, action) {
-		// 	state.statisticsIncomeExpenses = action.payload
-		// },
+		setCounts(state, { payload }) {
+			console.log(payload)
+			state.counts = {
+				productsCount: payload.productsCount,
+				customersCount: payload.customersCount,
+				suppliersCount: payload.suppliersCount,
+			}
+		},
+		setStatisticsCustomer(state, { payload }) {
+			state.statisticsCustomer = payload
+		},
+		setStatisticsIncomeExpenses(state, { payload }) {
+			state.statisticsIncomeExpenses = payload
+		},
 	},
 })
 
