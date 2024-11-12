@@ -4,20 +4,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { selectCounts } from '@redux/Statistics/selectors'
 import { getSectorsStatistics } from './statisticsHelpers'
-import { fetchStatistics } from '../../../../redux/Statistics/operations'
-import { setCounts } from '../../../../redux/Statistics/statisticsSlice'
+import { fetchStatistics } from '@redux/Statistics/operations'
 
 const StatisticsBox = () => {
 	const { productsCount, suppliersCount, customersCount } = useSelector(selectCounts)
 	const dispatch = useDispatch()
 	useEffect(() => {
-		const loadStatistics = async () => {
-			const data = await fetchStatistics()
-			if (data) {
-				dispatch(setCounts(data.counts))
-			}
-		}
-		loadStatistics()
+		dispatch(fetchStatistics())
 	}, [dispatch])
 
 	const sectorsStatistics = getSectorsStatistics(productsCount, suppliersCount, customersCount)

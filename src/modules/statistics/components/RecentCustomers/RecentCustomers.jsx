@@ -1,22 +1,10 @@
-import { useEffect } from 'react'
 import styles from './RecentCustomers.module.scss'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchStatistics } from '../../../../redux/Statistics/operations'
-import { setStatisticsCustomer } from '../../../../redux/Statistics/statisticsSlice'
 import { selectStatisticsCustomer } from '../../../../redux/Statistics/selectors'
+import { useSelector } from 'react-redux'
 const RecentCustomers = () => {
 	const headers = ['Name', 'Email', 'Spent', 'Address']
 	const statisticsCustomer = useSelector(selectStatisticsCustomer)
-	const dispatch = useDispatch()
-	useEffect(() => {
-		const loadStatisticsCustomers = async () => {
-			const data = await fetchStatistics()
-			if (data) {
-				dispatch(setStatisticsCustomer(data.statisticsCustomer))
-			}
-		}
-		loadStatisticsCustomers()
-	}, [dispatch])
+
 	return (
 		<div className={styles.recentCustomers}>
 			<h2>Recent Customers</h2>

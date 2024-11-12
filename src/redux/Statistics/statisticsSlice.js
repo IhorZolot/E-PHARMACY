@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { fetchStatistics } from './operations'
 const initialState = {
 	counts: {
 		productsCount: 0,
@@ -7,28 +8,27 @@ const initialState = {
 	},
 	statisticsCustomer: [],
 	statisticsIncomeExpenses: [],
+	isLoading: false,
+	error: null,
 }
 const statisticsSlice = createSlice({
 	name: 'statistics',
 	initialState,
-	selectors: {},
-	reducers: {
-		setCounts(state, { payload }) {
-			console.log(payload)
-			state.counts = {
-				productsCount: payload.productsCount,
-				customersCount: payload.customersCount,
-				suppliersCount: payload.suppliersCount,
-			}
-		},
-		setStatisticsCustomer(state, { payload }) {
-			state.statisticsCustomer = payload
-		},
-		setStatisticsIncomeExpenses(state, { payload }) {
-			state.statisticsIncomeExpenses = payload
-		},
+	extraReducers: builder => {
+		builder.addCase(fetchStatistics.fulfilled, (state, { payload }) => {
+			state.isLoading = false
+			state.counts = payload.counts
+			state.statisticsCustomer = payload.statisticsCustomer
+			state.statisticsIncomeExpenses = payload.statisticsIncomeExpenses
+		})
+		builder.addCase(fetchStatistics.pending, state => {
+			state.isLoading = true
+		})
+		builder.addCase(fetchStatistics.rejected, (state, { payload }) => {
+			state.isLoading = false
+			state.error = payload
+		})
 	},
 })
 
-export const { setCounts, setStatisticsCustomer, setStatisticsIncomeExpenses } = statisticsSlice.actions
 export default statisticsSlice.reducer

@@ -1,6 +1,12 @@
+import { createAsyncThunk } from '@reduxjs/toolkit'
 import { API } from '../../config/adminConfig'
 
-export const fetchStatistics = async () => {
-	const { data } = await API.get('/statistics')
-	return data
-}
+export const fetchStatistics = createAsyncThunk('statistics/fetchStatistics', async (_, thunkAPI) => {
+	try {
+		const { data } = await API.get('/statistics')
+		console.log(data)
+		return data
+	} catch (error) {
+		return thunkAPI.rejectWithValue(error.message)
+	}
+})
