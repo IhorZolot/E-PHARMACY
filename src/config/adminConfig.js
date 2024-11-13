@@ -7,8 +7,3 @@ export const API = axios.create({
 			? 'http://localhost:3000/api'
 			: 'https://e-pharmacy-backend-b23n.onrender.com/api',
 })
-
-export const fetchProducts = async () => {
-	const { data } = await API.get('/products')
-	return data
-}

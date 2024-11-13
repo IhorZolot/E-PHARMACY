@@ -27,12 +27,12 @@ function App() {
 				<Route path='/login' element={<LoginPage />} />
 				<Route path='/register' element={<RegisterPage />} />
 
-				<Route exact path='/' element={<SharedLayout />}>
+				<Route path='/' element={<SharedLayout />}>
 					<Route index element={<CreateShopPage />} />
 					<Route path='/shop/create' element={<CreateShopPage />} />
 					<Route path='/shop/edit' element={<EditShopPage />} />
-					<Route path='/shop/:id' element={<ShopPage />} />
-					<Route path='/shop/:id/update' element={<EditShopPage />} />
+					<Route path='/shop/:shopId' element={<ShopPage />} />
+					<Route path='/shop/:shopId/update' element={<EditShopPage />} />
 					<Route path='/medicine' element={<MedicinePage />} />
 					<Route path='/statistic' element={<StatisticsPage />} />
 					<Route path='*' element={<NotFoundPage />} />

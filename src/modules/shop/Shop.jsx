@@ -11,6 +11,7 @@ import CardMyShop from './components/CardMyShop/CardMyShop'
 const Shop = () => {
 	const [isOpen, toggleModal] = useModal()
 	const navigate = useNavigate()
+
 	return (
 		<div>
 			<TitleMedShop />

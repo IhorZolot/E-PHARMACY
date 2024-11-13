@@ -1,26 +1,20 @@
 import { SpriteSVG } from '@assets/icons/spriteSVG'
 import styles from './FilterMedicine.module.scss'
 import { useEffect, useState } from 'react'
-import { fetchProducts } from '@config/adminConfig'
 import { useSearchParams } from 'react-router-dom'
+import { fetchProducts } from '@redux/Products/operations'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectProducts } from '@redux/Products/selectors'
 
 const FilterMedicine = () => {
-	const [products, setProducts] = useState([])
+	const products = useSelector(selectProducts)
 	const [valueFilter, setValueFilter] = useState('')
 	const [setSearchParams] = useSearchParams()
+	const dispatch = useDispatch()
 
 	useEffect(() => {
-		const getProducts = async () => {
-			try {
-				const res = await fetchProducts()
-				setProducts(res.data)
-				console.log(res.data)
-			} catch (error) {
-				console.log('Error fetching products:', error)
-			}
-		}
-		getProducts()
-	}, [])
+		dispatch(fetchProducts())
+	}, [dispatch])
 
 	const selectedCategory = [...new Set(products.map((product, index) => ({ id: index, category: product.category })))]
 	console.log(selectedCategory)

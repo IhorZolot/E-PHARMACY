@@ -1,22 +1,16 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import ButtonCard from '../ButtonCard/ButtonCard'
 import styles from './CardShop.module.scss'
-import { fetchProducts } from '@config/adminConfig'
+import { fetchProducts } from '@redux/Products/operations'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectProducts } from '@redux/Products/selectors'
 
 const CardShop = () => {
-	const [products, setProducts] = useState([])
+	const products = useSelector(selectProducts)
+	const dispatch = useDispatch()
 	useEffect(() => {
-		const getProducts = async () => {
-			try {
-				const res = await fetchProducts()
-				setProducts(res.data)
-				console.log(res.data)
-			} catch (error) {
-				console.log('Error fetching products:', error)
-			}
-		}
-		getProducts()
-	}, [])
+		dispatch(fetchProducts())
+	}, [dispatch])
 
 	return (
 		<div className={styles.cardShop}>
