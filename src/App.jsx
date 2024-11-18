@@ -13,16 +13,6 @@ import EditShopPage from './pages/EditShopPage/EditShopPage'
 function App() {
 	return (
 		<>
-			{/* <nav style={{ display: 'flex', gap: '20px' }}>
-				<Link to='/login'>Login</Link>
-				<Link to='/register'>Register</Link>
-				<Link to='/'>CreateShop</Link>
-				<Link to='/shop/edit'>EditShop</Link>
-				<Link to='/shop/:id'>Shop</Link>
-				<Link to='/medicine'>Medicine</Link>
-				<Link to='/statistic'>Statistic</Link>
-			</nav> */}
-
 			<Routes>
 				<Route path='/login' element={<LoginPage />} />
 				<Route path='/register' element={<RegisterPage />} />

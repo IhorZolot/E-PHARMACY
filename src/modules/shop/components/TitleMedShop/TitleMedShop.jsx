@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom'
 
 const TitleMedShop = () => {
 	const { shopId } = useParams()
+
 	const shop = useSelector(selectShops)
 	const dispatch = useDispatch()
 	useEffect(() => {
