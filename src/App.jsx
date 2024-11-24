@@ -20,7 +20,6 @@ function App() {
 				<Route path='/' element={<SharedLayout />}>
 					<Route index element={<CreateShopPage />} />
 					<Route path='/shop/create' element={<CreateShopPage />} />
-					<Route path='/shop/edit' element={<EditShopPage />} />
 					<Route path='/shop/:shopId' element={<ShopPage />} />
 					<Route path='/shop/:shopId/update' element={<EditShopPage />} />
 					<Route path='/medicine' element={<MedicinePage />} />

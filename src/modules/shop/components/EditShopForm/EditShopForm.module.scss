@@ -7,9 +7,18 @@
 	justify-content: center;
 }
 .createShopForm div {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
+}
+.createShopForm span {
+	position: absolute;
+	gap: 5px;
+	bottom: -12px;
+	padding-left: 20px;
+	font-size: 10px;
+	color: red;
 }
 .createShopForm label {
 	font-weight: $font-weight-bold;
@@ -55,6 +64,14 @@
 		line-height: 129%;
 		color: $text-color-main;
 		margin-bottom: 10px;
+	}
+	span {
+		position: absolute;
+		gap: 5px;
+		bottom: -12px;
+		padding-left: 20px;
+		font-size: 10px;
+		color: red;
 	}
 }
 

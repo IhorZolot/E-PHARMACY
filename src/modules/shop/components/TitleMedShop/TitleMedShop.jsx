@@ -4,18 +4,22 @@ import { useDispatch, useSelector } from 'react-redux'
 import { selectShops } from '@redux/Shops/selectors'
 import { useEffect } from 'react'
 import { fetchShopsById } from '@redux/Shops/operations'
-import { useParams } from 'react-router-dom'
 
 const TitleMedShop = () => {
-	const { shopId } = useParams()
-
 	const shop = useSelector(selectShops)
+	/////////////////////////////////////////////////////////
+	const shopId = '673ceda3fc5e2718b5e43f38'
+
 	const dispatch = useDispatch()
 	useEffect(() => {
 		if (shopId) {
 			dispatch(fetchShopsById(shopId))
 		}
 	}, [dispatch, shopId])
+
+	if (!shop) {
+		return <div>Loading...</div>
+	}
 
 	return (
 		<div className={styles.titleMedShop}>

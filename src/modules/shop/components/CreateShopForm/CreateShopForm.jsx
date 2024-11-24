@@ -1,14 +1,12 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useDispatch } from 'react-redux'
 
 import styles from './CreateShopForm.module.scss'
 import { schemaAddForm } from './helpers/validationSchema'
-import { useDispatch } from 'react-redux'
 import { addShopThunk } from '@redux/Shops/operations'
-import { useNavigate } from 'react-router-dom'
 
 const CreateShopForm = () => {
-	const navigate = useNavigate()
 	const dispatch = useDispatch()
 
 	const {
@@ -20,13 +18,9 @@ const CreateShopForm = () => {
 		resolver: zodResolver(schemaAddForm),
 	})
 	const submit = data => {
-		console.log(data)
-		dispatch(addShopThunk(data)).then(action => {
-			if (action.payload && action.payload._id) {
-				navigate(`/shop/${action.payload._id}`)
-			}
-			reset()
-		})
+		console.log('data', data)
+		dispatch(addShopThunk(data))
+		reset()
 	}
 
 	return (
@@ -65,6 +59,11 @@ const CreateShopForm = () => {
 				<label htmlFor='postal'>Zip / Postal</label>
 				<input placeholder='Enter text' type='text' id='postal' {...register('postal')} />
 				{errors.postal && <span>{errors.postal.message}</span>}
+			</div>
+			<div>
+				<label htmlFor='password'>Password</label>
+				<input placeholder='Enter text' type='text' id='password' {...register('password')} />
+				{errors.password && <span>{errors.password.message}</span>}
 			</div>
 
 			<div className={styles.delivery}>
