@@ -5,9 +5,9 @@ import EditFormMedicine from './components/EditFormMedicine/EditFormMedicine'
 const Medicine = () => {
 	return (
 		<>
-			{/* <AddFormMedicine />
+			<AddFormMedicine />
 			<EditFormMedicine />
-			<DelFormMedicine /> */}
+			<DelFormMedicine />
 		</>
 	)
 }

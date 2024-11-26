@@ -24,13 +24,12 @@ const EditShopForm = () => {
 			return
 		}
 		const trimmedData = Object.entries(data).reduce((acc, [key, value]) => {
-			if (typeof value === 'string' && value.trim()) {
+			if (value?.trim()) {
 				acc[key] = value.trim()
-			} else if (value !== undefined && value !== null) {
-				acc[key] = value
 			}
 			return acc
 		}, {})
+
 		console.log('data', trimmedData)
 		dispatch(updateShopThunk({ shopId, updateShop: trimmedData })).then(() => {
 			reset()

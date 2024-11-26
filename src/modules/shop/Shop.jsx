@@ -1,14 +1,13 @@
 import { useNavigate } from 'react-router-dom'
 import { Button } from '../../shared/components/Button'
-import { DrugButtonSector } from './components/DrugButtonSector'
 import TitleMedShop from './components/TitleMedShop/TitleMedShop'
 import styles from './Shop.module.scss'
 import useModal from '../../hooks/useModal'
 import AddFormMedicine from '../medicine/components/AddFormMedicine/AddFormMedicine'
 import Modal from '../../shared/components/Modal/Modal'
-import CardMyShop from './components/CardMyShop/CardMyShop'
 import { useSelector } from 'react-redux'
 import { selectShopId } from '../../redux/Shops/selectors'
+import DrugLinkSector from './components/DrugLinkSector/DrugLinkSector'
 
 const Shop = () => {
 	const [isOpen, toggleModal] = useModal()
@@ -31,8 +30,7 @@ const Shop = () => {
 					</Modal>
 				)}
 			</div>
-			<DrugButtonSector />
-			<CardMyShop />
+			<DrugLinkSector />
 		</div>
 	)
 }

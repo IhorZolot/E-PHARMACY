@@ -1,1 +1,0 @@
-export { default as DrugButtonSector } from './DrugButtonSector.jsx'

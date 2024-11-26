@@ -1,1 +1,1 @@
-export {default } from './Medicine.jsx'
+export { default as Medicine } from './Medicine.jsx'
