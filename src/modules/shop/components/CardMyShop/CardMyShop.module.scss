@@ -4,19 +4,22 @@
 	display: flex;
 	gap: 10px;
 	flex-direction: column;
+	margin-bottom: 30px;
 }
 .imgShop {
+	display: block;
+	width: 100%;
 	border: $border-card;
 	border-radius: 27px;
-	padding: 14px 18px;
-	width: 335px;
+	width: 373px;
 	height: 337px;
+	object-fit: cover;
 }
 .infoShop {
 	display: flex;
 	flex-direction: column;
 	border-radius: 20px;
-	width: 335px;
+	max-width: 335px;
 	height: 135px;
 	background-color: $text-white-color;
 	padding: 20px;
@@ -25,28 +28,31 @@
 .titleShopBox {
 	display: flex;
 	gap: 10px;
-	justify-content: space-between;
+	flex-direction: column;
 }
 .titleBox {
 	display: flex;
-	flex-direction: column;
 	gap: 10px;
-	margin-bottom: 10px;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
 }
 .titleShop {
+	display: block;
 	font-weight: $font-weight-bold;
 	font-size: $font-size-md;
 	line-height: 140%;
 	color: $text-color-main;
 }
 .suppliersShop {
+	display: block;
 	font-weight: $font-weight-regular;
 	font-size: $font-size-xs;
 	line-height: 150%;
 	color: $placeholder-color;
 }
-
 .priceShop {
+	display: block;
 	font-weight: $font-weight-bold;
 	font-size: $font-size-md;
 	line-height: 140%;

@@ -25,7 +25,7 @@ function App() {
 					<Route path='/shop/create' element={<CreateShopPage />} />
 					<Route path='/shop/:shopId/update' element={<EditShopPage />} />
 					<Route path='/shop/:shopId' element={<ShopPage />}>
-						<Route index element={<CardMyShop />} />
+						<Route path='product' element={<CardMyShop />} />
 						<Route path='medicine' element={<AllDrugsPage />} />
 					</Route>
 					<Route path='/medicine' element={<MedicinePage />} />

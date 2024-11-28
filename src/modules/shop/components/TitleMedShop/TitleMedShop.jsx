@@ -8,7 +8,7 @@ import { fetchShopsById } from '@redux/Shops/operations'
 const TitleMedShop = () => {
 	const shop = useSelector(selectShops)
 	/////////////////////////////////////////////////////////
-	const shopId = '673ceda3fc5e2718b5e43f38'
+	const shopId = '67464de2c21ca4602aef786b'
 
 	const dispatch = useDispatch()
 	useEffect(() => {

@@ -17,7 +17,6 @@ const FilterMedicine = () => {
 	}, [dispatch])
 
 	const selectedCategory = [...new Set(products.map((product, index) => ({ id: index, category: product.category })))]
-	console.log(selectedCategory)
 
 	const onsubmit = e => {
 		e.preventDefault()

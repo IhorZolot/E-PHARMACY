@@ -8,7 +8,7 @@ const DrugLinkSector = () => {
 		<>
 			<nav>
 				<NavLink
-					to={`/shop/${shopId}`}
+					to={`/shop/${shopId}/product`}
 					end
 					className={({ isActive }) => `${styles.NavLink} ${isActive ? styles.active : ''}`}
 				>
