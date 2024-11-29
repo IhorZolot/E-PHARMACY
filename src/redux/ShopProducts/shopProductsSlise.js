@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { fetchShopProducts } from './operations'
+import { addProductToShopThunk, fetchShopProducts } from './operations'
 
 const initialState = {
 	shopProducts: [],
@@ -22,6 +22,10 @@ const shopProductsSlice = createSlice({
 			.addCase(fetchShopProducts.rejected, (state, { payload }) => {
 				state.isLoading = false
 				state.error = payload
+			})
+			.addCase(addProductToShopThunk.fulfilled, (state, { payload }) => {
+				state.isLoading = false
+				state.shopProducts.push(payload)
 			})
 	},
 })

@@ -9,3 +9,15 @@ export const fetchShopProducts = createAsyncThunk('shopProducts/fetchShopProduct
 		return thunkAPI.rejectWithValue(error.message)
 	}
 })
+
+export const addProductToShopThunk = createAsyncThunk(
+	'shopProducts/addProductToShop',
+	async ({ shopId, addMedicine }, thunkAPI) => {
+		try {
+			const { data } = await API.post(`/shop/${shopId}/product/add`, addMedicine)
+			return data
+		} catch (error) {
+			return thunkAPI.rejectWithValue(error.message)
+		}
+	}
+)

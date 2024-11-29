@@ -30,7 +30,6 @@ const EditShopForm = () => {
 			return acc
 		}, {})
 
-		console.log('data', trimmedData)
 		dispatch(updateShopThunk({ shopId, updateShop: trimmedData })).then(() => {
 			reset()
 		})

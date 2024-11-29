@@ -3,6 +3,7 @@
 .shopSection {
 	max-width: 335px;
 	margin-bottom: 20px;
+	position: relative;
 }
 .titleFormSection {
 	max-width: 335px;
@@ -46,5 +47,23 @@
 	color: $background-color;
 	&:hover {
 		background: $main-color-active;
+	}
+}
+.closeButton {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	background-color: transparent;
+	border: none;
+	svg {
+		font-size: 24px;
+		transition: transform 0.3s ease;
+	}
+	&:hover,
+	&:focus {
+		background-color: transparent;
+		svg {
+			transform: scale(1.2);
+		}
 	}
 }
