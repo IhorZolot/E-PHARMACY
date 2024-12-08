@@ -1,5 +1,11 @@
+import Medicine from '../../modules/medicine/Medicine'
+
 const MedicinePage = () => {
-	return <div>MedicinePage</div>
+	return (
+		<>
+			<Medicine />
+		</>
+	)
 }
 
 export default MedicinePage

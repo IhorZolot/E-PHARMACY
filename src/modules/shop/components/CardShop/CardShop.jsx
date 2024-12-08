@@ -4,10 +4,12 @@ import styles from './CardShop.module.scss'
 import { fetchProducts } from '@redux/Products/operations'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectProducts } from '@redux/Products/selectors'
+import { useNavigate } from 'react-router-dom'
 
 const CardShop = () => {
 	const products = useSelector(selectProducts)
 	const dispatch = useDispatch()
+	const navigate = useNavigate()
 	useEffect(() => {
 		dispatch(fetchProducts())
 	}, [dispatch])
@@ -26,7 +28,7 @@ const CardShop = () => {
 							<p className={styles.priceShop}>${product.price}</p>
 						</div>
 						<div className={styles.buttonShopBox}>
-							<ButtonCard>Add to shop</ButtonCard>
+							<ButtonCard onClick={() => navigate('/medicine')}>Add to shop</ButtonCard>
 							<button className={styles.buttonDetails}>Details</button>
 						</div>
 					</div>

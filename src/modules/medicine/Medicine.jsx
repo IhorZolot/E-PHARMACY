@@ -1,13 +1,11 @@
-import AddFormMedicine from './components/AddFormMedicine/AddFormMedicine'
-import DelFormMedicine from './components/DelFormMedicine/DelFormMedicine'
-import EditFormMedicine from './components/EditFormMedicine/EditFormMedicine'
+import CardOneProduct from './DetailsCard/CardOneProduct'
+import DetailsCard from './DetailsCard/DetailsCard'
 
 const Medicine = () => {
 	return (
 		<>
-			<AddFormMedicine />
-			<EditFormMedicine />
-			<DelFormMedicine />
+			<CardOneProduct />
+			<DetailsCard />
 		</>
 	)
 }

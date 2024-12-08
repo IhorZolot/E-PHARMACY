@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 
 import './App.scss'
-import { MedicinePage } from './pages/AllDrugsPage'
 import { LoginPage } from './pages/LoginPage'
 import { ShopPage } from './pages/ShopPage'
 import { StatisticsPage } from './pages/StatisticsPage'
@@ -12,6 +11,7 @@ import CreateShopPage from './pages/CreateShopPage/CreateShopPage'
 import EditShopPage from './pages/EditShopPage/EditShopPage'
 import AllDrugsPage from './pages/AllDrugsPage/AllDrugsPage'
 import CardMyShop from './modules/shop/components/CardMyShop/CardMyShop'
+import MedicinePage from './pages/MedicinePage/MedicinePage'
 
 function App() {
 	return (
@@ -28,7 +28,10 @@ function App() {
 						<Route path='product' element={<CardMyShop />} />
 						<Route path='medicine' element={<AllDrugsPage />} />
 					</Route>
-					<Route path='/medicine' element={<MedicinePage />} />
+					<Route path='/medicine' element={<MedicinePage />}>
+						<Route path='description' element={<h3>Description</h3>} />
+						<Route path='reviews' element={<h3>Composition</h3>} />
+					</Route>
 					<Route path='/statistic' element={<StatisticsPage />} />
 					<Route path='*' element={<NotFoundPage />} />
 				</Route>
