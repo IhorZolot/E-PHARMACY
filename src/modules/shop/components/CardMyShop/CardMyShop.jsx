@@ -6,10 +6,10 @@ import styles from './CardMyShop.module.scss'
 import { ButtonCard } from '../ButtonCard'
 import { fetchShopProducts } from '@redux/ShopProducts/operations'
 import { selectShopProducts } from '@redux/ShopProducts/selectors'
-import { deleteProductToShopThunk } from '@redux/ShopProducts/operations'
 import useModal from '../../../../hooks/useModal'
 import EditFormMedicine from '../../../medicine/components/EditFormMedicine/EditFormMedicine'
 import Modal from '../../../../shared/components/Modal/Modal'
+import DelFormMedicine from '../../../medicine/components/DelFormMedicine/DelFormMedicine'
 
 const CardMyShop = () => {
 	const shopProducts = useSelector(selectShopProducts)
@@ -17,11 +17,10 @@ const CardMyShop = () => {
 	const dispatch = useDispatch()
 	const [isOpen, toggleModal] = useModal()
 	const [editToMedicine, setEditToMedicine] = useState(null)
+	const [deleteToMedicine, setDeleteToMedicine] = useState(null)
+	const [modalType, setModalType] = useState(null)
 
-	const handleEditProduct = product => {
-		setEditToMedicine(product)
-		toggleModal()
-	}
+	const placeholderImage = '/src/assets/images/altImage.png'
 
 	useEffect(() => {
 		dispatch(fetchShopProducts(shopId))
@@ -29,15 +28,16 @@ const CardMyShop = () => {
 	if (!shopProducts || shopProducts.length === 0) {
 		return <p>No products available</p>
 	}
+	const handleEditProduct = product => {
+		setEditToMedicine(product)
+		setModalType('edit')
+		toggleModal()
+	}
 
-	const placeholderImage = '/src/assets/images/altImage.png'
-
-	const handleDeleteProduct = productId => {
-		if (!shopId || !productId) {
-			console.error('shopId or productId is undefined')
-			return
-		}
-		dispatch(deleteProductToShopThunk({ shopId, productId }))
+	const handleDeleteProduct = product => {
+		setDeleteToMedicine(product)
+		setModalType('delete')
+		toggleModal()
 	}
 
 	return (
@@ -55,13 +55,18 @@ const CardMyShop = () => {
 						</div>
 						<div className={styles.buttonShopBox}>
 							<ButtonCard onClick={() => handleEditProduct(product)}>Edit</ButtonCard>
-							<ButtonCard isStyle onClick={() => handleDeleteProduct(product._id)}>
+							<ButtonCard isStyle onClick={() => handleDeleteProduct(product)}>
 								Delete
 							</ButtonCard>
 						</div>
-						{isOpen && (
+						{isOpen && modalType === 'edit' && (
 							<Modal onClose={toggleModal}>
 								<EditFormMedicine medicine={editToMedicine} onClose={toggleModal} />
+							</Modal>
+						)}
+						{isOpen && modalType === 'delete' && (
+							<Modal onClose={toggleModal}>
+								<DelFormMedicine onClose={toggleModal} medicine={deleteToMedicine} />
 							</Modal>
 						)}
 					</div>
