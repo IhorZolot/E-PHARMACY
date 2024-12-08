@@ -21,3 +21,27 @@ export const addProductToShopThunk = createAsyncThunk(
 		}
 	}
 )
+
+export const editProductToShopThunk = createAsyncThunk(
+	'shopProducts/editProductToShop',
+	async ({ shopId, productId, updateMedicine }, thunkAPI) => {
+		try {
+			const { data } = await API.put(`/shop/${shopId}/product/${productId}/edit`, updateMedicine)
+			return data
+		} catch (error) {
+			return thunkAPI.rejectWithValue(error.message)
+		}
+	}
+)
+
+export const deleteProductToShopThunk = createAsyncThunk(
+	'shopProducts/deleteProductToShop',
+	async ({ shopId, productId }, thunkAPI) => {
+		try {
+			const { data } = await API.delete(`/shop/${shopId}/product/${productId}/delete`)
+			return data._id
+		} catch (error) {
+			return thunkAPI.rejectWithValue(error.message)
+		}
+	}
+)

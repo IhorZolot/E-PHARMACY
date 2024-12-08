@@ -28,15 +28,14 @@ const AddFormMedicine = ({ onClose }) => {
 			console.error('shopId is undefined')
 			return
 		}
-		console.log('Form data:', data)
 		const formData = new FormData()
-		if (data.photo && data.photo.length > 0) {
-			formData.append('photo', data.photo[0])
+		for (const [key, value] of Object.entries(data)) {
+			if (key === 'photo' && value && value.length > 0) {
+				formData.append(key, value[0])
+			} else if (value !== undefined && value !== null) {
+				formData.append(key, value)
+			}
 		}
-		formData.append('name', data.name)
-		formData.append('price', data.price)
-		formData.append('category', data.category)
-		formData.append('description', data.description)
 		console.log('FormData entries:', [...formData.entries()])
 
 		dispatch(addProductToShopThunk({ shopId, addMedicine: formData }))
@@ -45,7 +44,7 @@ const AddFormMedicine = ({ onClose }) => {
 				onClose()
 			})
 			.catch(err => {
-				console.error('Error:', err)
+				console.error('Error:', err.message)
 			})
 	}
 
