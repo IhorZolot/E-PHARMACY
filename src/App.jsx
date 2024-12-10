@@ -12,6 +12,8 @@ import EditShopPage from './pages/EditShopPage/EditShopPage'
 import AllDrugsPage from './pages/AllDrugsPage/AllDrugsPage'
 import CardMyShop from './modules/shop/components/CardMyShop/CardMyShop'
 import MedicinePage from './pages/MedicinePage/MedicinePage'
+import { Description } from './modules/medicine/DetailsCard/Description'
+import Reviews from './modules/medicine/DetailsCard/Reviews'
 
 function App() {
 	return (
@@ -28,9 +30,9 @@ function App() {
 						<Route path='product' element={<CardMyShop />} />
 						<Route path='medicine' element={<AllDrugsPage />} />
 					</Route>
-					<Route path='/medicine' element={<MedicinePage />}>
-						<Route path='description' element={<h3>Description</h3>} />
-						<Route path='reviews' element={<h3>Composition</h3>} />
+					<Route path='/medicine/:medicineId' element={<MedicinePage />}>
+						<Route path='description' element={<Description />} />
+						<Route path='reviews' element={<Reviews />} />
 					</Route>
 					<Route path='/statistic' element={<StatisticsPage />} />
 					<Route path='*' element={<NotFoundPage />} />

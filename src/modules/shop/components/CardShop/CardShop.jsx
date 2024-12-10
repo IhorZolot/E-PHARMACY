@@ -10,15 +10,25 @@ const CardShop = () => {
 	const products = useSelector(selectProducts)
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
+
 	useEffect(() => {
 		dispatch(fetchProducts())
 	}, [dispatch])
+
+	const handleViewDetails = medicineId => {
+		navigate(`/medicine/${medicineId}`)
+	}
 
 	return (
 		<div className={styles.cardShop}>
 			{products.map((product, index) => (
 				<div key={index} className={styles.productCard}>
-					<img src={product.photo} alt={product.name} className={styles.imgShop} />
+					<img
+						src={product.photo}
+						alt={product.name}
+						className={styles.imgShop}
+						onError={e => (e.target.src = '/path/to/placeholder/image.png')}
+					/>
 					<div className={styles.infoShop}>
 						<div className={styles.titleShopBox}>
 							<div className={styles.titleBox}>
@@ -28,8 +38,10 @@ const CardShop = () => {
 							<p className={styles.priceShop}>${product.price}</p>
 						</div>
 						<div className={styles.buttonShopBox}>
-							<ButtonCard onClick={() => navigate('/medicine')}>Add to shop</ButtonCard>
-							<button className={styles.buttonDetails}>Details</button>
+							<ButtonCard onClick={() => handleViewDetails(product._id)}>Add to shop</ButtonCard>
+							<button className={styles.buttonDetails} onClick={() => handleViewDetails(product._id)}>
+								Details
+							</button>
 						</div>
 					</div>
 				</div>
