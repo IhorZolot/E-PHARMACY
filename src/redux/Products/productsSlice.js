@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { fetchOneProduct, fetchProducts, fetchProductsReviews } from './operations'
+import { fetchCategoriesProducts, fetchFilteredProducts, fetchOneProduct, fetchProducts, fetchProductsReviews } from './operations'
 
 const initialState = {
 	products: [],
@@ -7,6 +7,8 @@ const initialState = {
 	oneProduct: null,
 	isLoading: false,
 	error: null,
+	categories: [],
+	filteredProducts: [],
 }
 
 const productsSlice = createSlice({
@@ -48,8 +50,31 @@ const productsSlice = createSlice({
 				state.isLoading = false
 				state.error = payload
 			})
+			.addCase(fetchCategoriesProducts.fulfilled, (state, { payload }) => {
+				state.isLoading = false
+				state.categories = payload
+			})
+			.addCase(fetchCategoriesProducts.pending, state => {
+				state.isLoading = true
+			})
+			.addCase(fetchCategoriesProducts.rejected, (state, { payload }) => {
+				state.isLoading = false
+				state.error = payload
+			})
+			.addCase(fetchFilteredProducts.fulfilled, (state, { payload }) => {
+				state.isLoading = false
+				console.log('Payload received:', payload); 
+				state.filteredProducts = payload
+			})
+			.addCase(fetchFilteredProducts.pending, state => {
+				state.isLoading = true
+			})
+			.addCase(fetchFilteredProducts.rejected, (state, { payload }) => {
+				state.isLoading = false
+				state.error = payload
+			})
+
 	},
 })
 
-export const { setDescription } = productsSlice.actions
 export const productsReducer = productsSlice.reducer

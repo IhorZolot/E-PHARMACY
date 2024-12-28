@@ -29,13 +29,17 @@ const AddFormMedicine = ({ onClose }) => {
 			return
 		}
 		const formData = new FormData()
+
 		for (const [key, value] of Object.entries(data)) {
-			if (key === 'photo' && value && value.length > 0) {
-				formData.append(key, value[0])
-			} else if (value !== undefined && value !== null) {
+			if (key === 'photo') {
+				if (value && value.length > 0) {
+					formData.append(key, value[0])
+				}
+			} else if (value !== undefined && value !== null && value !== '') {
 				formData.append(key, value)
 			}
 		}
+
 		console.log('FormData entries:', [...formData.entries()])
 
 		dispatch(addProductToShopThunk({ shopId, addMedicine: formData }))
@@ -72,7 +76,7 @@ const AddFormMedicine = ({ onClose }) => {
 			</div>
 			<div className={styles.inputBox}>
 				<label htmlFor='price'>Price</label>
-				<input type='text' id='price' placeholder='Enter text' {...register('price')} />
+				<input type='number' id='price' placeholder='Enter text' {...register('price', { valueAsNumber: true })} />
 				{errors.price && <span>{errors.price.message}</span>}
 			</div>
 			<div className={styles.inputBox}>

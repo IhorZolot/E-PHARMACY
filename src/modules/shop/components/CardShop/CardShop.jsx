@@ -1,19 +1,17 @@
 import { useEffect } from 'react'
 import ButtonCard from '../ButtonCard/ButtonCard'
 import styles from './CardShop.module.scss'
-import { fetchProducts } from '@redux/Products/operations'
-import { useDispatch, useSelector } from 'react-redux'
-import { selectProducts } from '@redux/Products/selectors'
+import {   useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import {  selectFilteredProducts } from '../../../../redux/Products/selectors'
 
 const CardShop = () => {
-	const products = useSelector(selectProducts)
-	const dispatch = useDispatch()
+	const filteredProducts = useSelector(selectFilteredProducts); 
 	const navigate = useNavigate()
 
 	useEffect(() => {
-		dispatch(fetchProducts())
-	}, [dispatch])
+    console.log(filteredProducts); 
+  }, [filteredProducts]);
 
 	const handleViewDetails = medicineId => {
 		navigate(`/medicine/${medicineId}`)
@@ -21,8 +19,8 @@ const CardShop = () => {
 
 	return (
 		<div className={styles.cardShop}>
-			{products.map((product, index) => (
-				<div key={index} className={styles.productCard}>
+			{filteredProducts.map((product) => (
+				<div key={product._id} className={styles.productCard}>
 					<img
 						src={product.photo}
 						alt={product.name}

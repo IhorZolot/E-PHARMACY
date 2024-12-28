@@ -5,5 +5,5 @@ export const validationAddMedicineSchema = z.object({
 	name: z.string().min(1, { message: 'Name is required' }),
 	price: z.number().min(1, { message: 'Price is required' }),
 	category: z.string().min(1, { message: 'Category is required' }),
-	description: z.string(),
+	description: z.string().optional(),
 })

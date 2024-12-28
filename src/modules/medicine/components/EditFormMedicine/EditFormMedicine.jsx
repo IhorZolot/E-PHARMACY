@@ -71,7 +71,7 @@ const EditFormMedicine = ({ medicine, onClose }) => {
 			</div>
 			<div className={styles.editInputBox}>
 				<label htmlFor='price'>Price</label>
-				<input type='text' id='price' placeholder='Enter text' {...register('price')} />
+				<input type='number' id='price' placeholder='Enter text' {...register('price', { valueAsNumber: true })} />
 				{errors.price && <span>{errors.price.message}</span>}
 			</div>
 			<div className={styles.editInputBox}>

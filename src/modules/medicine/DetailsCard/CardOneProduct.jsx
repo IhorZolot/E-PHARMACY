@@ -7,6 +7,7 @@ import { selectIsLoading, selectOneProduct } from '../../../redux/Products/selec
 import { useEffect } from 'react'
 import { fetchOneProduct } from '../../../redux/Products/operations'
 import { addProductToShopThunk } from '../../../redux/ShopProducts/operations'
+import { validationAddMedicineSchema } from '../components/AddFormMedicine/helpers/validationAddMedicineSchema'
 
 const CardOneProduct = () => {
 	const { medicineId } = useParams()
@@ -25,11 +26,15 @@ const CardOneProduct = () => {
 	if (!product) {
 		return <div>Product not found</div>
 	}
+
 	const addProductToShop = () => {
-		console.log(product)
-		///////////////////////////////////////////////////
-		const shopId = '67464de2c21ca4602aef786b'
-		dispatch(addProductToShopThunk({ shopId, product }))
+		try {
+			const shopId = '67464de2c21ca4602aef786b'
+			const validatedProduct = validationAddMedicineSchema.parse(product)
+			dispatch(addProductToShopThunk({ shopId, addMedicine: validatedProduct }))
+		} catch (error) {
+			console.error('Failed to add product:', error.message)
+		}
 	}
 
 	return (
