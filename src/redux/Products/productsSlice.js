@@ -63,7 +63,6 @@ const productsSlice = createSlice({
 			})
 			.addCase(fetchFilteredProducts.fulfilled, (state, { payload }) => {
 				state.isLoading = false
-				console.log('Payload received:', payload); 
 				state.filteredProducts = payload
 			})
 			.addCase(fetchFilteredProducts.pending, state => {

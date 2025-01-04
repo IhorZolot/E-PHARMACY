@@ -2,12 +2,12 @@ import { SpriteSVG } from '@assets/icons/spriteSVG'
 import styles from './FilterMedicine.module.scss'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectCategories } from '../../../../redux/Products/selectors'
-import { fetchCategoriesProducts, fetchFilteredProducts } from '../../../../redux/Products/operations'
+import { selectCategories } from '@redux/Products/selectors'
+import { fetchCategoriesProducts, fetchFilteredProducts } from '@redux/Products/operations'
 
 const FilterMedicine = () => {
 	const dispatch = useDispatch()
-	const categories = useSelector(selectCategories) || []
+	const categories = useSelector(selectCategories) ?? []
 	const [selectedCategory, setSelectedCategory] = useState('')
 	const [valueFilter, setValueFilter] = useState('')
 

@@ -4,6 +4,8 @@ import { MobileBar } from './components/MobileBar'
 import styles from './MobileMenu.module.scss'
 
 const MobileMenu = ({ onClose }) => {
+
+
 	return (
 		<div className={styles.mobileMenu}>
 			<button className={styles.closeModal} onClick={onClose}>

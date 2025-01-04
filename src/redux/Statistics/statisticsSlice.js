@@ -31,4 +31,4 @@ const statisticsSlice = createSlice({
 	},
 })
 
-export default statisticsSlice.reducer
+export const statisticsReducer = statisticsSlice.reducer

@@ -1,14 +1,44 @@
 import { configureStore } from '@reduxjs/toolkit'
-import statisticsReducer from './Statistics/statisticsSlice'
-import { productsReducer } from './Products/productsSlice'
+import storage from 'redux-persist/lib/storage';
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist';
+
+import { userReducer } from './User/userSlice';
 import { shopsReducer } from './Shops/shopsSlice'
-import { shopProductsReducer } from './ShopProducts/shopProductsSlise'
+import {statisticsReducer} from './Statistics/statisticsSlice'
+import { productsReducer } from './Products/productsSlice'
+import { shopProductsReducer } from './ShopProducts/shopProductsSlice'
+
+const persistConfig = {
+  key: 'root',
+  version: 1,
+  storage,
+  whitelist: ['token'],
+};
 
 export const store = configureStore({
 	reducer: {
+		user: persistReducer(persistConfig, userReducer),
 		statistics: statisticsReducer,
 		products: productsReducer,
 		shops: shopsReducer,
 		shopProducts: shopProductsReducer,
 	},
+
+	middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 })
+
+export const persistor = persistStore(store);

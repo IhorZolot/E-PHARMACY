@@ -7,3 +7,11 @@ export const API = axios.create({
 			? 'http://localhost:3000/api'
 			: 'https://e-pharmacy-backend-b23n.onrender.com/api',
 })
+
+export const setToken = (token) => {
+  API.defaults.headers.common.Authorization = `Bearer ${token}`;
+};
+
+export const removeToken = () => {
+  API.defaults.headers.common.Authorization = '';
+};

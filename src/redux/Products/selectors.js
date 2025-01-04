@@ -1,3 +1,4 @@
+import { createSelector } from '@reduxjs/toolkit'
 
 export const selectProducts = state => state.products.products
 export const selectOneProduct = state => state.products.oneProduct
@@ -9,3 +10,9 @@ export const selectCategories = state => state.products.categories
 
 export const selectFilteredProducts = state => state.products.filteredProducts
 
+export const selectVisibleProducts = createSelector(
+  [selectProducts, selectFilteredProducts],
+  (products, filteredProducts) => {
+    return filteredProducts.length > 0 ? filteredProducts : products;
+  }
+);
