@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { API } from '../../config/adminConfig'
+import { toast } from 'react-toastify'
 
 export const fetchShopProducts = createAsyncThunk('shopProducts/fetchShopProducts', async (shopId, thunkAPI) => {
 	try {
@@ -43,5 +44,15 @@ export const deleteProductToShopThunk = createAsyncThunk(
 		} catch (error) {
 			return thunkAPI.rejectWithValue(error.message)
 		}
-	}
+	},
+		{
+			condition: (_, { getState }) => {
+				const loading = getState().shopProducts.isLoading
+				if(loading) {
+					toast.info ('You are already loading')
+					return false
+				}
+			}
+		}
+	
 )

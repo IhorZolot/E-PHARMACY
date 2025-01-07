@@ -36,11 +36,14 @@ export const refreshThunk = createAsyncThunk('user/refresh', async (_, thunkAPI)
     return thunkAPI.rejectWithValue('No token found')
   }
   try {
+    setToken(savedToken);
     const { data } = await API.get('/user/user-info')
-    setToken(data.token);
     console.log(data);
     return data
   } catch (error) {
+    if (error.response && error.response.status === 401) {
+      thunkAPI.dispatch(logoutThunk());
+    }
     return thunkAPI.rejectWithValue(error.message)
   }
 })

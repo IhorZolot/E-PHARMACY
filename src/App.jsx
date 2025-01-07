@@ -1,4 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
+import { Suspense, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 import './App.scss'
 import { LoginPage } from './pages/LoginPage'
@@ -17,11 +19,19 @@ import Reviews from './modules/medicine/DetailsCard/Reviews'
 import { ROUTES } from './config/routes'
 import { PublicRoute } from './HOC'
 import { PrivateRoute } from './HOC'
-import { Suspense } from 'react'
+import { refreshThunk } from './redux/User/operations'
+import { Loader } from './shared/components/Loader'
+import { selectIsRefreshing } from './redux/User/selectors'
 
 function App() {
-	return (
-		<Suspense fallback={<div>Loading...</div>}>
+	const dispatch = useDispatch()
+	const isRefresh = useSelector(selectIsRefreshing)
+useEffect (() => {
+	dispatch(refreshThunk())
+}, [dispatch])
+
+	return isRefresh ? <Loader/> : (
+		<Suspense fallback={<Loader/>}>
 			<Routes>
 				<Route
 					path={ROUTES.LOGIN}

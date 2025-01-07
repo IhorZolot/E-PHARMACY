@@ -18,7 +18,6 @@ const { register, handleSubmit, reset, formState: { errors } } = useForm( {
 
 
 	const submit = data => {
-		console.log(data);
 		dispatch(loginThunk(data)).unwrap().then(() => {
 			toast.success('User logged in successfully');
 			navigate('/shop/create', { replace: true })
