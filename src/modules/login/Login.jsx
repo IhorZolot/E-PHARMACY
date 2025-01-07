@@ -5,7 +5,7 @@ import { OverlayLoginPage } from './components/OverlayLoginPage'
 import WhitePill from '../../assets/icons/WhitePill.svg'
 import styles from './Login.module.scss'
 import { LogoType } from '../../shared/components/LogoType'
-import { SignupForm } from './components/SignupFofm'
+import { SignupForm } from './components/SignupForm'
 import { SigninForm } from './components/SigninForm'
 
 const Login = () => {

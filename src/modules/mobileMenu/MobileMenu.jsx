@@ -12,7 +12,7 @@ const MobileMenu = ({ onClose }) => {
 				<SpriteSVG name='closeModal' />
 			</button>
 			<MobileBar onClose={onClose} />
-			<LogoutButton onClose={onClose} />
+			<LogoutButton  />
 		</div>
 	)
 }
