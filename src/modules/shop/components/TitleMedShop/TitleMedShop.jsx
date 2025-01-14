@@ -1,14 +1,16 @@
 import { SpriteSVG } from '@assets/icons/spriteSVG'
 import styles from './TitleMedShop.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectShops } from '@redux/Shops/selectors'
+import { selectShops, selectShopId } from '@redux/Shops/selectors'
 import { useEffect } from 'react'
 import { fetchShopsById } from '@redux/Shops/operations'
+import Loader from '../../../../shared/components/Loader/Loader'
 
 const TitleMedShop = () => {
-	const shop = useSelector(selectShops)
-	/////////////////////////////////////////////////////////
-	const shopId = '67464de2c21ca4602aef786b'
+	const shop  = useSelector(selectShops)
+	const shopId = useSelector(selectShopId)
+	console.log('shop', shop);
+	console.log('shopId', shopId);
 
 	const dispatch = useDispatch()
 	useEffect(() => {
@@ -18,7 +20,7 @@ const TitleMedShop = () => {
 	}, [dispatch, shopId])
 
 	if (!shop) {
-		return <div>Loading...</div>
+		return <Loader/>
 	}
 
 	return (

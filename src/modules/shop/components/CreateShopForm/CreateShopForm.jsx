@@ -5,9 +5,12 @@ import { useDispatch } from 'react-redux'
 import styles from './CreateShopForm.module.scss'
 import { schemaAddForm } from './helpers/validationSchema'
 import { addShopThunk } from '@redux/Shops/operations'
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 const CreateShopForm = () => {
 	const dispatch = useDispatch()
+	const navigate = useNavigate()
 
 	const {
 		register,
@@ -18,9 +21,15 @@ const CreateShopForm = () => {
 		resolver: zodResolver(schemaAddForm),
 	})
 	const submit = data => {
-		console.log('data', data)
-		dispatch(addShopThunk(data))
-		reset()
+		dispatch(addShopThunk(data)).unwrap().then((shop) => {
+				toast.success('Shop created successfully')
+				navigate(`/shop/${shop._id}`, { replace: true })
+				reset()
+			})
+			.catch (error => {
+			console.error('Error creating shop:', error);
+			toast.error('Failed to create shop. Please try again.');
+		})
 	}
 
 	return (

@@ -14,6 +14,7 @@ const shopsSlice = createSlice({
 	extraReducers: builder => {
 		builder
 			.addCase(fetchShopsById.fulfilled, (state, { payload }) => {
+				console.log('Fetched shop:', payload);
 				state.isLoading = false
 				state.shop = payload
 				state.shopId = payload._id

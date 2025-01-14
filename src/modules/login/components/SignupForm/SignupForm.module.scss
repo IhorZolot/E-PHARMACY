@@ -18,6 +18,20 @@
 		line-height: 150%;
 		color: rgba(29, 30, 33, 0.4);
 	}
+	 div {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	}
+	span {
+		position: absolute;
+		gap: 5px;
+		bottom: -12px;
+		padding-left: 20px;
+		font-size: 10px;
+		color: red;
+	}
 
 	button {
 		border-radius: 60px;
@@ -43,4 +57,19 @@ button:hover {
 	background-color: darken(#59b17a, 10%);
 	transform: scale(1.02);
 	transition: 0.3s;
+}
+
+.createShopForm div {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+.createShopForm span {
+	position: absolute;
+	gap: 5px;
+	bottom: -12px;
+	padding-left: 20px;
+	font-size: 10px;
+	color: red;
 }

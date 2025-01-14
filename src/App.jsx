@@ -51,7 +51,7 @@ useEffect (() => {
 				/>
 
 				<Route
-					path={ROUTES.HOME}
+					path='/'
 					element={
 						<PrivateRoute>
 							<SharedLayout />
@@ -59,17 +59,17 @@ useEffect (() => {
 					}
 				>
 					<Route index element={<CreateShopPage />} />
-					<Route path={ROUTES.CREATE} element={<CreateShopPage />} />
-					<Route path={ROUTES.UPDATE} element={<EditShopPage />} />
-					<Route path={ROUTES.SHOP} element={<ShopPage />}>
-						<Route path={ROUTES.PRODUCT} element={<CardMyShop />} />
-						<Route path={ROUTES.MEDICINE} element={<AllDrugsPage />} />
+					<Route path='shop/create' element={<CreateShopPage />} />
+					<Route path='shop/:shopId/update' element={<EditShopPage />} />
+					<Route path='shop/:shopId' element={<ShopPage />}>
+						<Route path='product' element={<CardMyShop />} />
+						<Route path='medicine' element={<AllDrugsPage />} />
 					</Route>
-					<Route path={ROUTES.ONE_MEDICINE} element={<MedicinePage />}>
-						<Route path={ROUTES.DESCRIPTION} element={<Description />} />
-						<Route path={ROUTES.REVIEWS} element={<Reviews />} />
+					<Route path='/medicine/:medicineId' element={<MedicinePage />}>
+						<Route path='description' element={<Description />} />
+						<Route path='reviews' element={<Reviews />} />
 					</Route>
-					<Route path={ROUTES.STATISTICS} element={<StatisticsPage />} />
+					<Route path='/statistic' element={<StatisticsPage />} />
 					<Route path='*' element={<NotFoundPage />} />
 				</Route>
 			</Routes>
