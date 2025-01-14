@@ -1,13 +1,18 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import styles from './EditShopForm.module.scss'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { schemaEditForm } from './helpers/validationEditSchema'
-import { updateShopThunk } from '../../../../redux/Shops/operations'
+import {  fetchShopsById, updateShopThunk } from '../../../../redux/Shops/operations'
 import { useParams } from 'react-router-dom'
+import { useEffect } from 'react'
+import { selectShop, selectIsStatus } from '../../../../redux/Shops/selectors'
+import { toast } from 'react-toastify'
 const EditShopForm = () => {
 	const dispatch = useDispatch()
 	const { shopId } = useParams()
+	const updateStatus = useSelector(selectIsStatus)
+	const shop = useSelector(selectShop)
 
 	const {
 		register,
@@ -17,12 +22,27 @@ const EditShopForm = () => {
 	} = useForm({
 		resolver: zodResolver(schemaEditForm),
 	})
+	useEffect(() => {
+    if (shopId) {
+      dispatch(fetchShopsById(shopId))
+    }
+  }, [shopId, dispatch])
+
+useEffect(() => {
+	if (shop) {
+		reset(shop)
+	}
+}, [shop, reset])
+
 
 	const submit = data => {
 		if (!shopId) {
-			console.error('shopId is undefined')
+			toast.error('shopId is undefined')
 			return
 		}
+		if(updateStatus ) {
+			toast.error('Shop is already updated')
+			return}
 		const trimmedData = Object.entries(data).reduce((acc, [key, value]) => {
 			if (value?.trim()) {
 				acc[key] = value.trim()
@@ -31,6 +51,7 @@ const EditShopForm = () => {
 		}, {})
 
 		dispatch(updateShopThunk({ shopId, updateShop: trimmedData })).then(() => {
+			toast.success('Shop updated successfully')
 			reset()
 		})
 	}

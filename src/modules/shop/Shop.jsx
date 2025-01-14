@@ -6,12 +6,13 @@ import useModal from '../../hooks/useModal'
 import AddFormMedicine from '../medicine/components/AddFormMedicine/AddFormMedicine'
 import Modal from '../../shared/components/Modal/Modal'
 import { useSelector } from 'react-redux'
-import { selectShopId } from '../../redux/Shops/selectors'
 import DrugLinkSector from './components/DrugLinkSector/DrugLinkSector'
+import { selectShopId } from '../../redux/Shops/selectors'
+
 
 const Shop = () => {
 	const [isOpen, toggleModal] = useModal()
-	const shopId = useSelector(selectShopId)
+	const  shopId  = useSelector(selectShopId)
 	const navigate = useNavigate()
 
 	return (

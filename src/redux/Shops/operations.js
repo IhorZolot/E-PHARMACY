@@ -18,6 +18,7 @@ export const addShopThunk = createAsyncThunk('shops/addNewShop', async (shop, th
 		return thunkAPI.rejectWithValue(error.message)
 	}
 })
+
 export const updateShopThunk = createAsyncThunk(
 	'shops/updateShop',
 	async ({ shopId, updateShop }, { rejectWithValue }) => {

@@ -2,10 +2,11 @@ import { createSlice, isAnyOf } from '@reduxjs/toolkit'
 import { addShopThunk, fetchShopsById, updateShopThunk } from './operations'
 
 const initialState = {
-	shop: [],
-	isLoading: false,
+	shop: {},
 	error: null,
 	shopId: null,
+	isStatus: false,
+	isLoading: false,
 }
 
 const shopsSlice = createSlice({
@@ -14,22 +15,21 @@ const shopsSlice = createSlice({
 	extraReducers: builder => {
 		builder
 			.addCase(fetchShopsById.fulfilled, (state, { payload }) => {
-				console.log('Fetched shop:', payload);
 				state.isLoading = false
 				state.shop = payload
 				state.shopId = payload._id
 			})
 			.addCase(addShopThunk.fulfilled, (state, { payload }) => {
 				state.isLoading = false
-				state.shop.push(payload)
+				state.shop = payload 
 				state.shopId = payload._id
 			})
 			.addCase(updateShopThunk.fulfilled, (state, { payload }) => {
 				state.isLoading = false
-				const updatedShop = state.shop.find(shop => shop._id === payload._id)
-				if (updatedShop) {
-					state.shop = payload
+				if (state.shop && state.shop._id === payload._id) {
+					state.shop = payload  
 				}
+				state.isStatus = true
 			})
 			.addMatcher(isAnyOf(fetchShopsById.pending, addShopThunk.pending, updateShopThunk.pending), state => {
 				state.isLoading = true
