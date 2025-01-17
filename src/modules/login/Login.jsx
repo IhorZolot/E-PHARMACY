@@ -1,4 +1,3 @@
-import clsx from 'clsx'
 import { useLocation } from 'react-router-dom'
 
 import { OverlayLoginPage } from './components/OverlayLoginPage'
@@ -13,7 +12,7 @@ const Login = () => {
 	const isLoginPage = location.pathname === '/login'
 
 	return (
-		<div className={clsx(styles.loginSection, styles.container)}>
+		<div className={styles.loginSection}>
 			<LogoType />
 			<div>
 				<div className={styles.titleSection}>

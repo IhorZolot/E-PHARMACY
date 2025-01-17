@@ -26,7 +26,6 @@ const CardShop = () => {
 						src={product.photo}
 						alt={product.name}
 						className={styles.imgShop}
-						onError={e => (e.target.src = '/path/to/placeholder/image.png')}
 					/>
 					<div className={styles.infoShop}>
 						<div className={styles.titleShopBox}>

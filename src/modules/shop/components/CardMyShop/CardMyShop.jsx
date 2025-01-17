@@ -42,7 +42,7 @@ const CardMyShop = () => {
 
 	return (
 		<>
-			{shopProducts.map(product => (
+			{shopProducts?.map(product => (
 				<div key={product._id} className={styles.cardShop}>
 					<img src={product.photo ? product.photo : placeholderImage} alt={product.name} className={styles.imgShop} />
 					<div className={styles.infoShop}>

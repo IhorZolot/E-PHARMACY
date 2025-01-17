@@ -1,19 +1,22 @@
 import styles from './CardOneProduct.module.scss'
 import altImage from '@assets/images/altImage.png'
 import ButtonCard from '../../shop/components/ButtonCard/ButtonCard'
-import { useParams } from 'react-router-dom'
+import {  useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectIsLoading, selectOneProduct } from '../../../redux/Products/selectors'
 import { useEffect } from 'react'
 import { fetchOneProduct } from '../../../redux/Products/operations'
 import { addProductToShopThunk } from '../../../redux/ShopProducts/operations'
 import { validationAddMedicineSchema } from '../components/AddFormMedicine/helpers/validationAddMedicineSchema'
+import { toast } from 'react-toastify'
+import { selectShopId } from '../../../redux/Shops/selectors'
 
 const CardOneProduct = () => {
 	const { medicineId } = useParams()
 	const dispatch = useDispatch()
 	const isLoading = useSelector(selectIsLoading)
 	const product = useSelector(selectOneProduct)
+	const  shopId = useSelector(selectShopId)
 
 	useEffect(() => {
 		dispatch(fetchOneProduct(medicineId))
@@ -29,9 +32,9 @@ const CardOneProduct = () => {
 
 	const addProductToShop = () => {
 		try {
-			const shopId = '67464de2c21ca4602aef786b'
 			const validatedProduct = validationAddMedicineSchema.parse(product)
 			dispatch(addProductToShopThunk({ shopId, addMedicine: validatedProduct }))
+			toast.success('Product added to shop successfully')
 		} catch (error) {
 			console.error('Failed to add product:', error.message)
 		}
