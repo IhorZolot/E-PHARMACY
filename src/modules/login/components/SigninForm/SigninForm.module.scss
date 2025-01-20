@@ -6,23 +6,24 @@
 	gap: 12px;
 	align-items: center;
 	justify-content: center;
+
 	input {
 		border: 1px solid rgba(29, 30, 33, 0.1);
 		border-radius: 60px;
-		width: 335px;
-		height: 44px;
-		padding: 0 20px;
+		padding: 13px 20px;
 		background: #fff;
 		font-weight: 400;
 		font-size: 12px;
 		line-height: 150%;
 		color: rgba(29, 30, 33, 0.4);
+		outline: none;
 	}
 	div {
 		position: relative;
 		display: flex;
 		flex-direction: column;
 		gap: 5px;
+		width: 100%;
 	}
 	span {
 		position: absolute;
@@ -36,7 +37,6 @@
 	button {
 		border-radius: 60px;
 		padding: 13px 139px;
-		height: 44px;
 		background: #59b17a;
 		font-weight: 500;
 		font-size: 14px;
@@ -58,3 +58,22 @@ button:hover {
 	transform: scale(1.02);
 	transition: 0.3s;
 }
+@media screen and (min-width: 375px) {
+}
+
+@media screen and (min-width: 768px) {
+	.formBox {
+		gap: 20px;
+		
+		input {
+			max-width: 323px;
+		}
+		button {
+			max-width: 323px;
+			margin-top: 50px;
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+}	

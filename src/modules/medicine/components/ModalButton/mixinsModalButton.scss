@@ -1,3 +1,5 @@
+@use "sass:color";
+
 @mixin modalButton($bg-color, $text-color, $padding) {
 	border-radius: 60px;
 	padding: $padding;
@@ -11,6 +13,6 @@
 	transition: background-color 0.3s;
 
 	&:hover {
-		background-color: darken($bg-color, 10%);
+		background-color: color.adjust($bg-color, $lightness: -10%);
 	}
 }

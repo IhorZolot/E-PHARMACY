@@ -1,8 +1,10 @@
 @import  'sharedStyles';
 
 .loginSection {
-  min-height: 100vh;
+  padding: 20px;
+  width: 100%;
 }
+
 .titleSection {
   margin-bottom: 15px;
 
@@ -12,7 +14,7 @@
     font-size: $font-size-xxxl;
     line-height: 121%;
     font-family: $font-family;
-    // max-width: 373px;
+    max-width: 360px;
   }
 
   img {
@@ -26,7 +28,42 @@
 }
 
 @media screen and (min-width: $breakpoint-mobile) {
+}
+@media screen and (min-width: $breakpoint-tablet) {
   .loginSection {
-    height: 812px;
+    padding:25px;
+    height: 1024px
+  }
+  .formSection {
+    display: flex;
+    align-items: start;
+  }
+  .titleSection {
+    margin-bottom: 15px;
+    h1 {
+      font-size: 52px;
+      max-width: 614px;
+    }
+    img {
+      width: 179px;
+      height: 175px;
+      transform: translate(400px, 80px);
+    }
   }
 }
+@media screen and (min-width: $breakpoint-desktop) {
+  .loginSection {
+    padding: 40px 80px;
+  }
+  .loginTablet {
+    display: flex;
+    align-items: end;
+    gap:60px;
+
+    }
+    .formSection {
+      display: flex;
+      flex-direction: column;
+    }
+}
+  
