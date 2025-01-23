@@ -67,3 +67,27 @@
 		}
 	}
 }
+@media screen and (min-width: $breakpoint-tablet) {
+	.shopSection {
+		max-width: 704px;
+		margin-bottom: 40px;
+	}
+	.titleFormSection {
+		max-width: 704px;
+	}
+}
+
+@media screen and (min-width: $breakpoint-desktop) {
+	.shopSection {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		max-width: 708px;
+		
+	}
+	.closeButton {
+		top: 20px;
+		right: 320px;
+	}
+}

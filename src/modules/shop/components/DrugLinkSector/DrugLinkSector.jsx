@@ -6,7 +6,7 @@ const DrugLinkSector = () => {
 
 	return (
 		<>
-			<nav>
+			<nav className={styles.DrugLinkSector}>
 				<NavLink
 					to={`/shop/${shopId}/product`}
 					end

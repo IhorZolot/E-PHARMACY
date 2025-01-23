@@ -16,3 +16,14 @@
 		color: $text-second-color;
 	}
 }
+@media screen and (min-width: $breakpoint-tablet) {
+	.shopTitle {
+		margin-bottom: 40px;
+		h2 {
+			margin-bottom: 20px;
+		}
+		p {
+			max-width: 390px;
+		}
+	}
+}

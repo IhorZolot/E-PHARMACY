@@ -12,51 +12,22 @@
 	justify-content: center;
 	border: 1.15px solid #f1f1f1;
 	border-radius: 60px;
-	width: 112px;
-	height: 46px;
+	padding: 11px 26px;
 	background: $text-white-color;
+	span {
+		display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 10px;
+			color: $text-button-color;
 }
-.span {
-  display: flex;
-		justify-content: center;
-		align-items: center;
-    gap: 10px;
-		color: $text-button-color;
-	&:hover {
-		width: 70px;
-		height: 16px;
-		border-radius: 24px;
-		padding: 8px 12px;
-		background-color: $main-color;
-		color: $text-white-color;
-	}
+&:hover {
+	background-color: $main-color;
+	span {
+		color: #f1f1f1; 
 }
+}}
 
 
 
-// .imageWrapper {
-//   position: relative;
-//   display: inline-block; 
-// }
 
-// .icon {
-//   width: 100%; 
-//   height: auto;
-// }
-
-// .overlay {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   gap: 56px;
-// }
-
-// .linkItem {
-//   display: flex;
-//   align-items: center;
-// }

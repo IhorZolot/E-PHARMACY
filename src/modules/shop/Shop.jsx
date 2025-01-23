@@ -16,7 +16,7 @@ const Shop = () => {
 	const navigate = useNavigate()
 
 	return (
-		<div>
+		< >
 			<TitleMedShop />
 			<div className={styles.sectorButtons}>
 				<Button onClick={() => navigate(`/shop/${shopId}/update`)} className={styles.buttonEdit}>
@@ -32,7 +32,7 @@ const Shop = () => {
 				)}
 			</div>
 			<DrugLinkSector />
-		</div>
+		</>
 	)
 }
 
