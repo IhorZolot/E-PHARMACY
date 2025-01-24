@@ -8,16 +8,16 @@ import { useNavigate } from 'react-router-dom'
 const EditShop = () => {
 	const navigate = useNavigate()
 	return (
-		<div className={styles.shopSection}>
+		<section className={styles.shopSection}>
+			<div className={styles.titleFormSection}>
 			<button className={styles.closeButton} type='button' onClick={() => navigate(-1)}>
 				<IoCloseSharp />
 			</button>
-			<div className={styles.titleFormSection}>
 				<TitleShop />
 				<EditShopForm />
 			</div>
 			<ImageShop />
-		</div>
+		</section>
 	)
 }
 

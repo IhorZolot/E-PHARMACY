@@ -9,7 +9,7 @@ import '../../styles/_container.scss'
 const CreateShop = () => {
 	const navigate = useNavigate()
 	return (
-		<div className={clsx(styles.shopSection,'container')}>
+		<section className={clsx(styles.shopSection,'container')}>
 			<div className={styles.titleFormSection}>
 			<button className={styles.closeButton} type='button' onClick={() => navigate(-1)}>
 				<IoCloseSharp />
@@ -18,7 +18,7 @@ const CreateShop = () => {
 				<CreateShopForm />
 			</div>
 			<ImageShop />
-		</div>
+		</section>
 	)
 }
 

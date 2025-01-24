@@ -41,7 +41,7 @@ const CardMyShop = () => {
 	}
 
 	return (
-		<>
+		<section className={styles.cardShopSection} >
 			{shopProducts?.map(product => (
 				<div key={product._id} className={styles.cardShop}>
 					<img src={product.photo ? product.photo : placeholderImage} alt={product.name} className={styles.imgShop} />
@@ -59,7 +59,11 @@ const CardMyShop = () => {
 								Delete
 							</ButtonCard>
 						</div>
-						{isOpen && modalType === 'edit' && (
+						
+					</div>
+				</div>
+			))}
+			{isOpen && modalType === 'edit' && (
 							<Modal onClose={toggleModal}>
 								<EditFormMedicine medicine={editToMedicine} onClose={toggleModal} />
 							</Modal>
@@ -69,10 +73,7 @@ const CardMyShop = () => {
 								<DelFormMedicine onClose={toggleModal} medicine={deleteToMedicine} />
 							</Modal>
 						)}
-					</div>
-				</div>
-			))}
-		</>
+		</section>
 	)
 }
 

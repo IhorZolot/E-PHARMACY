@@ -8,8 +8,8 @@ const mobileLinksData = [
 		name: 'Medicine store',
 	},
 	{
-		path: '/medicine',
-		name: 'Medicine',
+		path: '/statistic',
+		name: 'Statistics',
 	},
 ]
 

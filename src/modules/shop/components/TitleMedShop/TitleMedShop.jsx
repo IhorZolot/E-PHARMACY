@@ -26,6 +26,7 @@ const TitleMedShop = () => {
 	return (
 		<div className={styles.titleMedShop}>
 			<h2>{shop && shop.shop}</h2>
+			<div className={styles.titleOwner}>
 			<p>
 				<span>Owner:</span>
 				{shop && shop.name}
@@ -48,6 +49,8 @@ const TitleMedShop = () => {
 					<span className={styles.spanMap}>{shop && shop.phone}</span>
 				</div>
 			</div>
+			</div>
+			
 		</div>
 	)
 }

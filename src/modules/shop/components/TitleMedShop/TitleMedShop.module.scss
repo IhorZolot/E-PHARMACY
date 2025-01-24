@@ -3,21 +3,21 @@
 .titleMedShop {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   h2 {
     font-weight: $font-weight-bold;
     font-size:$font-size-xxxl;
     line-height: 114%;
     color: $text-color-main;
-    margin-bottom:10px;
+    margin-bottom:20px;
   }
   p {
   display: inline-block;
-  margin-bottom: 10px;
   font-weight:$font-weight-regular;
   font-size:$font-size-sm;
   line-height: 129%;
   color: $text-color-main;
+  margin-bottom: 1rem;
   span{
     color: $text-button-color;
     font-weight:$font-weight-regular;
@@ -42,4 +42,30 @@
     font-weight:$font-weight-regular;
     font-size:$font-size-sm;
     line-height: 129%;
+}
+@media screen and (min-width: $breakpoint-tablet) {
+  .titleMedShop {
+    margin-bottom: 1rem;
+    p{
+      margin-bottom: 0px;
+    }
+  }
+  .titleOwner {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+}
+@media screen and (min-width: $breakpoint-desktop) {
+  .titleMedShop {
+    h2 {
+      margin-bottom:0px;
+    }
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  
 }

@@ -15,7 +15,7 @@ const Login = () => {
 	const isLoginPage = location.pathname === '/login'
 
 	return (
-		<div className={clsx(styles.loginSection, 'container')}>
+		<section className={clsx(styles.loginSection, 'container')}>
 			<LogoType />
 			<div className={styles.loginTablet}>
 			<div className={styles.titleSection}>
@@ -29,7 +29,7 @@ const Login = () => {
 				</div>
 			</div>
 			<OverlayLoginPage />
-		</div>
+		</section>
 	)
 }
 

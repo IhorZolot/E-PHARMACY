@@ -19,7 +19,7 @@ const CardShop = () => {
 	}
 
 	return (
-		<div className={styles.cardShop}>
+		<div className={styles.cardShopSection}>
 			{visibleProducts.map((product) => (
 				<div key={product._id} className={styles.productCard}>
 					<img

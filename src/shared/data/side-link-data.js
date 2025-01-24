@@ -4,7 +4,7 @@ const linksData = [
 		name: 'Shop',
 	},
 	{
-		path: '/medicine',
+		path: '/shop/:shopId',
 		name: 'Medicine',
 	},
 	{

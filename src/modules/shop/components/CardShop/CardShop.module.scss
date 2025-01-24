@@ -1,4 +1,9 @@
 @import 'sharedStyles';
+.cardShopSection{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
 
 .cardShop {
 	display: flex;
@@ -10,15 +15,15 @@
 	border-radius: 27px;
 	padding: 14px 18px;
 	width: 335px;
-	height: 337px;
+	height: 300px;
 	margin-bottom: 10px;
 }
 .infoShop {
 	display: flex;
 	flex-direction: column;
 	border-radius: 20px;
-	width: 335px;
-	height: 135px;
+	max-width: 335px;
+	max-height: 135px;
 	background-color: $text-white-color;
 	padding: 20px;
 	justify-content: space-between;
@@ -67,4 +72,20 @@
 	text-decoration: underline;
 	text-decoration-skip-ink: none;
 	color: $text-color-main;
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
+	.cardShopSection{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.imgShop {
+		width: 226px;
+		height: 260px;
+	}
+}
+@media screen and (min-width: $breakpoint-desktop) {
+	.cardShopSection{
+		grid-template-columns: repeat(4, 1fr);
+	}
 }

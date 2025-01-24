@@ -6,7 +6,7 @@ import useMedia from '../../hooks/useMedia'
 const Footer = () => {
 	const { isTablet } = useMedia()
 	return (
-		<div className={styles.fullFooter}>
+		<footer className={styles.fullFooter}>
 			<div className={styles.footerBox}>
 				<div>
 					<LogoFooter />
@@ -22,7 +22,7 @@ const Footer = () => {
 				<span>Privacy Policy</span>
 				<span>Terms & Conditions</span>
 			</div>
-		</div>
+		</footer>
 	)
 }
 

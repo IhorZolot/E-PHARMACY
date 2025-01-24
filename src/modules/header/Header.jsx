@@ -14,7 +14,7 @@ const Header = () => {
 	const {isDesktop} = useMedia()
 
 	return (
-		<div className={styles.header}>
+		<header className={styles.header}>
 			<LogoType />
 			{!isDesktop ? (<Burger openModal={toggleModal} />) : (<><NavBarHeader/>  <LogoutButton /></>)}
 			{isOpen && (
@@ -22,7 +22,7 @@ const Header = () => {
 					<MobileMenu onClose={toggleModal} />
 				</Modal>
 			)}
-		</div>
+		</header>
 	)
 }
 

@@ -29,7 +29,7 @@ const FilterMedicine = () => {
 
 	return (
 		<form className={styles.filterSection} onSubmit={onsubmit}>
-			<label htmlFor='category'>
+			<div>
 				<select
 					id='category'
 					className={styles.selectCategory}
@@ -44,8 +44,9 @@ const FilterMedicine = () => {
 							</option>
 						))}
 				</select>
-			</label>
-			<label className={styles.inputSearch} htmlFor='search'>
+			</div>
+			
+			<div className={styles.inputSearch}>
 				<input
 					value={valueFilter}
 					onChange={e => setValueFilter(e.target.value)}
@@ -57,7 +58,7 @@ const FilterMedicine = () => {
 				<div className={styles.iconInput}>
 					<SpriteSVG name='search' />
 				</div>
-			</label>
+			</div>
 			<button className={styles.filterButton}>
 				<SpriteSVG name='filter' />
 				Filter

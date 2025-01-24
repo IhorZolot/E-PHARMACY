@@ -86,3 +86,23 @@
 		margin: 0;
 	}
 }
+@media screen and (min-width: $breakpoint-tablet) {
+	.createShopForm {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 15px;
+	}
+	.delivery {
+    grid-column: 1 / 2; 
+  }
+  button {
+    grid-column: 1 / 2; 
+    justify-self: start; 
+  }
+}
+@media screen and (min-width: $breakpoint-desktop) {
+	.delivery {
+		margin-top: 20px;
+   margin-bottom: 60px;
+  }
+}

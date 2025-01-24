@@ -8,6 +8,7 @@ import Modal from '../../shared/components/Modal/Modal'
 import { useSelector } from 'react-redux'
 import DrugLinkSector from './components/DrugLinkSector/DrugLinkSector'
 import { selectShopId } from '../../redux/Shops/selectors'
+import clsx from 'clsx'
 
 
 const Shop = () => {
@@ -15,9 +16,12 @@ const Shop = () => {
 	const  shopId  = useSelector(selectShopId)
 	const navigate = useNavigate()
 
+	
+
 	return (
-		< >
-			<TitleMedShop />
+		<section className={clsx(styles.shopSection,'container')}>
+			<div>
+			<TitleMedShop   />
 			<div className={styles.sectorButtons}>
 				<Button onClick={() => navigate(`/shop/${shopId}/update`)} className={styles.buttonEdit}>
 					Edit data
@@ -25,14 +29,15 @@ const Shop = () => {
 				<Button onClick={toggleModal} className={styles.buttonAdd}>
 					Add medicine
 				</Button>
-				{isOpen && (
+			</div>
+			<DrugLinkSector />
+			</div>
+			{isOpen && (
 					<Modal onClose={toggleModal}>
 						<AddFormMedicine onClose={toggleModal} />
 					</Modal>
 				)}
-			</div>
-			<DrugLinkSector />
-		</>
+		</section>
 	)
 }
 
