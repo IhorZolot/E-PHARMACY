@@ -1,16 +1,21 @@
 @import 'sharedStyles';
 
 .shopSection {
-	max-width: 335px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
 	margin-bottom: 20px;
-	position: relative;
+	
 }
 .titleFormSection {
-	max-width: 335px;
-	padding: 40px 20px;
+	max-width: 305px;
+	padding: 40px 15px;
 	background-color: $text-white-color;
 	border-radius: 27px;
 	margin-bottom: 20px;
+	position: relative;
 }
 
 .sectorButtons {
@@ -69,25 +74,26 @@
 }
 @media screen and (min-width: $breakpoint-tablet) {
 	.shopSection {
-		max-width: 704px;
 		margin-bottom: 40px;
 	}
 	.titleFormSection {
-		max-width: 704px;
+		max-width: 650px;
+		width: 100%;
+		padding: 40px 25px;
 	}
 }
 
 @media screen and (min-width: $breakpoint-desktop) {
 	.shopSection {
-		display: flex;
+		flex-direction: row;
 		justify-content: center;
-		align-items: center;
+		align-items: flex-start;
 		gap: 20px;
-		max-width: 708px;
-		
 	}
-	.closeButton {
-		top: 20px;
-		right: 320px;
+	.titleFormSection {
+	width: 708px;
+		margin-bottom: 0;
+
 	}
+	
 }

@@ -9,9 +9,7 @@ const ImageShop = () => {
 	const selectedShopImg =  isDesktop ? ImgShopDesk : isTablet ? ImgShopTab : ImgShopMob
 
 	return (
-		<>
 			<img src={selectedShopImg} alt='ImgShop' />
-		</>
 	)
 }
 

@@ -32,10 +32,46 @@
 	}
 }
 @media screen and (min-width: $breakpoint-tablet) {
+	.fullFooter {
+		
+		p {
+			width: 45%;
+		}
+	}
 	.footerBox {
 	display: flex;
 	justify-content: space-between;
+	}
+	.navBarBox {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 10px;
 
 	}
-	
+	.policyBox {
+		justify-content: space-evenly;
+	}
 }
+@media screen and (min-width: $breakpoint-desktop) {
+	.footerBox {
+		margin-bottom: 50px;
+		align-items: flex-start;
+		p {
+			width: 50%;
+		}
+		}
+		.footerBox > div:first-child {
+			flex:  50%  0; 
+		}
+		.footerBox > div:last-child {
+			flex: 0  70%; 
+		}
+		.navBarBox {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			gap: 20px;
+			margin-top: 10px;
+		}
+	}

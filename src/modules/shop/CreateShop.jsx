@@ -10,10 +10,10 @@ const CreateShop = () => {
 	const navigate = useNavigate()
 	return (
 		<div className={clsx(styles.shopSection,'container')}>
+			<div className={styles.titleFormSection}>
 			<button className={styles.closeButton} type='button' onClick={() => navigate(-1)}>
 				<IoCloseSharp />
 			</button>
-			<div className={styles.titleFormSection}>
 				<TitleShop />
 				<CreateShopForm />
 			</div>

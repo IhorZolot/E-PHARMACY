@@ -27,3 +27,8 @@
 		margin-bottom: 10px;
 	}
 }
+@media screen and (min-width: $breakpoint-desktop) {
+	.navBar {
+		margin-bottom: 0;
+	}
+}

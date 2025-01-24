@@ -4,18 +4,18 @@ import SocialNetwork from './components/SocialNetwork/SocialNetwork'
 import styles from './Footer.module.scss'
 import useMedia from '../../hooks/useMedia'
 const Footer = () => {
-	const { isDesktop, isTablet } = useMedia()
+	const { isTablet } = useMedia()
 	return (
 		<div className={styles.fullFooter}>
 			<div className={styles.footerBox}>
 				<div>
 					<LogoFooter />
-					<p>Get the medicine to help you feel better, get back to your active life, and enjoy every moment.</p>
+					<p>Created a drug franchise that embodies effective formulas and changes the approach to treatment.</p>
 				</div>
-				<div>
-					<NavBar />
-					{(isDesktop  || isTablet) && <SocialNetwork /> }
-				</div>
+          <div className={styles.navBarBox}>
+            <NavBar />
+						{isTablet &&<SocialNetwork />}
+          </div>
 			</div>
 			<div className={styles.policyBox}>
 				<span>© E-Pharmacy 2023. All Rights Reserved</span>
