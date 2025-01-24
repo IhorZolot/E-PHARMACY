@@ -12,29 +12,26 @@
 		width: 157px;
 		height: 98px;
 		background: $text-white-color;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    p{
-      font-weight: $font-weight-bold;
-font-size: $font-size-md;
-line-height: 125%;
-color: $text-color-main;
-padding-left: 7px;
-    }
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		p {
+			font-weight: $font-weight-bold;
+			font-size: $font-size-md;
+			line-height: 125%;
+			color: $text-color-main;
+			padding-left: 7px;
+		}
 	}
-	
 }
-
-.sector{
-  display: flex;
-  gap: 14px;
-  padding: 6px;;
-  span{
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 117%;
-    color: $text-button-cancel-color;
-  }
-
+.sector {
+	display: flex;
+	gap: 14px;
+	padding: 6px;
+	span {
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 117%;
+		color: $text-button-cancel-color;
+	}
 }
