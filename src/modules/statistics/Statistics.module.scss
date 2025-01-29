@@ -1,6 +1,11 @@
 @import 'sharedStyles';
 
 .statisticsSection {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: self-start;
+	width: 100%;
 	padding: 20px;
 }
 
@@ -10,4 +15,16 @@
 	line-height: 114%;
 	color: $text-color-main;
 	margin-bottom: 20px;
+}
+@media screen and (min-width: $breakpoint-tablet) {
+}
+
+@media screen and (min-width: $breakpoint-desktop) {
+	.customersExpensesSection {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: flex-start;
+		gap: 20px;
+	}
 }

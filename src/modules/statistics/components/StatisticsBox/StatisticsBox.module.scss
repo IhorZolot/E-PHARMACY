@@ -9,8 +9,8 @@
 		border: 1px solid $bg-color-button;
 		border-radius: 8px;
 		padding: 14px;
-		width: 157px;
-		height: 98px;
+		width: 124px;
+		max-height: 88px;
 		background: $text-white-color;
 		display: flex;
 		flex-direction: column;
@@ -34,4 +34,32 @@
 		line-height: 117%;
 		color: $text-button-cancel-color;
 	}
+}
+.statisticsBox li:hover{border-color: #4CAF50; 
+}
+.statisticsBox li.active  {
+	border-color: #4CAF50; 
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
+	.statisticsBox {
+		justify-content: space-around;
+
+	gap: 20px;
+	li {
+		max-width: 221px;
+		max-height: 108px;
+		p {
+			font-size: $font-size-xxl;
+		}
+	}
+}
+
+}
+@media screen and (min-width: $breakpoint-desktop) {
+	.statisticsBox {
+		li {
+			max-width: 240px;
+	}
+}
 }

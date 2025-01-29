@@ -11,11 +11,11 @@ import { selectShopId } from '../../redux/Shops/selectors'
 import clsx from 'clsx'
 
 
+
 const Shop = () => {
 	const [isOpen, toggleModal] = useModal()
 	const  shopId  = useSelector(selectShopId)
 	const navigate = useNavigate()
-
 	
 
 	return (

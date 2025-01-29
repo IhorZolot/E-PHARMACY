@@ -6,7 +6,6 @@ import MobileMenu from '../mobileMenu/MobileMenu'
 import { Burger } from './components/Burger'
 import { LogoutButton } from './components/LogoutButton'
 import NavBarHeader from './components/NavBarHeader/NavBarHeader'
-
 import styles from './Header.module.scss'
 
 const Header = () => {

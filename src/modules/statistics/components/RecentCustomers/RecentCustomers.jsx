@@ -1,12 +1,28 @@
 import styles from './RecentCustomers.module.scss'
 import { selectStatisticsCustomer } from '../../../../redux/Statistics/selectors'
 import { useSelector } from 'react-redux'
+import TableButton from './components/Button/TableButton'
+import PerfectScrollbar from "react-perfect-scrollbar";
+import "react-perfect-scrollbar/dist/css/styles.css";
+import ClientModal from './components/ClientModal/ClientModal';
+import Modal from '../../../../shared/components/Modal/Modal';
+import { useState } from 'react';
+import useModal from '../../../../hooks/useModal';
+
 const RecentCustomers = () => {
-	const headers = ['Name', 'Email', 'Spent', 'Address']
+	const [isOpen, toggleModal] = useModal()
+	const [selectedClient, setSelectedClient] = useState(null);
+	const headers = ['Name', 'Email', 'Spent', 'Medicine']
 	const statisticsCustomer = useSelector(selectStatisticsCustomer)
 
+	const clickOneClient = (client) => {
+    setSelectedClient(client); 
+		toggleModal();
+  };
+
 	return (
-		<div className={styles.recentCustomers}>
+		<div className={styles.recentCustomers}  >
+			<PerfectScrollbar>
 			<h2>Recent Customers</h2>
 			<table className={styles.table}>
 				<thead className={styles.tableHeader}>
@@ -22,11 +38,16 @@ const RecentCustomers = () => {
 							<td>{row.name}</td>
 							<td>{row.email}</td>
 							<td>{row.spent}</td>
-							<td>{row.address}</td>
+							<td><TableButton onClick={() => clickOneClient(row)}/></td>
 						</tr>
 					))}
 				</tbody>
 			</table>
+			</PerfectScrollbar>
+			{isOpen && (
+				<Modal onClose={toggleModal}>
+				<ClientModal client={selectedClient} onClose={toggleModal}/>
+			</Modal>)}
 		</div>
 	)
 }

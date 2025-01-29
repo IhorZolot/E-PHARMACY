@@ -22,6 +22,7 @@
 	border-top: 1px solid rgba(247, 248, 250, 0.3);
 	padding-top: 20px;
 	display: flex;
+	flex-wrap: wrap;
 	gap: 10px;
 	span {
     display: inline-block;
