@@ -3,47 +3,42 @@
 .statisticsExpenses {
   border: 1px solid rgba(29, 30, 33, 0.1);
   border-radius: 8px;
-  max-width: 335px;
-  max-height: 511px;
-	background: $text-white-color;
-  
+  background: $text-white-color;
+  margin-bottom: 20px;
 
-	h2 {
-		display: block;
-		border: 0px solid rgba(29, 30, 33, 0.08);
-		border-radius: 8px 8px 0 0;
-		background: #e7f1ed;
-		font-weight: $font-weight-bold;
-		font-size: $font-size-md;
-		line-height: 125%;
-		color: $text-color-main;
-		padding: 16px 20px;
-	}
+  h2 {
+    display: block;
+    border-radius: 8px 8px 0 0;
+    background: #e7f1ed;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-md;
+    line-height: 125%;
+    color: $text-color-main;
+    padding: 16px 20px;
+  }
+}
+.tableContainer {
+  width: 100%;
+  max-width: 335px; 
+  overflow-x: auto; 
+  -webkit-overflow-scrolling: touch;
 }
 .table {
-  background : $text-white-color;
+  background: $text-white-color;
   border-radius: 8px;
   border-collapse: collapse;
-  width: 100%;
+  min-width: 335px;
   height: 100%;
-}
-.table th,
-.table td {
-  border: 1px solid rgba(29, 30, 33, 0.1);
-  padding: 15px 10px;
-}
-.table th {
-  border-right: none;
-  border-left: none;
-}
-.table td {
-  border-right: none;
-  border-left: none;
-  border-bottom: none;
-}
-.table th:last-child,
-.table td:last-child {
-  border-right: none;
+  th, td {
+    border: 1px solid rgba(29, 30, 33, 0.1);
+    padding: 15px 10px;
+    border-left: none;
+    border-right: none;
+  }
+
+  td {
+    border-bottom: none;
+  }
 }
 
 .tableHeader {
@@ -56,10 +51,33 @@
 
 .tableBody {
   font-weight: 500;
-font-size: 12px;
-line-height: 117%;
-color: $text-color-main;
+  font-size: 12px;
+  line-height: 117%;
+  color: $text-color-main;
 }
 
+@media screen and (min-width: $breakpoint-tablet) {
+  .table {
+    width: 100%; 
+  }
+  .statisticsExpenses h2 {
+    font-size: $font-size-lg;
+  }
+  .tableHeader {
+    font-size: 14px;
+  }
+  .tableBody {
+    font-size: $font-size-lg;
+  }
+  .table td {
+    padding: 21.5px 15px;
+  }
+  .tableContainer {
+    max-width: 100%; 
+  }
 
-
+  .table {
+    width: 100%; 
+    min-width: auto; 
+  }
+}

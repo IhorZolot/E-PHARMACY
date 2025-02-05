@@ -11,17 +11,15 @@ import { selectShopId } from '../../redux/Shops/selectors'
 import clsx from 'clsx'
 
 
-
 const Shop = () => {
 	const [isOpen, toggleModal] = useModal()
 	const  shopId  = useSelector(selectShopId)
 	const navigate = useNavigate()
-	
 
 	return (
 		<section className={clsx(styles.shopSection,'container')}>
 			<div>
-			<TitleMedShop   />
+			<TitleMedShop />
 			<div className={styles.sectorButtons}>
 				<Button onClick={() => navigate(`/shop/${shopId}/update`)} className={styles.buttonEdit}>
 					Edit data

@@ -2,8 +2,6 @@ import styles from './RecentCustomers.module.scss'
 import { selectStatisticsCustomer } from '../../../../redux/Statistics/selectors'
 import { useSelector } from 'react-redux'
 import TableButton from './components/Button/TableButton'
-import PerfectScrollbar from "react-perfect-scrollbar";
-import "react-perfect-scrollbar/dist/css/styles.css";
 import ClientModal from './components/ClientModal/ClientModal';
 import Modal from '../../../../shared/components/Modal/Modal';
 import { useState } from 'react';
@@ -22,8 +20,8 @@ const RecentCustomers = () => {
 
 	return (
 		<div className={styles.recentCustomers}  >
-			<PerfectScrollbar>
 			<h2>Recent Customers</h2>
+			<div className={styles.tableContainer}>
 			<table className={styles.table}>
 				<thead className={styles.tableHeader}>
 					<tr>
@@ -43,7 +41,7 @@ const RecentCustomers = () => {
 					))}
 				</tbody>
 			</table>
-			</PerfectScrollbar>
+			</div>
 			{isOpen && (
 				<Modal onClose={toggleModal}>
 				<ClientModal client={selectedClient} onClose={toggleModal}/>

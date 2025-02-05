@@ -1,18 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-
 import { SpriteSVG } from '@assets/icons/spriteSVG'
 import styles from './TitleMedShop.module.scss'
 import { fetchShopsById } from '@redux/Shops/operations'
 import Loader from '../../../../shared/components/Loader/Loader'
-import {  selectShop } from '../../../../redux/Shops/selectors'
+import { selectShop, selectShopId } from '../../../../redux/Shops/selectors'
 
 const TitleMedShop = () => {
-	const { shopId } = useParams();
+	const  shopId  = useSelector(selectShopId)
 	const shop = useSelector(selectShop)
 
 	const dispatch = useDispatch()
+	
 	useEffect(() => {
 		if (shopId) {
 			dispatch(fetchShopsById(shopId))

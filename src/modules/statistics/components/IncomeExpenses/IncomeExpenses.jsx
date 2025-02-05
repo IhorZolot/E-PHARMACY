@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux'
 import styles from './IncomeExpenses.module.scss'
 import { selectStatisticsIncomeExpenses } from '../../../../redux/Statistics/selectors'
+import { getAmountStyle, getRowStyle } from './components/index'
 
 const IncomeExpenses = () => {
 	const statisticsIncomeExpenses = useSelector(selectStatisticsIncomeExpenses)
@@ -8,6 +9,7 @@ const IncomeExpenses = () => {
 	return (
 		<div className={styles.statisticsExpenses}>
 			<h2>Income/Expenses</h2>
+			<div className={styles.tableContainer} >
 			<table className={styles.table}>
 				<thead className={styles.tableHeader}>
 					<tr>
@@ -17,13 +19,16 @@ const IncomeExpenses = () => {
 				<tbody className={styles.tableBody}>
 					{statisticsIncomeExpenses.map((row, index) => (
 						<tr key={index}>
-							<td>{row.type}</td>
+							<td><div className={getRowStyle(row.type)}> {row.type}</div></td>
 							<td>{row.name}</td>
-							<td>{row.amount}</td>
+							<td><a className={getAmountStyle(row.type)}>
+                    {row.amount >= 0 ? `${row.amount}` : row.amount}
+                  </a></td>
 						</tr>
 					))}
 				</tbody>
 			</table>
+			</div>
 		</div>
 	)
 }

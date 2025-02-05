@@ -9,12 +9,13 @@
 		border: 1px solid $bg-color-button;
 		border-radius: 8px;
 		padding: 14px;
-		width: 124px;
-		max-height: 88px;
+		min-width: 124px;
+		min-height: 88px;
 		background: $text-white-color;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+
 		p {
 			font-weight: $font-weight-bold;
 			font-size: $font-size-md;
@@ -43,23 +44,22 @@
 
 @media screen and (min-width: $breakpoint-tablet) {
 	.statisticsBox {
-		justify-content: space-around;
-
+	justify-content: center;
 	gap: 20px;
 	li {
-		max-width: 221px;
-		max-height: 108px;
 		p {
 			font-size: $font-size-xxl;
 		}
 	}
 }
-
+.statisticsBox li {
+	min-width: 180px;
+}
 }
 @media screen and (min-width: $breakpoint-desktop) {
 	.statisticsBox {
 		li {
-			max-width: 240px;
+			min-width: 240px;
 	}
 }
 }

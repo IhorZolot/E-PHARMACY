@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { API, removeToken, setToken } from '../../config/adminConfig';
+import { fetchShopsById } from '../Shops/operations';
 
 
 export const registerThunk= createAsyncThunk('user/register', async (credentials, { rejectWithValue }) => {
@@ -10,13 +11,17 @@ export const registerThunk= createAsyncThunk('user/register', async (credentials
     return rejectWithValue(error.message)
   }
 })
-export const loginThunk = createAsyncThunk('user/login', async (credentials, { rejectWithValue }) => {
+export const loginThunk = createAsyncThunk('user/login', async (credentials, thunkAPI) => {
   try {
     const { data } = await API.post('/user/login', credentials)
     setToken(data.token);
+    
+    if (data.shopId) {
+      await thunkAPI.dispatch(fetchShopsById(data.shopId));
+    }
     return data
   } catch (error) {
-    return rejectWithValue(error.message)
+    return thunkAPI.rejectWithValue(error.message)
   }
 })
 export const logoutThunk = createAsyncThunk('user/logout', async (_, { rejectWithValue }) => {
@@ -37,6 +42,10 @@ export const refreshThunk = createAsyncThunk('user/refresh', async (_, thunkAPI)
   try {
     setToken(savedToken);
     const { data } = await API.get('/user/user-info')
+
+    if (data.shopId) {
+      await thunkAPI.dispatch(fetchShopsById(data.shopId));
+    }
     return data
   } catch (error) {
     if (error.response && error.response.status === 401) {
