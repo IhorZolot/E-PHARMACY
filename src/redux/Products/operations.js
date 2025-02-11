@@ -1,12 +1,14 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { API } from '../../config/adminConfig'
 
-export const fetchProducts = createAsyncThunk('products/fetchProducts', async (_, thunkAPI) => {
+export const fetchProducts = createAsyncThunk('products/fetchProducts', async (_, { rejectWithValue, getState }) => {
 	try {
-		const { data } = await API.get('/products')
-		return data.products
+		const { page, limit } = getState().products;
+		const { data } = await API.get(`/products?page=${page}&limit=${limit}`)
+		console.log('Отримані дані:', data);
+		return data
 	} catch (error) {
-		return thunkAPI.rejectWithValue(error.message)
+		return rejectWithValue(error.message)
 	}
 })
 export const fetchCategoriesProducts = createAsyncThunk('products/fetchCategories', async (_, thunkAPI) => {

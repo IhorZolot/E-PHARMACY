@@ -10,6 +10,7 @@ import useModal from '../../../../hooks/useModal'
 import EditFormMedicine from '../../../medicine/components/EditFormMedicine/EditFormMedicine'
 import Modal from '../../../../shared/components/Modal/Modal'
 import DelFormMedicine from '../../../medicine/components/DelFormMedicine/DelFormMedicine'
+import Loader from '../../../../shared/components/Loader/Loader'
 
 const CardMyShop = () => {
 	const shopProducts = useSelector(selectShopProducts)
@@ -25,9 +26,15 @@ const CardMyShop = () => {
 	useEffect(() => {
 		dispatch(fetchShopProducts(shopId))
 	}, [dispatch, shopId])
+
 	if (!shopProducts || shopProducts.length === 0) {
 		return <p>No products available</p>
 	}
+
+	if (!shopProducts) {
+		return <Loader />; 
+	}
+
 	const handleEditProduct = product => {
 		setEditToMedicine(product)
 		setModalType('edit')

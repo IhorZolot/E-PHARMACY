@@ -2,25 +2,35 @@ import ButtonCard from '../ButtonCard/ButtonCard'
 import styles from './CardShop.module.scss'
 import {   useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import {   selectVisibleProducts } from '../../../../redux/Products/selectors'
+import {   selectCurrentPage, selectTotalPages, selectVisibleProducts } from '../../../../redux/Products/selectors'
 import { useEffect } from 'react'
 import { fetchProducts } from '../../../../redux/Products/operations'
+import { Pagination, Stack } from '@mui/material'
+import { setCurrentPage } from '../../../../redux/Products/productsSlice'
 
 const CardShop = () => {
-	const visibleProducts = useSelector(selectVisibleProducts)
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
+
+	const visibleProducts = useSelector(selectVisibleProducts)
+	const currentPage = useSelector(selectCurrentPage)
+	const totalPages = useSelector(selectTotalPages)
+	
 	useEffect(() => {
     dispatch(fetchProducts());
-  }, [dispatch]);
+  }, [dispatch, currentPage ]);
 
 	const handleViewDetails = medicineId => {
 		navigate(`/medicine/${medicineId}`)
 	}
+	const handlePageChange = ( event, page) => {
+    dispatch(setCurrentPage(page));
+  };
 
 	return (
 		<div className={styles.cardShopSection}>
-			{visibleProducts.map((product) => (
+			{visibleProducts?.map((product) => (
+				console.log('visibleProducts:', visibleProducts),
 				<div key={product._id} className={styles.productCard}>
 					<img
 						src={product.photo}
@@ -44,6 +54,27 @@ const CardShop = () => {
 					</div>
 				</div>
 			))}
+			<Stack spacing={2} className={styles.paginationBox} >
+				<Pagination
+					count={totalPages} 
+          page={currentPage} 
+					onChange={handlePageChange} 
+            sx={{
+              "& .MuiPaginationItem-root": {
+                color: '#59b17a',
+              },
+              "& .MuiPaginationItem-root.Mui-selected": {
+                backgroundColor: '#59b17a',
+                color: 'white',
+              },
+              "& .MuiPaginationItem-root:hover": {
+                backgroundColor: '#9baba1',
+								color: 'white',
+              }
+            }}
+				/>
+			</Stack>
+			
 		</div>
 	)
 }

@@ -4,21 +4,35 @@ import { fetchCategoriesProducts, fetchFilteredProducts, fetchOneProduct, fetchP
 const initialState = {
 	products: [],
 	reviews: [],
+	categories: [],
+	filteredProducts: [],
 	oneProduct: null,
 	isLoading: false,
 	error: null,
-	categories: [],
-	filteredProducts: [],
+	page: 1,
+	totalPages: 0, 
+	limit: 8,
+	totalItems: ''
 }
 
 const productsSlice = createSlice({
 	name: 'products',
 	initialState,
 
+	reducers: {
+		setCurrentPage: (state, { payload }) => {
+			state.page = payload
+		}
+	},
 	extraReducers: builder => {
 		builder.addCase(fetchProducts.fulfilled, (state, { payload }) => {
+			console.log('fetchProducts payload:', payload);
 			state.isLoading = false
-			state.products = payload
+			state.products = payload.products
+			state.page = Number(payload.page);
+  state.totalPages = Number(payload.pages);
+			state.totalItems = payload.total
+			
 		})
 		builder.addCase(fetchProducts.pending, state => {
 			state.isLoading = true
@@ -75,5 +89,5 @@ const productsSlice = createSlice({
 
 	},
 })
-
+export const { setCurrentPage } = productsSlice.actions;
 export const productsReducer = productsSlice.reducer

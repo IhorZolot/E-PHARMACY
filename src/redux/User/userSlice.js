@@ -19,7 +19,6 @@ const userSlice = createSlice({
   initialState,
  extraReducers: builder => {
    builder.addCase(registerThunk.fulfilled, (state, { payload }) => {
-    console.log('Payload:', payload);
      state.user = payload.user
      state.isLoggedIn = true
    })

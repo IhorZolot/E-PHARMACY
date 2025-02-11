@@ -1,6 +1,6 @@
 const linksData = [
 	{
-		path: '/',
+		path: '/shop/create',
 		name: 'Shop',
 	},
 	{

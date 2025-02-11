@@ -58,12 +58,11 @@ useEffect (() => {
 						</PrivateRoute>
 					}
 				>
-					<Route index element={<CreateShopPage />} />
 					<Route path='shop/create' element={<CreateShopPage />} />
 					<Route path='shop/:shopId/update' element={<EditShopPage />} />
 					<Route path='shop/:shopId' element={<ShopPage />}>
-						<Route path='product' element={<CardMyShop />} />
-						<Route path='medicine' element={<AllDrugsPage />} />
+					<Route index element={<AllDrugsPage />} /> 
+					<Route path='product' element={<CardMyShop />} />
 					</Route>
 					<Route path='/medicine/:medicineId' element={<MedicinePage />}>
 						<Route path='description' element={<Description />} />

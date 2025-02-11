@@ -5,8 +5,8 @@ import Modal from '../../shared/components/Modal/Modal'
 import MobileMenu from '../mobileMenu/MobileMenu'
 import { Burger } from './components/Burger'
 import { LogoutButton } from './components/LogoutButton'
-import NavBarHeader from './components/NavBarHeader/NavBarHeader'
 import styles from './Header.module.scss'
+import NavBar from '../../shared/components/NavBar/NavBar'
 
 const Header = () => {
 	const [isOpen, toggleModal] = useModal()
@@ -15,7 +15,7 @@ const Header = () => {
 	return (
 		<header className={styles.header}>
 			<LogoType />
-			{!isDesktop ? (<Burger openModal={toggleModal} />) : (<><NavBarHeader/>  <LogoutButton /></>)}
+			{!isDesktop ? (<Burger openModal={toggleModal} />) : (<><NavBar typeStyle='Header'   />  <LogoutButton /></>)}
 			{isOpen && (
 				<Modal onClose={toggleModal}>
 					<MobileMenu onClose={toggleModal} />

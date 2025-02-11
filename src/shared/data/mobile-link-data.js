@@ -1,6 +1,6 @@
 const mobileLinksData = [
 	{
-		path: '/',
+		path: '/shop/create',
 		name: 'Home',
 	},
 	{

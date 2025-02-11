@@ -4,12 +4,13 @@ import { SpriteSVG } from '@assets/icons/spriteSVG'
 import styles from './TitleMedShop.module.scss'
 import { fetchShopsById } from '@redux/Shops/operations'
 import Loader from '../../../../shared/components/Loader/Loader'
-import { selectShop, selectShopId } from '../../../../redux/Shops/selectors'
+import { selectShop } from '../../../../redux/Shops/selectors'
+import { useParams } from 'react-router-dom'
 
 const TitleMedShop = () => {
-	const  shopId  = useSelector(selectShopId)
+	const  { shopId } = useParams()
 	const shop = useSelector(selectShop)
-
+			
 	const dispatch = useDispatch()
 	
 	useEffect(() => {
@@ -49,7 +50,6 @@ const TitleMedShop = () => {
 				</div>
 			</div>
 			</div>
-			
 		</div>
 	)
 }

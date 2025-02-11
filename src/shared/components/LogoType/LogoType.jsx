@@ -5,7 +5,7 @@ import styles from './LogoType.module.scss'
 const LogoType = () => {
 	const navigate = useNavigate()
 	return (
-		<div className={styles.logoSection} onClick={() => navigate('/')}>
+		<div className={styles.logoSection} onClick={() => navigate('/shop/create')}>
 			<img src={MedLogo} alt='MedLogo' />
 			<span>E-Pharmacy</span>
 		</div>

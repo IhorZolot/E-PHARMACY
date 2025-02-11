@@ -13,7 +13,7 @@ const Footer = () => {
 					<p>Created a drug franchise that embodies effective formulas and changes the approach to treatment.</p>
 				</div>
           <div className={styles.navBarBox}>
-            <NavBar />
+            <NavBar  />
 						{isTablet &&<SocialNetwork />}
           </div>
 			</div>

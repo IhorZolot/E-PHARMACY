@@ -3,7 +3,7 @@ import styles from './DrugLinkSector.module.scss'
 
 const DrugLinkSector = () => {
 	const { shopId } = useParams()
-
+	
 	return (
 		<>
 			<nav className={styles.DrugLinkSector}>
@@ -15,7 +15,7 @@ const DrugLinkSector = () => {
 					Drug store
 				</NavLink>
 				<NavLink
-					to={`/shop/${shopId}/medicine`}
+					to={`/shop/${shopId}`}
 					end
 					className={({ isActive }) => `${styles.NavLink} ${isActive ? styles.active : ''}`}
 				>

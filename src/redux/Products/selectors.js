@@ -9,6 +9,8 @@ export const selectError = state => state.products.error
 export const selectCategories = state => state.products.categories
 
 export const selectFilteredProducts = state => state.products.filteredProducts
+export const selectCurrentPage = state => state.products.page
+export const selectTotalPages = state => state.products.totalPages
 
 export const selectVisibleProducts = createSelector(
   [selectProducts, selectFilteredProducts],
