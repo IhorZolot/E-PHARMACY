@@ -1,5 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { fetchCategoriesProducts, fetchFilteredProducts, fetchOneProduct, fetchProducts, fetchProductsReviews } from './operations'
+import {
+	fetchCategoriesProducts,
+	fetchFilteredProducts,
+	fetchOneProduct,
+	fetchProducts,
+	fetchProductsReviews,
+} from './operations'
 
 const initialState = {
 	products: [],
@@ -10,9 +16,9 @@ const initialState = {
 	isLoading: false,
 	error: null,
 	page: 1,
-	totalPages: 0, 
+	totalPages: 0,
 	limit: 8,
-	totalItems: ''
+	totalItems: '',
 }
 
 const productsSlice = createSlice({
@@ -22,17 +28,16 @@ const productsSlice = createSlice({
 	reducers: {
 		setCurrentPage: (state, { payload }) => {
 			state.page = payload
-		}
+		},
 	},
 	extraReducers: builder => {
 		builder.addCase(fetchProducts.fulfilled, (state, { payload }) => {
-			console.log('fetchProducts payload:', payload);
+			console.log('fetchProducts payload:', payload)
 			state.isLoading = false
 			state.products = payload.products
-			state.page = Number(payload.page);
-  state.totalPages = Number(payload.pages);
+			state.page = Number(payload.page)
+			state.totalPages = Number(payload.pages)
 			state.totalItems = payload.total
-			
 		})
 		builder.addCase(fetchProducts.pending, state => {
 			state.isLoading = true
@@ -86,8 +91,7 @@ const productsSlice = createSlice({
 				state.isLoading = false
 				state.error = payload
 			})
-
 	},
 })
-export const { setCurrentPage } = productsSlice.actions;
+export const { setCurrentPage } = productsSlice.actions
 export const productsReducer = productsSlice.reducer

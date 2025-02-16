@@ -31,7 +31,6 @@ const CardShop = () => {
 	return (
 		<div className={styles.cardShopSection}>
 			{visibleProducts?.map((product) => (
-				console.log('visibleProducts:', visibleProducts),
 				<div key={product._id} className={styles.productCard}>
 					<img
 						src={product.photo}
@@ -60,19 +59,7 @@ const CardShop = () => {
 					count={totalPages} 
           page={currentPage} 
 					onChange={handlePageChange} 
-            sx={{
-              "& .MuiPaginationItem-root": {
-                color: '#59b17a',
-              },
-              "& .MuiPaginationItem-root.Mui-selected": {
-                backgroundColor: '#59b17a',
-                color: 'white',
-              },
-              "& .MuiPaginationItem-root:hover": {
-                backgroundColor: '#9baba1',
-								color: 'white',
-              }
-            }}
+					className={styles.pagination}
 				/>
 			</Stack>
 			

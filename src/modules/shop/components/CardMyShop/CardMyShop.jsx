@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { Pagination, Stack } from '@mui/material'
 
 import styles from './CardMyShop.module.scss'
 import { ButtonCard } from '../ButtonCard'
@@ -11,9 +12,13 @@ import EditFormMedicine from '../../../medicine/components/EditFormMedicine/Edit
 import Modal from '../../../../shared/components/Modal/Modal'
 import DelFormMedicine from '../../../medicine/components/DelFormMedicine/DelFormMedicine'
 import Loader from '../../../../shared/components/Loader/Loader'
-
+import {  selectCurrentShopPage,selectTotalShopPages } from '../../../../redux/ShopProducts/selectors'
+import { setCurrentShopPage } from '../../../../redux/ShopProducts/shopProductsSlice'
 const CardMyShop = () => {
 	const shopProducts = useSelector(selectShopProducts)
+	const currentPage = useSelector(selectCurrentShopPage)
+	const totalPages = useSelector(selectTotalShopPages)
+
 	const { shopId } = useParams()
 	const dispatch = useDispatch()
 	const [isOpen, toggleModal] = useModal()
@@ -25,7 +30,7 @@ const CardMyShop = () => {
 
 	useEffect(() => {
 		dispatch(fetchShopProducts(shopId))
-	}, [dispatch, shopId])
+	}, [dispatch, shopId, currentPage])
 
 	if (!shopProducts || shopProducts.length === 0) {
 		return <p>No products available</p>
@@ -46,6 +51,9 @@ const CardMyShop = () => {
 		setModalType('delete')
 		toggleModal()
 	}
+	const handlePageChange = ( event, page) => {
+			dispatch(setCurrentShopPage(page));
+		};
 
 	return (
 		<section className={styles.cardShopSection} >
@@ -70,6 +78,14 @@ const CardMyShop = () => {
 					</div>
 				</div>
 			))}
+			<Stack spacing={2} className={styles.paginationBox} >
+				<Pagination
+					count={totalPages} 
+          page={currentPage} 
+					onChange={handlePageChange} 
+					className={styles.pagination}
+				/>
+			</Stack>
 			{isOpen && modalType === 'edit' && (
 							<Modal onClose={toggleModal}>
 								<EditFormMedicine medicine={editToMedicine} onClose={toggleModal} />
@@ -80,6 +96,7 @@ const CardMyShop = () => {
 								<DelFormMedicine onClose={toggleModal} medicine={deleteToMedicine} />
 							</Modal>
 						)}
+
 		</section>
 	)
 }

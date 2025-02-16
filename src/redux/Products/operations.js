@@ -5,7 +5,6 @@ export const fetchProducts = createAsyncThunk('products/fetchProducts', async (_
 	try {
 		const { page, limit } = getState().products;
 		const { data } = await API.get(`/products?page=${page}&limit=${limit}`)
-		console.log('Отримані дані:', data);
 		return data
 	} catch (error) {
 		return rejectWithValue(error.message)
@@ -24,7 +23,6 @@ export const fetchFilteredProducts = createAsyncThunk('products/fetchFilteredPro
 		console.log('Filters before API call:', filters);
 		const params = new URLSearchParams(filters)
 		const { data } = await API.get(`/products/filters?${params.toString()}`)
-		console.log('API Response:', data);
 		return data
 	} catch (error) {
 		console.error('Error fetching filtered products:', error);

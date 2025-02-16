@@ -1,5 +1,3 @@
-import { IoCloseSharp } from 'react-icons/io5'
-import { useNavigate } from 'react-router-dom'
 import clsx from 'clsx'
 
 import { CreateShopForm } from './components/CreateShopForm'
@@ -9,13 +7,10 @@ import styles from './Shop.module.scss'
 import '../../styles/_container.scss'
 
 const CreateShop = () => {
-	const navigate = useNavigate()
+
 	return (
 		<section className={clsx(styles.shopSection,'container')}>
 			<div className={styles.titleFormSection}>
-			<button className={styles.closeButton} type='button' onClick={() => navigate(-1)}>
-				<IoCloseSharp />
-			</button>
 				<TitleShop />
 				<CreateShopForm />
 			</div>

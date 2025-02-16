@@ -1,11 +1,13 @@
-import styles from './RecentCustomers.module.scss'
-import { selectStatisticsCustomer } from '../../../../redux/Statistics/selectors'
 import { useSelector } from 'react-redux'
+import { useState } from 'react';
+
+import { selectStatisticsCustomer } from '../../../../redux/Statistics/selectors'
 import TableButton from './components/Button/TableButton'
 import ClientModal from './components/ClientModal/ClientModal';
 import Modal from '../../../../shared/components/Modal/Modal';
-import { useState } from 'react';
 import useModal from '../../../../hooks/useModal';
+import styles from './RecentCustomers.module.scss'
+
 
 const RecentCustomers = () => {
 	const [isOpen, toggleModal] = useModal()

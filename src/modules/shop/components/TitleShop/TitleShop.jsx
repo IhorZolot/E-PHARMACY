@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom'
 
 import styles from './TitleShop.module.scss'
+
 const TitleShop = () => {
 	const location = useLocation()
 	const isCreatePage = location.pathname === '/shop/create' || location.pathname === '/'

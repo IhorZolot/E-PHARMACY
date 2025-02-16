@@ -2,12 +2,13 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 import { API } from '../../config/adminConfig'
 import { toast } from 'react-toastify'
 
-export const fetchShopProducts = createAsyncThunk('shopProducts/fetchShopProducts', async (shopId, thunkAPI) => {
+export const fetchShopProducts = createAsyncThunk('shopProducts/fetchShopProducts', async (shopId, { rejectWithValue, getState }) => {
 	try {
-		const { data } = await API.get(`/shop/${shopId}/product`)
-		return data.products
+		const { page, limit } = getState().shopProducts
+		const { data } = await API.get(`/shop/${shopId}/product?page=${page}&limit=${limit}`)
+		return data
 	} catch (error) {
-		return thunkAPI.rejectWithValue(error.message)
+		return rejectWithValue(error.message)
 	}
 })
 

@@ -1,9 +1,10 @@
-import { SpriteSVG } from '@assets/icons/spriteSVG'
-import styles from './FilterMedicine.module.scss'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+
 import { selectCategories } from '@redux/Products/selectors'
 import { fetchCategoriesProducts, fetchFilteredProducts } from '@redux/Products/operations'
+import { SpriteSVG } from '@assets/icons/spriteSVG'
+import styles from './FilterMedicine.module.scss'
 
 const FilterMedicine = () => {
 	const dispatch = useDispatch()

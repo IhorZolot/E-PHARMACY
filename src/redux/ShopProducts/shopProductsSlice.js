@@ -10,16 +10,30 @@ const initialState = {
 	shopProducts: [],
 	isLoading: false,
 	error: null,
+	page: 1,
+	totalPages: 0, 
+	limit: 8,
+	totalItems: ''
 }
 
 const shopProductsSlice = createSlice({
 	name: 'shopProducts',
 	initialState,
+
+	reducers: {
+		setCurrentShopPage: (state, { payload }) => {
+			state.page = payload
+		}
+	},
+
 	extraReducers: builder => {
 		builder
 			.addCase(fetchShopProducts.fulfilled, (state, { payload }) => {
 				state.isLoading = false
-				state.shopProducts = payload
+				state.shopProducts = payload.products
+				state.page = Number(payload.page);
+				state.totalPages = Number(payload.pages);
+				state.totalItems = payload.totalProducts
 			})
 			.addCase(fetchShopProducts.pending, state => {
 				state.isLoading = true
@@ -67,5 +81,5 @@ const shopProductsSlice = createSlice({
 			})
 	},
 })
-
+export const { setCurrentShopPage } = shopProductsSlice.actions;
 export const shopProductsReducer = shopProductsSlice.reducer

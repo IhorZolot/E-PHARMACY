@@ -57,24 +57,7 @@
 		background: $main-color-active;
 	}
 }
-.closeButton {
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	background-color: transparent;
-	border: none;
-	svg {
-		font-size: 24px;
-		transition: transform 0.3s ease;
-	}
-	&:hover,
-	&:focus {
-		background-color: transparent;
-		svg {
-			transform: scale(1.2);
-		}
-	}
-}
+
 @media screen and (min-width: $breakpoint-tablet) {
 	.shopSection {
 		margin-bottom: 40px;

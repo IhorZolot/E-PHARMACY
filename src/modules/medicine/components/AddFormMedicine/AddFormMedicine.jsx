@@ -1,14 +1,15 @@
+import { useDispatch } from 'react-redux'
+import { useParams } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+
+import { validationAddMedicineSchema } from './helpers/validationAddMedicineSchema'
+import { addProductToShopThunk } from '../../../../redux/ShopProducts/operations'
+import CloseButton from '../../../../shared/components/CloseButton/CloseButton'
 import { SpriteSVG } from '@assets/icons/spriteSVG'
 import styles from './AddFormMedicine.module.scss'
 import twoPills from '@assets/icons/twoPills.png'
 import ModalButton from '../ModalButton/ModalButton'
-import { IoCloseSharp } from 'react-icons/io5'
-import { useDispatch } from 'react-redux'
-import { useParams } from 'react-router-dom'
-import { useForm } from 'react-hook-form'
-import { validationAddMedicineSchema } from './helpers/validationAddMedicineSchema'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { addProductToShopThunk } from '../../../../redux/ShopProducts/operations'
 
 const AddFormMedicine = ({ onClose }) => {
 	const dispatch = useDispatch()
@@ -25,7 +26,6 @@ const AddFormMedicine = ({ onClose }) => {
 
 	const submit = data => {
 		if (!shopId) {
-			console.error('shopId is undefined')
 			return
 		}
 		const formData = new FormData()
@@ -40,8 +40,6 @@ const AddFormMedicine = ({ onClose }) => {
 			}
 		}
 
-		console.log('FormData entries:', [...formData.entries()])
-
 		dispatch(addProductToShopThunk({ shopId, addMedicine: formData }))
 			.then(() => {
 				reset()
@@ -54,9 +52,7 @@ const AddFormMedicine = ({ onClose }) => {
 
 	return (
 		<form onSubmit={handleSubmit(submit)} className={styles.addFormMedicine}>
-			<button className={styles.closeButton} type='reset' onClick={onClose}>
-				<IoCloseSharp />
-			</button>
+			<CloseButton onClose={onClose} />
 			<h2>Add medicine to store</h2>
 			<div className={styles.addImageBox}>
 				<label>

@@ -34,6 +34,7 @@
 	display: flex;
 	gap: 10px;
 	flex-direction: column;
+	margin-bottom: 12px;
 }
 .titleBox {
 	display: flex;
@@ -77,6 +78,26 @@
 	text-decoration-skip-ink: none;
 	color: $text-color-main;
 }
+.paginationBox {
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+.pagination {
+  :global(.MuiPaginationItem-root) {
+    color: #59b17a;
+  }
+  :global(.MuiPaginationItem-root.Mui-selected) {
+    background-color: #59b17a;
+    color: white;
+  }
+  :global(.MuiPaginationItem-root:hover) {
+    background-color: #9baba1;
+    color: white;
+  }
+}
 @media screen and (min-width: $breakpoint-tablet) {
 	.cardShopSection{
 		display: grid;
@@ -88,6 +109,10 @@
 	}
 	.infoShop {
 		max-width: 266px;
+	}
+	.paginationBox {
+		grid-column: 1 / -1; 
+		justify-self: center; 
 	}
 }
 @media screen and (min-width: $breakpoint-desktop) {

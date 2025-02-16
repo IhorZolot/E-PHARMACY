@@ -16,6 +16,19 @@
 	align-items: center;
 	gap: 10px;
 }
+.pagination {
+  :global(.MuiPaginationItem-root) {
+    color: #59b17a;
+  }
+  :global(.MuiPaginationItem-root.Mui-selected) {
+    background-color: #59b17a;
+    color: white;
+  }
+  :global(.MuiPaginationItem-root:hover) {
+    background-color: #9baba1;
+    color: white;
+  }
+}
 
 .cardShop {
 	display: flex;
@@ -85,6 +98,7 @@
 	text-decoration-skip-ink: none;
 	color: $text-color-main;
 }
+
 
 @media screen and (min-width: $breakpoint-tablet) {
 	.cardShopSection{

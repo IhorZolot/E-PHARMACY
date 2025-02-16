@@ -1,8 +1,11 @@
+import CloseButton from '../../../../../../shared/components/CloseButton/CloseButton'
 import styles from './ClientModal.module.scss'
-const ClientModal = ({ client }) => {
+
+const ClientModal = ({ client, onClose }) => {
 	const headers = ['Name', 'Email', 'Spent']
 	return (
 		<div className={styles.clientModal}>
+			<CloseButton onClose={onClose} />
 			<h3 className={styles.modalTitle}>The client`s goods</h3>
 			<table className={styles.table}>
 				<thead className={styles.modalThead}>

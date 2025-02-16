@@ -1,8 +1,9 @@
+import clsx from 'clsx'
+
 import { StatisticsBox } from './components/StatisticsBox'
 import RecentCustomers from './components/RecentCustomers/RecentCustomers'
 import IncomeExpenses from './components/IncomeExpenses/IncomeExpenses'
 import styles from './Statistics.module.scss'
-import clsx from 'clsx'
 import '../../styles/_container.scss'
 
 const Statistics = () => {
