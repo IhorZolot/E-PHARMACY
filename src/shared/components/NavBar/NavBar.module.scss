@@ -1,11 +1,10 @@
 @import 'sharedStyles';
 
 	.navBarHeader {
-		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		gap: 5px;
+		gap: 15px;
 	}
 	.linkHeader {
 		display: flex;
@@ -24,6 +23,7 @@
 			color: $text-button-color;
 		}
 		&:hover {
+			transform: scale(1.1);
 			background-color: $main-color;
 			span {
 				color: #f1f1f1;
@@ -51,6 +51,7 @@
 		transition: color 0.3s ease, background-color 0.3s ease;
 		&:hover {
 			color: $text-button-color;
+			transform: scale(1.1);
 		}
 	}
 	@media screen and (min-width: $breakpoint-tablet) {

@@ -1,13 +1,15 @@
 import { useDispatch, useSelector } from 'react-redux'
-import styles from './EditShopForm.module.scss'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { schemaEditForm } from './helpers/validationEditSchema'
-import {  fetchShopsById, updateShopThunk } from '../../../../redux/Shops/operations'
 import { useParams } from 'react-router-dom'
 import { useEffect } from 'react'
-import { selectShop, selectIsStatus } from '../../../../redux/Shops/selectors'
 import { toast } from 'react-toastify'
+
+import {  fetchShopsById, updateShopThunk } from '../../../../redux/Shops/operations'
+import { selectShop, selectIsStatus } from '../../../../redux/Shops/selectors'
+import { schemaEditForm } from './helpers/validationEditSchema'
+import styles from './EditShopForm.module.scss'
+
 const EditShopForm = () => {
 	const dispatch = useDispatch()
 	const { shopId } = useParams()
@@ -33,7 +35,6 @@ useEffect(() => {
 		reset(shop)
 	}
 }, [shop, reset])
-
 
 	const submit = data => {
 		if (!shopId) {

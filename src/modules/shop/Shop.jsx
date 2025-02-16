@@ -19,7 +19,8 @@ const Shop = () => {
 	return (
 		<section className={clsx(styles.shopSection,'container')}>
 			<div>
-			<TitleMedShop />
+				<div className={styles.shopBox} >
+				<TitleMedShop />
 			<div className={styles.sectorButtons}>
 				<Button onClick={() => navigate(`/shop/${shopId}/update`)} className={styles.buttonEdit}>
 					Edit data
@@ -28,6 +29,7 @@ const Shop = () => {
 					Add medicine
 				</Button>
 			</div>
+				</div>
 			<DrugLinkSector />
 			</div>
 			{isOpen && (

@@ -1,12 +1,12 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useDispatch } from 'react-redux'
-
-import styles from './CreateShopForm.module.scss'
-import { schemaAddForm } from './helpers/validationSchema'
-import { addShopThunk } from '@redux/Shops/operations'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+
+import { schemaAddForm } from './helpers/validationSchema'
+import { addShopThunk } from '@redux/Shops/operations'
+import styles from './CreateShopForm.module.scss'
 
 const CreateShopForm = () => {
 	const dispatch = useDispatch()

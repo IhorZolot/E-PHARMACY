@@ -1,9 +1,10 @@
 import { IoCloseSharp } from 'react-icons/io5'
+import { useNavigate } from 'react-router-dom'
+
 import { EditShopForm } from './components/EditShopForm'
 import { ImageShop } from './components/ImageShop'
 import { TitleShop } from './components/TitleShop'
 import styles from './Shop.module.scss'
-import { useNavigate } from 'react-router-dom'
 
 const EditShop = () => {
 	const navigate = useNavigate()

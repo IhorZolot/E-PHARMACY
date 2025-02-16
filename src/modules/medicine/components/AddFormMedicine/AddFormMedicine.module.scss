@@ -6,16 +6,14 @@
 	position: relative;
 	flex-direction: column;
 	border-radius: 20px;
-	width: 335px;
-	height: 706px;
 	background: $text-white-color;
 	padding: 40px 20px;
-	align-items: center;
 	h2 {
 		font-weight: $font-weight-bold;
 		font-size: 20px;
 		line-height: 140%;
 		color: $text-color-main;
+		margin: 0 auto;
 		margin-bottom: 15px;
 	}
 	label {
@@ -24,15 +22,12 @@
 		line-height: 129%;
 		color: $text-color-main;
 		margin-bottom: 10px;
-		padding-left: 20px;
 	}
 	input {
 		border: $border-input;
 		border-radius: 60px;
-		width: 295px;
-		height: 44px;
-		margin-bottom: 15px;
-		padding: 0 20px;
+		padding: 12px 20px;
+    box-sizing: border-box;
 		font-weight: 400;
 		font-size: $font-size-xs;
 		line-height: 150%;
@@ -42,9 +37,6 @@
 	textarea {
 		border: $border-input;
 		border-radius: 15px;
-		width: 295px;
-		height: 40px;
-		margin-bottom: 15px;
 		padding: 20px 20px;
 		font-weight: 400;
 		font-size: $font-size-xs;
@@ -56,6 +48,12 @@
 		border: 1px solid $main-color;
 	}
 }
+.addInputBox{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 15px;
+}
 
 .addImageBox {
 	display: flex;
@@ -64,7 +62,7 @@
 	justify-content: center;
 	margin-bottom: 20px;
 	img {
-		margin-bottom: 10px;
+		margin-bottom: 15px;
 	}
 }
 .inputBox {
@@ -74,8 +72,6 @@
 }
 .addInputButtonBox {
 	display: flex;
-	align-items: center;
-	justify-content: center;
 	gap: 10px;
 	margin-top: 20px;
 }
@@ -115,6 +111,24 @@
 	font-size: $font-size-xs;
 	line-height: 150%;
 	text-decoration: underline;
-	text-decoration-skip-ink: none;
 	color: $placeholder-color;
+	cursor: pointer;
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
+	.addFormMedicine {
+		max-width: 568px;
+		max-height: 652px;
+		input {
+			width: 230px;
+			height: 44px;
+		}
+
+	}
+	.addInputBox{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 6px;
+		
+	}
 }

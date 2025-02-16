@@ -1,12 +1,13 @@
+import {   useDispatch, useSelector } from 'react-redux'
+import { Pagination, Stack } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
+
+import {   selectCurrentPage, selectTotalPages, selectVisibleProducts } from '../../../../redux/Products/selectors'
+import { setCurrentPage } from '../../../../redux/Products/productsSlice'
+import { fetchProducts } from '../../../../redux/Products/operations'
 import ButtonCard from '../ButtonCard/ButtonCard'
 import styles from './CardShop.module.scss'
-import {   useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import {   selectCurrentPage, selectTotalPages, selectVisibleProducts } from '../../../../redux/Products/selectors'
-import { useEffect } from 'react'
-import { fetchProducts } from '../../../../redux/Products/operations'
-import { Pagination, Stack } from '@mui/material'
-import { setCurrentPage } from '../../../../redux/Products/productsSlice'
 
 const CardShop = () => {
 	const dispatch = useDispatch()

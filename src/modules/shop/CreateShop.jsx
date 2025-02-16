@@ -1,11 +1,13 @@
 import { IoCloseSharp } from 'react-icons/io5'
+import { useNavigate } from 'react-router-dom'
+import clsx from 'clsx'
+
 import { CreateShopForm } from './components/CreateShopForm'
 import { ImageShop } from './components/ImageShop'
 import { TitleShop } from './components/TitleShop'
 import styles from './Shop.module.scss'
-import { useNavigate } from 'react-router-dom'
-import clsx from 'clsx'
 import '../../styles/_container.scss'
+
 const CreateShop = () => {
 	const navigate = useNavigate()
 	return (

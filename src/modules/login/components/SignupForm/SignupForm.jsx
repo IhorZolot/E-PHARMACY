@@ -1,11 +1,14 @@
-import { Link, useNavigate } from 'react-router-dom'
-import styles from './SignupForm.module.scss'
+
 import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { toast } from 'react-toastify'
+import { Link, useNavigate } from 'react-router-dom'
+
 import { registrationSchema } from './helpers/registrationSchema'
 import { registerThunk } from '../../../../redux/User/operations'
-import { toast } from 'react-toastify'
+import styles from './SignupForm.module.scss'
+
 function SignupForm() {
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
@@ -32,7 +35,6 @@ function SignupForm() {
 			})
 		reset()
 	}
-
 	return (
 		<form className={styles.formBox} onSubmit={handleSubmit(submit)}>
 			<div className={styles.inputBox}>
@@ -53,7 +55,6 @@ function SignupForm() {
 					{errors.password && <span>{errors.password.message}</span>}
 				</div>
 			</div>
-				
 			<button>Register</button>
 			<Link to='/login'>Already have an account?</Link>
 		</form>

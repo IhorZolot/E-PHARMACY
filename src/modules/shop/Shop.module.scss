@@ -7,22 +7,24 @@
 	align-items: center;
 	width: 100%;
 	margin-bottom: 20px;
-	padding: 20px;
 }
-
+.shopBox{
+	display: flex;
+	flex-direction: column;
+}
+.sectorButtons {
+	display: flex;
+	gap: 5px;
+	justify-content: flex-start;
+	margin-bottom: 30px;
+}
 .titleFormSection {
 	max-width: 305px;
-	padding: 40px 15px;
 	background-color: $text-white-color;
 	border-radius: 27px;
 	margin-bottom: 20px;
 	position: relative;
-}
-
-.sectorButtons {
-	display: flex;
-	gap: 5px;
-	margin-bottom: 30px;
+	padding: 20px;
 }
 .buttonEdit {
 	border: 1.15px solid #f1f1f1;
@@ -92,9 +94,16 @@
 		gap: 20px;
 	}
 	.titleFormSection {
-	width: 708px;
 		margin-bottom: 0;
-
+	}
+	.shopBox{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		gap: 20px;
+	}
+	.sectorButtons {
+		margin-bottom: 0px;
 	}
 	
 }

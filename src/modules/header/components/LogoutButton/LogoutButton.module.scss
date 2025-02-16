@@ -14,5 +14,6 @@
 	&:hover {
 		background-color: $main-color;
 		color: $text-white-color;
+		transform: scale(1.1);
 	}
 }

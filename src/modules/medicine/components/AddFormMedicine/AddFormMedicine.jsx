@@ -69,6 +69,7 @@ const AddFormMedicine = ({ onClose }) => {
 				</label>
 				{errors.image && <span>{errors.image.message}</span>}
 			</div>
+			<div className={styles.addInputBox}>
 			<div className={styles.inputBox}>
 				<label htmlFor='name'>Medicine Name</label>
 				<input type='text' id='name' placeholder='Enter text' {...register('name')} />
@@ -83,6 +84,7 @@ const AddFormMedicine = ({ onClose }) => {
 				<label htmlFor='category'>Category</label>
 				<input type='text' id='category' placeholder='Enter text' {...register('category')} />
 				{errors.category && <span>{errors.category.message}</span>}
+			</div>
 			</div>
 			<div className={styles.inputBox}>
 				<label htmlFor='description'>Description</label>

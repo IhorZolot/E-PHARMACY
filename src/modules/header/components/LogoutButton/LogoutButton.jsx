@@ -1,8 +1,10 @@
 import { useDispatch } from 'react-redux'
-import styles from './LogoutButton.module.scss'
-import { logoutThunk } from '@redux/User/operations'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+
+import styles from './LogoutButton.module.scss'
+import { logoutThunk } from '@redux/User/operations'
+
 const LogoutButton = () => {
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
@@ -14,7 +16,6 @@ const LogoutButton = () => {
 				toast.success('You are logged out')
 			}
 		)
-	
 	}
 	return (
 		<button className={styles.logoutButton} onClick={handleExit}>

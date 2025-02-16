@@ -1,11 +1,13 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom'
-import styles from './SigninForm.module.scss'
 import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
-import { loginThunk } from '../../../../redux/User/operations'
 import { toast } from 'react-toastify'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+
+import { loginThunk } from '../../../../redux/User/operations'
 import { loginSchema } from './helpers/loginSchema'
+import styles from './SigninForm.module.scss'
+
 const SigninForm = () => {
 const dispatch = useDispatch()
 const navigate = useNavigate()
@@ -16,7 +18,6 @@ const { register, handleSubmit, reset, formState: { errors } } = useForm( {
 	resolver: zodResolver(loginSchema)
 })
 
-
 	const submit = data => {
 		dispatch(loginThunk(data)).unwrap().then(() => {
 			toast.success('User logged in successfully');
@@ -26,7 +27,6 @@ const { register, handleSubmit, reset, formState: { errors } } = useForm( {
 		})
 		reset()
 	}
-
 	return (
 		<form className={styles.formBox} onSubmit={handleSubmit(submit)} >
 			<div>
