@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 
 import {   selectCurrentPage, selectTotalPages, selectVisibleProducts } from '../../../../redux/Products/selectors'
 import { setCurrentPage } from '../../../../redux/Products/productsSlice'
-import { fetchProducts } from '../../../../redux/Products/operations'
+import {  fetchProducts } from '../../../../redux/Products/operations'
 import ButtonCard from '../ButtonCard/ButtonCard'
 import styles from './CardShop.module.scss'
 
@@ -18,8 +18,8 @@ const CardShop = () => {
 	const totalPages = useSelector(selectTotalPages)
 	
 	useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch, currentPage ]);
+			dispatch(fetchProducts());
+	}, [dispatch, currentPage]);
 
 	const handleViewDetails = medicineId => {
 		navigate(`/medicine/${medicineId}`)

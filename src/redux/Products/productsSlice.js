@@ -82,7 +82,10 @@ const productsSlice = createSlice({
 			})
 			.addCase(fetchFilteredProducts.fulfilled, (state, { payload }) => {
 				state.isLoading = false
-				state.filteredProducts = payload
+				state.filteredProducts = payload.products
+				state.page = Number(payload.page)
+				state.totalPages = Number(payload.pages)
+				state.totalItems = payload.total
 			})
 			.addCase(fetchFilteredProducts.pending, state => {
 				state.isLoading = true

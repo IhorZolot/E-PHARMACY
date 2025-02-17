@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux'
+
 import { selectOneProduct } from '../../../redux/Products/selectors'
 import Loader from '../../../shared/components/Loader/Loader'
 import styles from './Description.module.scss'

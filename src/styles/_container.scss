@@ -5,15 +5,15 @@
   margin: 0 auto;
 
   @include bp.mobile {
-    max-width: bp.$breakpoint-mobile;
+    min-width: bp.$breakpoint-mobile;
   }
 
   @include bp.tablet {
-    max-width: bp.$breakpoint-tablet;
+    min-width: bp.$breakpoint-tablet;
   }
 
   @include bp.desktop {
-    max-width: bp.$breakpoint-desktop;
+    min-width: bp.$breakpoint-desktop;
   }
 }
 

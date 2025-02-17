@@ -2,7 +2,7 @@
 
 .shopTitle {
 	margin-bottom: 30px;
-	padding-top: 30px;;
+	padding:0 20px;;
 	h2 {
 		font-weight: $font-weight-bold;
 		font-size: $font-size-xl;
@@ -17,14 +17,14 @@
 		color: $text-second-color;
 	}
 }
-@media screen and (min-width: $breakpoint-tablet) {
-	.shopTitle {
-		margin-bottom: 40px;
-		h2 {
-			margin-bottom: 20px;
-		}
-		p {
-			max-width: 390px;
-		}
-	}
-}
+// @media screen and (min-width: $breakpoint-tablet) {
+// 	.shopTitle {
+// 		margin-bottom: 40px;
+// 		h2 {
+// 			margin-bottom: 20px;
+// 		}
+// 		p {
+// 			max-width: 390px;
+// 		}
+// 	}
+// }

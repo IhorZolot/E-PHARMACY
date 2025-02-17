@@ -1,14 +1,16 @@
-import { SpriteSVG } from '@assets/icons/spriteSVG'
-import styles from './EditFormMedicine.module.scss'
-import twoPills from '@assets/icons/twoPills.png'
-import ModalButton from '../ModalButton/ModalButton'
 import { useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { validationEditMedicineSchema } from './helpers/validationEditMedicineSchema'
-import { IoCloseSharp } from 'react-icons/io5'
+
 import { editProductToShopThunk } from '../../../../redux/ShopProducts/operations'
+import { validationEditMedicineSchema } from './helpers/validationEditMedicineSchema'
+import { SpriteSVG } from '@assets/icons/spriteSVG'
+import styles from './EditFormMedicine.module.scss'
+import twoPills from '@assets/icons/twoPills.png'
+import ModalButton from '../ModalButton/ModalButton'
+import CloseButton from '../../../../shared/components/CloseButton/CloseButton'
+
 const EditFormMedicine = ({ medicine, onClose }) => {
 	const dispatch = useDispatch()
 	const { shopId } = useParams()
@@ -48,9 +50,7 @@ const EditFormMedicine = ({ medicine, onClose }) => {
 	}
 	return (
 		<form className={styles.editFormMedicine} onSubmit={handleSubmit(submit)}>
-			<button className={styles.closeButton} type='reset' onClick={onClose}>
-				<IoCloseSharp />
-			</button>
+			<CloseButton onClose={onClose} />
 			<h2>Edit medicine</h2>
 			<div className={styles.editImageBox}>
 				<label>
@@ -63,8 +63,8 @@ const EditFormMedicine = ({ medicine, onClose }) => {
 				</label>
 				{errors.image && <span>{errors.image.message}</span>}
 			</div>
-
-			<div className={styles.editInputBox}>
+<div className={styles.inputBox}>
+<div className={styles.editInputBox}>
 				<label htmlFor='name'>Medicine Name</label>
 				<input type='text' id='name' placeholder='Enter text' {...register('name')} />
 				{errors.name && <span>{errors.name.message}</span>}
@@ -79,7 +79,7 @@ const EditFormMedicine = ({ medicine, onClose }) => {
 				<input type='text' id='category' placeholder='Enter text' {...register('category')} />
 				{errors.category && <span>{errors.category.message}</span>}
 			</div>
-
+</div>
 			<div className={styles.editInputBox}>
 				<label htmlFor='description'>Description</label>
 				<textarea type='text' {...register('description')} id='description' placeholder='Enter text' />

@@ -3,7 +3,7 @@ import { API } from '../../config/adminConfig'
 
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async (_, { rejectWithValue, getState }) => {
 	try {
-		const { page, limit } = getState().products;
+		const { page, limit } = getState().products
 		const { data } = await API.get(`/products?page=${page}&limit=${limit}`)
 		return data
 	} catch (error) {
@@ -20,12 +20,13 @@ export const fetchCategoriesProducts = createAsyncThunk('products/fetchCategorie
 })
 export const fetchFilteredProducts = createAsyncThunk('products/fetchFilteredProducts', async (filters, thunkAPI) => {
 	try {
-		console.log('Filters before API call:', filters);
-		const params = new URLSearchParams(filters)
+		const defaultFilters = { page: 1, limit: 8 }
+		const combinedFilters = { ...defaultFilters, ...filters }
+		const params = new URLSearchParams(combinedFilters)
 		const { data } = await API.get(`/products/filters?${params.toString()}`)
 		return data
 	} catch (error) {
-		console.error('Error fetching filtered products:', error);
+		console.error('Error fetching filtered products:', error)
 		return thunkAPI.rejectWithValue(error.message)
 	}
 })

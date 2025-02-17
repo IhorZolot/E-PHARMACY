@@ -1,15 +1,17 @@
-import styles from './CardOneProduct.module.scss'
-import altImage from '@assets/images/altImage.png'
-import ButtonCard from '../../shop/components/ButtonCard/ButtonCard'
+import { useEffect } from 'react'
+import { toast } from 'react-toastify'
 import {  useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
+
 import { selectIsLoading, selectOneProduct } from '../../../redux/Products/selectors'
-import { useEffect } from 'react'
 import { fetchOneProduct } from '../../../redux/Products/operations'
 import { addProductToShopThunk } from '../../../redux/ShopProducts/operations'
 import { validationAddMedicineSchema } from '../components/AddFormMedicine/helpers/validationAddMedicineSchema'
-import { toast } from 'react-toastify'
+import styles from './CardOneProduct.module.scss'
+import altImage from '@assets/images/altImage.png'
+import ButtonCard from '../../shop/components/ButtonCard/ButtonCard'
 import { selectShopId } from '../../../redux/Shops/selectors'
+import Loader from '../../../shared/components/Loader/Loader'
 
 const CardOneProduct = () => {
 	const { medicineId } = useParams()
@@ -23,20 +25,18 @@ const CardOneProduct = () => {
 	}, [dispatch, medicineId])
 
 	if (isLoading) {
-		return <div>Loading...</div>
+		return <Loader/>
 	}
-
 	if (!product) {
 		return <div>Product not found</div>
 	}
-
 	const addProductToShop = () => {
 		try {
 			const validatedProduct = validationAddMedicineSchema.parse(product)
 			dispatch(addProductToShopThunk({ shopId, addMedicine: validatedProduct }))
 			toast.success('Product added to shop successfully')
 		} catch (error) {
-			console.error('Failed to add product:', error.message)
+			toast.error('Failed to add product:', error.message)
 		}
 	}
 

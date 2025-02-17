@@ -57,7 +57,7 @@ useEffect(() => {
 		})
 	}
 	return (
-		<form className={styles.createShopForm} onSubmit={handleSubmit(submit)}>
+		<form className={styles.editShopForm} onSubmit={handleSubmit(submit)}>
 			<div>
 				<label htmlFor='shop'>Shop Name</label>
 				<input placeholder='Enter text' type='text' id='shop' {...register('shop')} />

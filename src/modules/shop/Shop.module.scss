@@ -5,8 +5,8 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 100%;
 	margin-bottom: 20px;
+	height: 100%;
 }
 .shopBox{
 	display: flex;
@@ -19,7 +19,6 @@
 	margin-bottom: 30px;
 }
 .titleFormSection {
-	max-width: 305px;
 	background-color: $text-white-color;
 	border-radius: 27px;
 	margin-bottom: 20px;
@@ -63,9 +62,7 @@
 		margin-bottom: 40px;
 	}
 	.titleFormSection {
-		max-width: 650px;
-		width: 100%;
-		padding: 40px 25px;
+		padding: 40px  12px;
 	}
 }
 

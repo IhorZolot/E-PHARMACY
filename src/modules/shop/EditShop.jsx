@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import clsx from 'clsx'
 
 import { EditShopForm } from './components/EditShopForm'
 import { ImageShop } from './components/ImageShop'
@@ -10,7 +11,7 @@ const EditShop = () => {
 	const navigate = useNavigate()
 
 	return (
-		<section className={styles.shopSection}>
+		<section className={clsx(styles.shopSection,'container')}>
 			<div className={styles.titleFormSection}>
 			<CloseButton onClose={() => navigate(-1)} />
 				<TitleShop />

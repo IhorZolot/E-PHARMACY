@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+
 import { fetchProductsReviews } from '../../../redux/Products/operations'
 import { selectReviews } from '../../../redux/Products/selectors'
 import styles from './Reviews.module.scss'

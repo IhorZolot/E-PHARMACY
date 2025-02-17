@@ -1,15 +1,15 @@
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import clsx from 'clsx'
+
+import AddFormMedicine from '../medicine/components/AddFormMedicine/AddFormMedicine'
 import { Button } from '../../shared/components/Button'
 import TitleMedShop from './components/TitleMedShop/TitleMedShop'
 import styles from './Shop.module.scss'
 import useModal from '../../hooks/useModal'
-import AddFormMedicine from '../medicine/components/AddFormMedicine/AddFormMedicine'
 import Modal from '../../shared/components/Modal/Modal'
-import { useSelector } from 'react-redux'
 import DrugLinkSector from './components/DrugLinkSector/DrugLinkSector'
 import { selectShopId } from '../../redux/Shops/selectors'
-import clsx from 'clsx'
-
 
 const Shop = () => {
 	const [isOpen, toggleModal] = useModal()

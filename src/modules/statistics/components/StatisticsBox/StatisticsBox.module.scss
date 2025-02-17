@@ -1,8 +1,8 @@
 @import 'sharedStyles';
 
 .statisticsBox {
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 	gap: 10px;
 	margin-bottom: 20px;
 	li {
@@ -44,6 +44,7 @@
 
 @media screen and (min-width: $breakpoint-tablet) {
 	.statisticsBox {
+		grid-template-columns: repeat(3, 1fr);
 	justify-content: center;
 	gap: 20px;
 	li {

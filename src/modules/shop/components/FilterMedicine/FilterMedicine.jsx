@@ -5,12 +5,14 @@ import { selectCategories } from '@redux/Products/selectors'
 import { fetchCategoriesProducts, fetchFilteredProducts } from '@redux/Products/operations'
 import { SpriteSVG } from '@assets/icons/spriteSVG'
 import styles from './FilterMedicine.module.scss'
+import { selectCurrentPage } from '../../../../redux/Products/selectors'
 
 const FilterMedicine = () => {
 	const dispatch = useDispatch()
 	const categories = useSelector(selectCategories) ?? []
 	const [selectedCategory, setSelectedCategory] = useState('')
 	const [valueFilter, setValueFilter] = useState('')
+	const currentPage = useSelector(selectCurrentPage)
 
 	useEffect(() => {
 		dispatch(fetchCategoriesProducts())
@@ -25,6 +27,7 @@ const FilterMedicine = () => {
     if (valueFilter) {
         filters.query = valueFilter;
     }
+		filters.page = currentPage;     
 		dispatch(fetchFilteredProducts(filters))
 	}
 

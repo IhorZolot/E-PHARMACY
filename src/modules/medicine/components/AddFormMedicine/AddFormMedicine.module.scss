@@ -13,7 +13,6 @@
 		font-size: 20px;
 		line-height: 140%;
 		color: $text-color-main;
-		margin: 0 auto;
 		margin-bottom: 15px;
 	}
 	label {
@@ -22,6 +21,7 @@
 		line-height: 129%;
 		color: $text-color-main;
 		margin-bottom: 10px;
+		padding-left: 20px;
 	}
 	input {
 		border: $border-input;
