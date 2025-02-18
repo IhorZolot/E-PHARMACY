@@ -65,6 +65,7 @@ useEffect (() => {
 					<Route path='product' element={<CardMyShop />} />
 					</Route>
 					<Route path='/medicine/:medicineId' element={<MedicinePage />}>
+					<Route index element={<Description />} />
 						<Route path='description' element={<Description />} />
 						<Route path='reviews' element={<Reviews />} />
 					</Route>

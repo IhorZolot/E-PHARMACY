@@ -51,9 +51,7 @@ const productsSlice = createSlice({
 				state.oneProduct = payload
 				state.isLoading = false
 			})
-			.addCase(fetchOneProduct.pending, state => {
-				state.isLoading = true
-			})
+		
 			.addCase(fetchOneProduct.rejected, (state, { payload }) => {
 				state.isLoading = false
 				state.error = payload
@@ -61,9 +59,6 @@ const productsSlice = createSlice({
 			.addCase(fetchProductsReviews.fulfilled, (state, { payload }) => {
 				state.isLoading = false
 				state.reviews = payload
-			})
-			.addCase(fetchProductsReviews.pending, state => {
-				state.isLoading = true
 			})
 			.addCase(fetchProductsReviews.rejected, (state, { payload }) => {
 				state.isLoading = false

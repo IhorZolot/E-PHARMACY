@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { toast } from 'react-toastify'
-import {  useParams } from 'react-router-dom'
+import {  useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { selectIsLoading, selectOneProduct } from '../../../redux/Products/selectors'
@@ -16,6 +16,7 @@ import Loader from '../../../shared/components/Loader/Loader'
 const CardOneProduct = () => {
 	const { medicineId } = useParams()
 	const dispatch = useDispatch()
+	const navigate = useNavigate()
 	const isLoading = useSelector(selectIsLoading)
 	const product = useSelector(selectOneProduct)
 	const  shopId = useSelector(selectShopId)
@@ -34,6 +35,7 @@ const CardOneProduct = () => {
 		try {
 			const validatedProduct = validationAddMedicineSchema.parse(product)
 			dispatch(addProductToShopThunk({ shopId, addMedicine: validatedProduct }))
+			navigate(-1)
 			toast.success('Product added to shop successfully')
 		} catch (error) {
 			toast.error('Failed to add product:', error.message)

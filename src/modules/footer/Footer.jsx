@@ -3,6 +3,7 @@ import LogoFooter from './components/LogoFooter/LogoFooter'
 import SocialNetwork from './components/SocialNetwork/SocialNetwork'
 import styles from './Footer.module.scss'
 import useMedia from '../../hooks/useMedia'
+import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy'
 const Footer = () => {
 	const { isTablet } = useMedia()
 	return (
@@ -17,11 +18,7 @@ const Footer = () => {
 						{isTablet &&<SocialNetwork />}
           </div>
 			</div>
-			<div className={styles.policyBox}>
-				<span>© E-Pharmacy 2023. All Rights Reserved</span>
-				<span>Privacy Policy</span>
-				<span>Terms & Conditions</span>
-			</div>
+			<PrivacyPolicy/>
 		</footer>
 	)
 }

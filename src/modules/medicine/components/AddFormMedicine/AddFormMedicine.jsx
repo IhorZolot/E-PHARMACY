@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import {  useParams } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
@@ -10,10 +10,12 @@ import { SpriteSVG } from '@assets/icons/spriteSVG'
 import styles from './AddFormMedicine.module.scss'
 import twoPills from '@assets/icons/twoPills.png'
 import ModalButton from '../ModalButton/ModalButton'
+import { useState } from 'react'
 
 const AddFormMedicine = ({ onClose }) => {
 	const dispatch = useDispatch()
 	const { shopId } = useParams()
+	const [previewImage, setPreviewImage] = useState(twoPills);
 
 	const {
 		register,
@@ -29,7 +31,6 @@ const AddFormMedicine = ({ onClose }) => {
 			return
 		}
 		const formData = new FormData()
-
 		for (const [key, value] of Object.entries(data)) {
 			if (key === 'photo') {
 				if (value && value.length > 0) {
@@ -39,7 +40,6 @@ const AddFormMedicine = ({ onClose }) => {
 				formData.append(key, value)
 			}
 		}
-
 		dispatch(addProductToShopThunk({ shopId, addMedicine: formData }))
 			.then(() => {
 				reset()
@@ -56,12 +56,22 @@ const AddFormMedicine = ({ onClose }) => {
 			<h2>Add medicine to store</h2>
 			<div className={styles.addImageBox}>
 				<label>
-					<img src={twoPills} alt='twoPills' />
+					<img src={previewImage} alt='twoPills' />
 					<div className={styles.uploadButton}>
 						<SpriteSVG name='upload' />
 						Upload image
 					</div>
-					<input type='file' accept='image/*' style={{ display: 'none' }} {...register('photo')} />
+					<input type='file' accept='image/*' 
+					style={{ display: 'none' }} 
+					{...register('photo')}
+					onChange={(e) => {
+						const file = e.target.files[0];
+						if (file) {
+							const objectUrl = URL.createObjectURL(file);
+							setPreviewImage(objectUrl);
+						}
+					}}
+					/>
 				</label>
 				{errors.image && <span>{errors.image.message}</span>}
 			</div>

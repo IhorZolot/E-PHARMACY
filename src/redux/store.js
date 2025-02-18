@@ -16,6 +16,7 @@ import { shopsReducer } from './Shops/shopsSlice'
 import {statisticsReducer} from './Statistics/statisticsSlice'
 import { productsReducer } from './Products/productsSlice'
 import { shopProductsReducer } from './ShopProducts/shopProductsSlice'
+import {privatePolicyReducer} from './PrivatePolicy/privatePolicySlice'
 
 const persistConfig = {
   key: 'root',
@@ -31,6 +32,7 @@ export const store = configureStore({
 		products: productsReducer,
 		shops: shopsReducer,
 		shopProducts: shopProductsReducer,
+    privatePolicy: privatePolicyReducer
 	},
 
 	middleware: (getDefaultMiddleware) =>

@@ -26,6 +26,10 @@
 	line-height: 100%;
 	text-align: center;
 	color: $background-color;
+	&:hover {
+		transition: color 0.3s ease;
+		transform: scale(1.1);
+	}
 }
 .active {
 	display: flex;
@@ -39,6 +43,10 @@
 	letter-spacing: -0.05em;
 	text-align: center;
 	color: $main-color;
+	&:hover {
+		transition: color 0.3s ease;
+		transform: scale(1.1);
+	}
 }
 @media screen and (min-width: $breakpoint-tablet) {
 	.detailsBox {
