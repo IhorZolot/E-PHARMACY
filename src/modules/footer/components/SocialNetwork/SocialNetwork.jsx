@@ -1,6 +1,7 @@
 import { RiFacebookFill } from "react-icons/ri";
 import { BsInstagram } from "react-icons/bs";
 import { FaYoutube } from "react-icons/fa";
+
 import styles from './SocialNetwork.module.scss'
 
 const SocialNetwork = () => {

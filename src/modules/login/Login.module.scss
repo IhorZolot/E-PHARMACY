@@ -1,13 +1,21 @@
 @import  'sharedStyles';
 
 .loginSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  justify-content: center;
   padding: 20px;
-  width: 100%;
 }
 
 .titleSection {
   margin-bottom: 15px;
-
+  img {
+    width: 95px;
+    height: 93px;
+    transform: translate(220px, 38px);
+  }
   h1 {
     font-weight: $font-weight-bold;
     color: $text-color-main;
@@ -15,24 +23,15 @@
     line-height: 121%;
     font-family: $font-family;
     max-width: 360px;
-  }
-
-  img {
-    width: 95px;
-    height: 93px;
-    transform: translate(220px, 38px);
-  }
-  span {
-    color: $main-color;
+    span {
+      color: $main-color;
+    }
   }
 }
 
-@media screen and (min-width: $breakpoint-mobile) {
-}
 @media screen and (min-width: $breakpoint-tablet) {
   .loginSection {
     padding:25px;
-    height: 1024px
   }
   .formSection {
     display: flex;
