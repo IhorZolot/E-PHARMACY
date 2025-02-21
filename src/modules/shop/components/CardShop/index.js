@@ -1,1 +1,1 @@
-export {default as CardShop} from './CardShop.jsx'
+export { default } from './CardShop.jsx'

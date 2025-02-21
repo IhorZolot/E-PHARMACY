@@ -1,1 +1,1 @@
-export { default as MedicinePage } from './AllDrugsPage'
+export { default } from './AllDrugsPage'

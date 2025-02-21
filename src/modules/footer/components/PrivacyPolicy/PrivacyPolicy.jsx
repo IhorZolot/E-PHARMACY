@@ -5,8 +5,8 @@ import { useEffect } from 'react'
 import { selectPrivatePolicy, selectPublicTerms } from '../../../../redux/PrivatePolicy/selectors'
 import { fetchPrivatePolicy, fetchPublicTerms } from '../../../../redux/PrivatePolicy/operations'
 import useModal from '../../../../hooks/useModal'
-import Modal from '../../../../shared/components/Modal/Modal'
 import ModalContent from './ModalContent/ModalContent'
+import Modal from '../../../../shared/components/Modal/Modal'
 import styles from './PrivacyPolicy.module.scss'
 
 const PrivacyPolicy = () => {
@@ -33,12 +33,12 @@ const PrivacyPolicy = () => {
 			</Link>
 			{isPrivacyOpen && (
 				<Modal onClose={togglePrivacyModal}>
-					<ModalContent title='Privacy Policy'  content={privatePolicy} onClose={togglePrivacyModal}/>
+					<ModalContent title='Privacy Policy' content={privatePolicy} onClose={togglePrivacyModal} />
 				</Modal>
 			)}
 			{isTermsOpen && (
 				<Modal onClose={toggleTermsModal}>
-					<ModalContent title='Terms & Conditions' content={publicTerms} onClose={toggleTermsModal}/>
+					<ModalContent title='Terms & Conditions' content={publicTerms} onClose={toggleTermsModal} />
 				</Modal>
 			)}
 		</div>

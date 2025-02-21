@@ -1,4 +1,3 @@
-//https://e-pharmacy-backend-b23n.onrender.com
 import axios from 'axios'
 
 export const API = axios.create({

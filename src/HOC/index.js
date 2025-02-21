@@ -1,4 +1,2 @@
-import { lazy } from 'react'
-
-export const PublicRoute = lazy(() => import('./PublicRoute'))
-export const PrivateRoute = lazy(() => import('./PrivateRoute'))
+export { default as PublicRoute } from './PublicRoute'
+export { default as PrivateRoute } from './PrivateRoute'

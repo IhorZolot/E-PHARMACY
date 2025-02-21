@@ -1,1 +1,1 @@
-export {default as FilterMedicine} from './FilterMedicine.jsx'
+export { default } from './FilterMedicine.jsx'

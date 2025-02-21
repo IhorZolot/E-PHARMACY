@@ -1,1 +1,1 @@
-export {default as EditShopPage} from './EditShopPage.jsx'
+export { default } from './EditShopPage.jsx'

@@ -1,9 +1,9 @@
-import NavBar from '../../shared/components/NavBar/NavBar'
-import LogoFooter from './components/LogoFooter/LogoFooter'
-import SocialNetwork from './components/SocialNetwork/SocialNetwork'
+import { NavBar } from '../../shared/components/NavBar'
 import styles from './Footer.module.scss'
 import useMedia from '../../hooks/useMedia'
-import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy'
+import { PrivacyPolicy } from './components/PrivacyPolicy'
+import { SocialNetwork } from './components/SocialNetwork'
+import { LogoFooter } from './components/LogoFooter'
 const Footer = () => {
 	const { isTablet } = useMedia()
 	return (
@@ -13,12 +13,12 @@ const Footer = () => {
 					<LogoFooter />
 					<p>Created a drug franchise that embodies effective formulas and changes the approach to treatment.</p>
 				</div>
-          <div className={styles.navBarBox}>
-            <NavBar  />
-						{isTablet &&<SocialNetwork />}
-          </div>
+				<div className={styles.navBarBox}>
+					<NavBar />
+					{isTablet && <SocialNetwork />}
+				</div>
 			</div>
-			<PrivacyPolicy/>
+			<PrivacyPolicy />
 		</footer>
 	)
 }

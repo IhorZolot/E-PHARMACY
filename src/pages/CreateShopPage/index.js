@@ -1,1 +1,1 @@
-export {default as CreateShopPage} from './CreateShopPage.jsx'
+export { default } from './CreateShopPage.jsx'

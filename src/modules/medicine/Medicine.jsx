@@ -1,5 +1,4 @@
-import CardOneProduct from './DetailsCard/CardOneProduct'
-import DetailsCard from './DetailsCard/DetailsCard'
+import { CardOneProduct, DetailsCard } from './DetailsCard'
 import styles from './Medicine.module.scss'
 
 const Medicine = () => {
