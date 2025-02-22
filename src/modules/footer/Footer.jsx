@@ -1,6 +1,6 @@
-import { NavBar } from '../../shared/components/NavBar'
+import { NavBar } from '@shared/components/NavBar'
 import styles from './Footer.module.scss'
-import useMedia from '../../hooks/useMedia'
+import useMedia from '@hooks/useMedia'
 import { PrivacyPolicy } from './components/PrivacyPolicy'
 import { SocialNetwork } from './components/SocialNetwork'
 import { LogoFooter } from './components/LogoFooter'

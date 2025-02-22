@@ -1,5 +1,5 @@
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
-import { Suspense, useEffect } from 'react'
+import { Route, Routes, useLocation } from 'react-router-dom'
+import { lazy, Suspense, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { refreshThunk } from './redux/User/operations'
@@ -7,24 +7,24 @@ import { Loader } from './shared/components/Loader'
 import { ROUTES } from './config/routes'
 import { selectIsRefreshing } from './redux/User/selectors'
 import './App.scss'
-import ShopPage from './pages/ShopPage'
-import StatisticsPage from './pages/StatisticsPage'
-import NotFoundPage from './pages/NotFoundPage'
-import SharedLayout from './shared/components/SharedLayout/SharedLayout'
-import RegisterPage from './pages/RegisterPage/RegisterPage'
-import CreateShopPage from './pages/CreateShopPage/CreateShopPage'
-import EditShopPage from './pages/EditShopPage/EditShopPage'
-import AllDrugsPage from './pages/AllDrugsPage/AllDrugsPage'
-import CardMyShop from './modules/shop/components/CardMyShop/CardMyShop'
-import MedicinePage from './pages/MedicinePage/MedicinePage'
-import Description from './modules/medicine/DetailsCard/Description'
-import Reviews from './modules/medicine/DetailsCard/Reviews'
-import LoginPage from './pages/LoginPage/LoginPage'
 import { PrivateRoute, PublicRoute } from './HOC'
+
+const ShopPage = lazy(() => import('./pages/ShopPage'))
+const StatisticsPage = lazy(() => import('./pages/StatisticsPage'))
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
+const SharedLayout = lazy(() => import('./shared/components/SharedLayout/SharedLayout'))
+const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'))
+const CreateShopPage = lazy(() => import('./pages/CreateShopPage/CreateShopPage'))
+const EditShopPage = lazy(() => import('./pages/EditShopPage/EditShopPage'))
+const AllDrugsPage = lazy(() => import('./pages/AllDrugsPage/AllDrugsPage'))
+const CardMyShop = lazy(() => import('./modules/shop/components/CardMyShop/CardMyShop'))
+const MedicinePage = lazy(() => import('./pages/MedicinePage/MedicinePage'))
+const Description = lazy(() => import('./modules/medicine/DetailsCard/Description'))
+const Reviews = lazy(() => import('./modules/medicine/DetailsCard/Reviews'))
+const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage'))
 
 function App() {
 	const dispatch = useDispatch()
-	const navigate = useNavigate()
 	const isRefresh = useSelector(selectIsRefreshing)
 	const { pathname } = useLocation()
 
@@ -35,12 +35,6 @@ function App() {
 	useEffect(() => {
 		window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
 	}, [pathname])
-
-	useEffect(() => {
-		if (pathname === '/' && window.history.length <= 1) {
-			navigate('/shop/create', { replace: true })
-		}
-	}, [pathname, navigate])
 
 	return isRefresh ? (
 		<Loader />

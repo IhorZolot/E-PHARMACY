@@ -6,7 +6,6 @@ import { ROUTES } from '../config/routes'
 const PrivateRoute = ({ children }) => {
 	const location = useLocation()
 	const isLoggedIn = useSelector(selectIsLoggedIn)
-	if (isLoggedIn === undefined) return null
 	return isLoggedIn ? children : <Navigate to={ROUTES.LOGIN} state={{ from: location }} />
 }
 

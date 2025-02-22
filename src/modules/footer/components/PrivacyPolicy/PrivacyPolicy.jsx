@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 
-import { selectPrivatePolicy, selectPublicTerms } from '../../../../redux/PrivatePolicy/selectors'
-import { fetchPrivatePolicy, fetchPublicTerms } from '../../../../redux/PrivatePolicy/operations'
-import useModal from '../../../../hooks/useModal'
-import ModalContent from './ModalContent/ModalContent'
-import Modal from '../../../../shared/components/Modal/Modal'
+import { selectPrivatePolicy, selectPublicTerms } from '@redux/PrivatePolicy/selectors'
+import { fetchPrivatePolicy, fetchPublicTerms } from '@redux/PrivatePolicy/operations'
+import useModal from '@hooks/useModal'
+import Modal from '@shared/components/Modal'
 import styles from './PrivacyPolicy.module.scss'
+import ModalContent from './ModalContent'
 
 const PrivacyPolicy = () => {
 	const dispatch = useDispatch()

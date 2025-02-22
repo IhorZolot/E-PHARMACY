@@ -5,8 +5,7 @@ import { ROUTES } from '../config/routes'
 
 const PublicRoute = ({ children }) => {
 	const isLoggedIn = useSelector(selectIsLoggedIn)
-	if (isLoggedIn === undefined) return null
-	return !isLoggedIn ? children : <Navigate to={ROUTES.HOME} />
+	return !isLoggedIn ? children : <Navigate to={ROUTES.CREATE} />
 }
 
 export default PublicRoute

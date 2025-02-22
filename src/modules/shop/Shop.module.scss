@@ -5,10 +5,10 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	gap: 20px;
 	margin-bottom: 20px;
-	height: 100%;
 }
-.shopBox{
+.shopBox {
 	display: flex;
 	flex-direction: column;
 }
@@ -62,7 +62,7 @@
 		margin-bottom: 40px;
 	}
 	.titleFormSection {
-		padding: 40px  12px;
+		padding: 40px 12px;
 	}
 }
 
@@ -76,7 +76,7 @@
 	.titleFormSection {
 		margin-bottom: 0;
 	}
-	.shopBox{
+	.shopBox {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
@@ -85,5 +85,4 @@
 	.sectorButtons {
 		margin-bottom: 0px;
 	}
-	
 }

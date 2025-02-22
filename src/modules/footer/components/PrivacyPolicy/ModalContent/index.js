@@ -1,1 +1,1 @@
-export {default as ModalContent} from './ModalContent.jsx'
+export { default } from './ModalContent.jsx'
