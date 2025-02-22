@@ -1,10 +1,10 @@
 import { useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
 
-import { deleteProductToShopThunk } from '../../../../redux/ShopProducts/operations'
+import { deleteProductToShopThunk } from '@redux/ShopProducts/operations'
 import ModalButton from '../ModalButton/ModalButton'
 import styles from './DelFormMedicine.module.scss'
-import Pills from '../../../../assets/images/Pills.png'
+import Pills from '@assets/images/Pills.png'
 const DelFormMedicine = ({ medicine, onClose }) => {
 	const dispatch = useDispatch()
 	const { shopId } = useParams()

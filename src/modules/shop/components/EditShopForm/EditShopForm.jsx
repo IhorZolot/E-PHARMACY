@@ -5,8 +5,8 @@ import { useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import { toast } from 'react-toastify'
 
-import {  fetchShopsById, updateShopThunk } from '../../../../redux/Shops/operations'
-import { selectShop, selectIsStatus } from '../../../../redux/Shops/selectors'
+import { fetchShopsById, updateShopThunk } from '@redux/Shops/operations'
+import { selectShop, selectIsStatus } from '@redux/Shops/selectors'
 import { schemaEditForm } from './helpers/validationEditSchema'
 import styles from './EditShopForm.module.scss'
 
@@ -25,25 +25,26 @@ const EditShopForm = () => {
 		resolver: zodResolver(schemaEditForm),
 	})
 	useEffect(() => {
-    if (shopId) {
-      dispatch(fetchShopsById(shopId))
-    }
-  }, [shopId, dispatch])
+		if (shopId) {
+			dispatch(fetchShopsById(shopId))
+		}
+	}, [shopId, dispatch])
 
-useEffect(() => {
-	if (shop) {
-		reset(shop)
-	}
-}, [shop, reset])
+	useEffect(() => {
+		if (shop) {
+			reset(shop)
+		}
+	}, [shop, reset])
 
 	const submit = data => {
 		if (!shopId) {
 			toast.error('shopId is undefined')
 			return
 		}
-		if(updateStatus ) {
+		if (updateStatus) {
 			toast.error('Shop is already updated')
-			return}
+			return
+		}
 		const trimmedData = Object.entries(data).reduce((acc, [key, value]) => {
 			if (value?.trim()) {
 				acc[key] = value.trim()

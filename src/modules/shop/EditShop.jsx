@@ -5,15 +5,15 @@ import { EditShopForm } from './components/EditShopForm'
 import { ImageShop } from './components/ImageShop'
 import { TitleShop } from './components/TitleShop'
 import styles from './Shop.module.scss'
-import CloseButton from '../../shared/components/CloseButton/CloseButton'
+import CloseButton from '@shared/components/CloseButton/'
 
 const EditShop = () => {
 	const navigate = useNavigate()
 
 	return (
-		<section className={clsx(styles.shopSection,'container')}>
+		<section className={clsx(styles.shopSection, 'container')}>
 			<div className={styles.titleFormSection}>
-			<CloseButton onClose={() => navigate(-1)} />
+				<CloseButton onClose={() => navigate(-1)} />
 				<TitleShop />
 				<EditShopForm />
 			</div>

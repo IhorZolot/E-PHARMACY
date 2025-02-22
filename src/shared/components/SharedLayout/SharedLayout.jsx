@@ -1,13 +1,13 @@
-import { Header } from '../../../modules/header'
-import { Footer } from '../../../modules/footer'
+import { Header } from '@modules/header'
+import { Footer } from '@modules/footer'
 import { Outlet } from 'react-router-dom'
-import  '../../../styles/_container.scss'
+import '../../../styles/_container.scss'
 
 const SharedLayout = () => {
 	return (
 		<div className='container'>
 			<Header />
-			<main  >
+			<main>
 				<Outlet />
 			</main>
 			<Footer />

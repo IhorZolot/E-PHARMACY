@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 
 import styles from './OverlayLoginPage.module.scss'
-import '../../../../styles/_container.scss'
 import { SpriteSVG } from '@assets/icons/spriteSVG'
 
 const OverlayLoginPage = () => {

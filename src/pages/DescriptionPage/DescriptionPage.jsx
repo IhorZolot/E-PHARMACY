@@ -1,4 +1,4 @@
-import { Description } from '../../modules/medicine/DetailsCard'
+import { Description } from '@modules/medicine/DetailsCard'
 
 const DescriptionPage = () => {
 	return <Description />

@@ -1,9 +1,10 @@
 import { NavLink, Outlet, useParams } from 'react-router-dom'
+
 import styles from './DrugLinkSector.module.scss'
 
 const DrugLinkSector = () => {
 	const { shopId } = useParams()
-	
+
 	return (
 		<>
 			<nav className={styles.DrugLinkSector}>

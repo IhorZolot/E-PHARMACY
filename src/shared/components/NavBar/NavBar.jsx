@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-import { selectShopId } from '../../../redux/Shops/selectors'
+import { selectShopId } from '@redux/Shops/selectors'
 import linksData from '../../data/side-link-data'
 import styles from './NavBar.module.scss'
 

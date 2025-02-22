@@ -7,13 +7,14 @@ import styles from './CardMyShop.module.scss'
 import { ButtonCard } from '../ButtonCard'
 import { fetchShopProducts } from '@redux/ShopProducts/operations'
 import { selectShopProducts } from '@redux/ShopProducts/selectors'
-import useModal from '../../../../hooks/useModal'
-import EditFormMedicine from '../../../medicine/components/EditFormMedicine/EditFormMedicine'
-import Modal from '../../../../shared/components/Modal/Modal'
-import DelFormMedicine from '../../../medicine/components/DelFormMedicine/DelFormMedicine'
-import Loader from '../../../../shared/components/Loader/Loader'
-import {  selectCurrentShopPage,selectTotalShopPages } from '../../../../redux/ShopProducts/selectors'
-import { setCurrentShopPage } from '../../../../redux/ShopProducts/shopProductsSlice'
+import useModal from '@hooks/useModal'
+import { EditFormMedicine } from '../../../medicine/components/EditFormMedicine'
+import { DelFormMedicine } from '../../../medicine/components/DelFormMedicine'
+import Loader from '@shared/components/Loader/Loader'
+import { selectCurrentShopPage, selectTotalShopPages } from '@redux/ShopProducts/selectors'
+import { setCurrentShopPage } from '@redux/ShopProducts/shopProductsSlice'
+import Modal from '@shared/components/Modal/Modal'
+
 const CardMyShop = () => {
 	const shopProducts = useSelector(selectShopProducts)
 	const currentPage = useSelector(selectCurrentShopPage)
@@ -37,7 +38,7 @@ const CardMyShop = () => {
 	}
 
 	if (!shopProducts) {
-		return <Loader />; 
+		return <Loader />
 	}
 
 	const handleEditProduct = product => {
@@ -51,12 +52,12 @@ const CardMyShop = () => {
 		setModalType('delete')
 		toggleModal()
 	}
-	const handlePageChange = ( event, page) => {
-			dispatch(setCurrentShopPage(page));
-		};
+	const handlePageChange = (event, page) => {
+		dispatch(setCurrentShopPage(page))
+	}
 
 	return (
-		<section className={styles.cardShopSection} >
+		<section className={styles.cardShopSection}>
 			{shopProducts?.map(product => (
 				<div key={product._id} className={styles.cardShop}>
 					<img src={product.photo ? product.photo : placeholderImage} alt={product.name} className={styles.imgShop} />
@@ -74,29 +75,22 @@ const CardMyShop = () => {
 								Delete
 							</ButtonCard>
 						</div>
-						
 					</div>
 				</div>
 			))}
-			<Stack spacing={2} className={styles.paginationBox} >
-				<Pagination
-					count={totalPages} 
-          page={currentPage} 
-					onChange={handlePageChange} 
-					className={styles.pagination}
-				/>
+			<Stack spacing={2} className={styles.paginationBox}>
+				<Pagination count={totalPages} page={currentPage} onChange={handlePageChange} className={styles.pagination} />
 			</Stack>
 			{isOpen && modalType === 'edit' && (
-							<Modal onClose={toggleModal}>
-								<EditFormMedicine medicine={editToMedicine} onClose={toggleModal} />
-							</Modal>
-						)}
-						{isOpen && modalType === 'delete' && (
-							<Modal onClose={toggleModal}>
-								<DelFormMedicine onClose={toggleModal} medicine={deleteToMedicine} />
-							</Modal>
-						)}
-
+				<Modal onClose={toggleModal}>
+					<EditFormMedicine medicine={editToMedicine} onClose={toggleModal} />
+				</Modal>
+			)}
+			{isOpen && modalType === 'delete' && (
+				<Modal onClose={toggleModal}>
+					<DelFormMedicine onClose={toggleModal} medicine={deleteToMedicine} />
+				</Modal>
+			)}
 		</section>
 	)
 }

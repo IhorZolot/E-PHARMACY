@@ -1,9 +1,7 @@
-import Statistics from '../../modules/statistics/Statistics'
+import Statistics from '@modules/statistics/Statistics'
 
 const StatisticsPage = () => {
-  return (
-    <Statistics/>
-  )
+	return <Statistics />
 }
 
 export default StatisticsPage

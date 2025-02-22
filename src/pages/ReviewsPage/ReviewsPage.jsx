@@ -1,4 +1,4 @@
-import Reviews from '../../modules/medicine/DetailsCard/Reviews'
+import Reviews from '@modules/medicine/DetailsCard/Reviews'
 
 const ReviewsPage = () => {
 	return <Reviews />

@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+
 import MedLogo from '../../../../src/assets/icons/MedLogo.svg'
 import styles from './LogoType.module.scss'
 

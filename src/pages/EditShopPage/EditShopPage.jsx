@@ -1,4 +1,4 @@
-import { EditShop } from '../../modules/shop'
+import { EditShop } from '@modules/shop'
 
 const EditShopPage = () => {
 	return <EditShop />

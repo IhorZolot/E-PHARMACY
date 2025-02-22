@@ -1,4 +1,4 @@
-import { CreateShop } from '../../modules/shop'
+import { CreateShop } from '@modules/shop'
 
 const CreateShopPage = () => {
 	return <CreateShop />

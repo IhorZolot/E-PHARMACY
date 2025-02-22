@@ -1,17 +1,17 @@
 import { useEffect } from 'react'
 import { toast } from 'react-toastify'
-import {  useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { selectIsLoading, selectOneProduct } from '../../../redux/Products/selectors'
-import { fetchOneProduct } from '../../../redux/Products/operations'
-import { addProductToShopThunk } from '../../../redux/ShopProducts/operations'
+import { selectIsLoading, selectOneProduct } from '@redux/Products/selectors'
+import { fetchOneProduct } from '@redux/Products/operations'
+import { addProductToShopThunk } from '@redux/ShopProducts/operations'
 import { validationAddMedicineSchema } from '../components/AddFormMedicine/helpers/validationAddMedicineSchema'
 import styles from './CardOneProduct.module.scss'
 import altImage from '@assets/images/altImage.png'
 import ButtonCard from '../../shop/components/ButtonCard/ButtonCard'
-import { selectShopId } from '../../../redux/Shops/selectors'
-import Loader from '../../../shared/components/Loader/Loader'
+import { selectShopId } from '@redux/Shops/selectors'
+import Loader from '@shared/components/Loader/Loader'
 
 const CardOneProduct = () => {
 	const { medicineId } = useParams()
@@ -19,14 +19,14 @@ const CardOneProduct = () => {
 	const navigate = useNavigate()
 	const isLoading = useSelector(selectIsLoading)
 	const product = useSelector(selectOneProduct)
-	const  shopId = useSelector(selectShopId)
+	const shopId = useSelector(selectShopId)
 
 	useEffect(() => {
 		dispatch(fetchOneProduct(medicineId))
 	}, [dispatch, medicineId])
 
 	if (isLoading) {
-		return <Loader/>
+		return <Loader />
 	}
 	if (!product) {
 		return <div>Product not found</div>

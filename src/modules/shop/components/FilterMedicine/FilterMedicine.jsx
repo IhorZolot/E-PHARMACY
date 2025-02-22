@@ -18,14 +18,13 @@ const FilterMedicine = () => {
 
 	const onsubmit = e => {
 		e.preventDefault()
-		const filters = {};
-    if (selectedCategory) {
-        filters.category = selectedCategory;
-    }
-    if (valueFilter) {
-        filters.query = valueFilter;
-    }
-	
+		const filters = {}
+		if (selectedCategory) {
+			filters.category = selectedCategory
+		}
+		if (valueFilter) {
+			filters.query = valueFilter
+		}
 		dispatch(fetchFilteredProducts(filters))
 	}
 
@@ -47,7 +46,6 @@ const FilterMedicine = () => {
 						))}
 				</select>
 			</div>
-			
 			<div className={styles.inputSearch}>
 				<input
 					value={valueFilter}

@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { lazy, Suspense, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -66,20 +66,21 @@ function App() {
 						</PrivateRoute>
 					}
 				>
-					<Route path='shop/create' element={<CreateShopPage />} />
-					<Route path='shop/:shopId/update' element={<EditShopPage />} />
-					<Route path='shop/:shopId' element={<ShopPage />}>
+					<Route path={ROUTES.CREATE} element={<CreateShopPage />} />
+					<Route path={ROUTES.UPDATE} element={<EditShopPage />} />
+					<Route path={ROUTES.SHOP} element={<ShopPage />}>
 						<Route index element={<AllDrugsPage />} />
-						<Route path='product' element={<CardMyShop />} />
+						<Route path={ROUTES.PRODUCT} element={<CardMyShop />} />
 					</Route>
-					<Route path='/medicine/:medicineId' element={<MedicinePage />}>
+					<Route path={ROUTES.MEDICINE} element={<MedicinePage />}>
 						<Route index element={<Description />} />
-						<Route path='description' element={<Description />} />
-						<Route path='reviews' element={<Reviews />} />
+						<Route path={ROUTES.DESCRIPTION} element={<Description />} />
+						<Route path={ROUTES.REVIEWS} element={<Reviews />} />
 					</Route>
-					<Route path='/statistic' element={<StatisticsPage />} />
+					<Route path={ROUTES.STATISTICS} element={<StatisticsPage />} />
 					<Route path='*' element={<NotFoundPage />} />
 				</Route>
+				<Route path='*' element={<Navigate to={ROUTES.CREATE} />} />
 			</Routes>
 		</Suspense>
 	)

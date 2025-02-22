@@ -1,4 +1,3 @@
-
 import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -6,7 +5,7 @@ import { toast } from 'react-toastify'
 import { Link, useNavigate } from 'react-router-dom'
 
 import { registrationSchema } from './helpers/registrationSchema'
-import { registerThunk } from '../../../../redux/User/operations'
+import { registerThunk } from '@redux/User/operations'
 import styles from './SignupForm.module.scss'
 
 function SignupForm() {
@@ -38,14 +37,14 @@ function SignupForm() {
 	return (
 		<form className={styles.formBox} onSubmit={handleSubmit(submit)}>
 			<div className={styles.inputBox}>
-				<div >
+				<div>
 					<input placeholder='User Name' type='text' id='username' {...register('username')} />
 					{errors.username && <span>{errors.username.message}</span>}
 				</div>
 				<div>
 					<input placeholder='Email address' type='email' id='email' {...register('email')} />
 					{errors.email && <span>{errors.email.message}</span>}
-			</div>
+				</div>
 				<div>
 					<input placeholder='Phone number' type='tel' id='phone' {...register('phone')} />
 					{errors.phone && <span>{errors.phone.message}</span>}

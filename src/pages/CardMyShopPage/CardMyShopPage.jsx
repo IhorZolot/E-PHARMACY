@@ -1,4 +1,4 @@
-import CardMyShop from '../../modules/shop/components/CardMyShop/CardMyShop'
+import CardMyShop from '@modules/shop/components/CardMyShop/CardMyShop'
 
 const CardMyShopPage = () => {
 	return <CardMyShop />

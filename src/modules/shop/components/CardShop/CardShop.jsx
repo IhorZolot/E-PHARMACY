@@ -1,11 +1,11 @@
-import {   useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Pagination, Stack } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 
-import {   selectCurrentPage, selectTotalPages, selectVisibleProducts } from '../../../../redux/Products/selectors'
-import { setCurrentPage } from '../../../../redux/Products/productsSlice'
-import {  fetchProducts } from '../../../../redux/Products/operations'
+import { selectCurrentPage, selectTotalPages, selectVisibleProducts } from '@redux/Products/selectors'
+import { setCurrentPage } from '@redux/Products/productsSlice'
+import { fetchProducts } from '@redux/Products/operations'
 import ButtonCard from '../ButtonCard/ButtonCard'
 import styles from './CardShop.module.scss'
 
@@ -16,27 +16,23 @@ const CardShop = () => {
 	const visibleProducts = useSelector(selectVisibleProducts)
 	const currentPage = useSelector(selectCurrentPage)
 	const totalPages = useSelector(selectTotalPages)
-	
+
 	useEffect(() => {
-			dispatch(fetchProducts());
-	}, [dispatch, currentPage]);
+		dispatch(fetchProducts())
+	}, [dispatch, currentPage])
 
 	const handleViewDetails = medicineId => {
 		navigate(`/medicine/${medicineId}`)
 	}
-	const handlePageChange = ( event, page) => {
-    dispatch(setCurrentPage(page));
-  };
+	const handlePageChange = (event, page) => {
+		dispatch(setCurrentPage(page))
+	}
 
 	return (
 		<div className={styles.cardShopSection}>
-			{visibleProducts?.map((product) => (
+			{visibleProducts?.map(product => (
 				<div key={product._id} className={styles.productCard}>
-					<img
-						src={product.photo}
-						alt={product.name}
-						className={styles.imgShop}
-					/>
+					<img src={product.photo} alt={product.name} className={styles.imgShop} />
 					<div className={styles.infoShop}>
 						<div className={styles.titleShopBox}>
 							<div className={styles.titleBox}>
@@ -54,15 +50,9 @@ const CardShop = () => {
 					</div>
 				</div>
 			))}
-			<Stack spacing={2} className={styles.paginationBox} >
-				<Pagination
-					count={totalPages} 
-          page={currentPage} 
-					onChange={handlePageChange} 
-					className={styles.pagination}
-				/>
+			<Stack spacing={2} className={styles.paginationBox}>
+				<Pagination count={totalPages} page={currentPage} onChange={handlePageChange} className={styles.pagination} />
 			</Stack>
-			
 		</div>
 	)
 }
