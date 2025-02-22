@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, isAnyOf } from '@reduxjs/toolkit'
 import {
 	addProductToShopThunk,
 	deleteProductToShopThunk,
@@ -11,9 +11,9 @@ const initialState = {
 	isLoading: false,
 	error: null,
 	page: 1,
-	totalPages: 0, 
+	totalPages: 0,
 	limit: 8,
-	totalItems: ''
+	totalItems: '',
 }
 
 const shopProductsSlice = createSlice({
@@ -23,7 +23,7 @@ const shopProductsSlice = createSlice({
 	reducers: {
 		setCurrentShopPage: (state, { payload }) => {
 			state.page = payload
-		}
+		},
 	},
 
 	extraReducers: builder => {
@@ -31,27 +31,13 @@ const shopProductsSlice = createSlice({
 			.addCase(fetchShopProducts.fulfilled, (state, { payload }) => {
 				state.isLoading = false
 				state.shopProducts = payload.products
-				state.page = Number(payload.page);
-				state.totalPages = Number(payload.pages);
+				state.page = Number(payload.page)
+				state.totalPages = Number(payload.pages)
 				state.totalItems = payload.totalProducts
-			})
-			.addCase(fetchShopProducts.pending, state => {
-				state.isLoading = true
-			})
-			.addCase(fetchShopProducts.rejected, (state, { payload }) => {
-				state.isLoading = false
-				state.error = payload
 			})
 			.addCase(addProductToShopThunk.fulfilled, (state, { payload }) => {
 				state.isLoading = false
 				state.shopProducts.push(payload)
-			})
-			.addCase(addProductToShopThunk.pending, state => {
-				state.isLoading = true
-			})
-			.addCase(addProductToShopThunk.rejected, (state, { payload }) => {
-				state.isLoading = false
-				state.error = payload
 			})
 			.addCase(editProductToShopThunk.fulfilled, (state, { payload }) => {
 				const { updateProductShop } = payload
@@ -61,25 +47,34 @@ const shopProductsSlice = createSlice({
 					state.shopProducts[index] = { ...state.shopProducts[index], ...updateProductShop }
 				}
 			})
-			.addCase(editProductToShopThunk.pending, state => {
-				state.isLoading = true
-			})
-			.addCase(editProductToShopThunk.rejected, (state, { payload }) => {
-				state.isLoading = false
-				state.error = payload
-			})
 			.addCase(deleteProductToShopThunk.fulfilled, (state, { payload }) => {
 				state.isLoading = false
 				state.shopProducts = state.shopProducts.filter(product => product._id !== payload)
 			})
-			.addCase(deleteProductToShopThunk.pending, state => {
-				state.isLoading = true
-			})
-			.addCase(deleteProductToShopThunk.rejected, (state, { payload }) => {
-				state.isLoading = false
-				state.error = payload
-			})
+			.addMatcher(
+				isAnyOf(
+					fetchShopProducts.pending,
+					addProductToShopThunk.pending,
+					editProductToShopThunk.pending,
+					deleteProductToShopThunk.pending
+				),
+				state => {
+					state.isLoading = true
+				}
+			)
+			.addMatcher(
+				isAnyOf(
+					fetchShopProducts.rejected,
+					addProductToShopThunk.rejected,
+					editProductToShopThunk.rejected,
+					deleteProductToShopThunk.rejected
+				),
+				(state, { payload }) => {
+					state.isLoading = false
+					state.error = payload
+				}
+			)
 	},
 })
-export const { setCurrentShopPage } = shopProductsSlice.actions;
+export const { setCurrentShopPage } = shopProductsSlice.actions
 export const shopProductsReducer = shopProductsSlice.reducer

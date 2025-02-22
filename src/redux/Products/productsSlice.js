@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, isAnyOf } from '@reduxjs/toolkit'
 import {
 	fetchCategoriesProducts,
 	fetchFilteredProducts,
@@ -31,49 +31,26 @@ const productsSlice = createSlice({
 		},
 	},
 	extraReducers: builder => {
-		builder.addCase(fetchProducts.fulfilled, (state, { payload }) => {
-			console.log('fetchProducts payload:', payload)
-			state.isLoading = false
-			state.products = payload.products
-			state.page = Number(payload.page)
-			state.totalPages = Number(payload.pages)
-			state.totalItems = payload.total
-		})
-		builder.addCase(fetchProducts.pending, state => {
-			state.isLoading = true
-		})
 		builder
-			.addCase(fetchProducts.rejected, (state, { payload }) => {
+			.addCase(fetchProducts.fulfilled, (state, { payload }) => {
+				console.log('fetchProducts payload:', payload)
 				state.isLoading = false
-				state.error = payload
+				state.products = payload.products
+				state.page = Number(payload.page)
+				state.totalPages = Number(payload.pages)
+				state.totalItems = payload.total
 			})
 			.addCase(fetchOneProduct.fulfilled, (state, { payload }) => {
 				state.oneProduct = payload
 				state.isLoading = false
 			})
-		
-			.addCase(fetchOneProduct.rejected, (state, { payload }) => {
-				state.isLoading = false
-				state.error = payload
-			})
 			.addCase(fetchProductsReviews.fulfilled, (state, { payload }) => {
 				state.isLoading = false
 				state.reviews = payload
 			})
-			.addCase(fetchProductsReviews.rejected, (state, { payload }) => {
-				state.isLoading = false
-				state.error = payload
-			})
 			.addCase(fetchCategoriesProducts.fulfilled, (state, { payload }) => {
 				state.isLoading = false
 				state.categories = payload
-			})
-			.addCase(fetchCategoriesProducts.pending, state => {
-				state.isLoading = true
-			})
-			.addCase(fetchCategoriesProducts.rejected, (state, { payload }) => {
-				state.isLoading = false
-				state.error = payload
 			})
 			.addCase(fetchFilteredProducts.fulfilled, (state, { payload }) => {
 				state.isLoading = false
@@ -82,13 +59,25 @@ const productsSlice = createSlice({
 				state.totalPages = Number(payload.pages)
 				state.totalItems = payload.total
 			})
-			.addCase(fetchFilteredProducts.pending, state => {
-				state.isLoading = true
-			})
-			.addCase(fetchFilteredProducts.rejected, (state, { payload }) => {
-				state.isLoading = false
-				state.error = payload
-			})
+			.addMatcher(
+				isAnyOf(fetchProducts.pending, fetchCategoriesProducts.pending, fetchFilteredProducts.pending),
+				state => {
+					state.isLoading = true
+				}
+			)
+			.addMatcher(
+				isAnyOf(
+					fetchProducts.rejected,
+					fetchOneProduct.rejected,
+					fetchProductsReviews.rejected,
+					fetchCategoriesProducts.rejected,
+					fetchFilteredProducts.rejected
+				),
+				(state, { payload }) => {
+					state.isLoading = false
+					state.error = payload
+				}
+			)
 	},
 })
 export const { setCurrentPage } = productsSlice.actions
