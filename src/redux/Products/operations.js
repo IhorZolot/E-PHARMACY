@@ -20,8 +20,7 @@ export const fetchCategoriesProducts = createAsyncThunk('products/fetchCategorie
 })
 export const fetchFilteredProducts = createAsyncThunk('products/fetchFilteredProducts', async (filters, thunkAPI) => {
 	try {
-		const defaultFilters = { page: 1, limit: 8 }
-		const combinedFilters = { ...defaultFilters, ...filters }
+		const combinedFilters = { ...filters }
 		const params = new URLSearchParams(combinedFilters)
 		const { data } = await API.get(`/products/filters?${params.toString()}`)
 		return data

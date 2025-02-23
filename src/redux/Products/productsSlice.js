@@ -12,6 +12,10 @@ const initialState = {
 	reviews: [],
 	categories: [],
 	filteredProducts: [],
+	filters: {
+		category: '',
+		query: '',
+	},
 	oneProduct: null,
 	isLoading: false,
 	error: null,
@@ -29,11 +33,13 @@ const productsSlice = createSlice({
 		setCurrentPage: (state, { payload }) => {
 			state.page = payload
 		},
+		setFilters: (state, { payload }) => {
+			state.filters = payload
+		},
 	},
 	extraReducers: builder => {
 		builder
 			.addCase(fetchProducts.fulfilled, (state, { payload }) => {
-				console.log('fetchProducts payload:', payload)
 				state.isLoading = false
 				state.products = payload.products
 				state.page = Number(payload.page)
@@ -55,9 +61,7 @@ const productsSlice = createSlice({
 			.addCase(fetchFilteredProducts.fulfilled, (state, { payload }) => {
 				state.isLoading = false
 				state.filteredProducts = payload.products
-				state.page = Number(payload.page)
-				state.totalPages = Number(payload.pages)
-				state.totalItems = payload.total
+				state.totalPages = payload.pages
 			})
 			.addMatcher(
 				isAnyOf(fetchProducts.pending, fetchCategoriesProducts.pending, fetchFilteredProducts.pending),
@@ -80,5 +84,5 @@ const productsSlice = createSlice({
 			)
 	},
 })
-export const { setCurrentPage } = productsSlice.actions
+export const { setCurrentPage, setFilters } = productsSlice.actions
 export const productsReducer = productsSlice.reducer

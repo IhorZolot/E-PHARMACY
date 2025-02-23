@@ -3,11 +3,13 @@ import { Pagination, Stack } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 
-import { selectCurrentPage, selectTotalPages, selectVisibleProducts } from '@redux/Products/selectors'
-import { setCurrentPage } from '@redux/Products/productsSlice'
+import { selectTotalPages, selectVisibleProducts } from '@redux/Products/selectors'
+import { fetchFilteredProducts } from '@redux/Products/operations'
 import { fetchProducts } from '@redux/Products/operations'
 import ButtonCard from '../ButtonCard/ButtonCard'
 import styles from './CardShop.module.scss'
+import { setCurrentPage } from '@redux/Products/productsSlice'
+import { selectCurrentPage, selectFilters } from '@redux/Products/selectors'
 
 const CardShop = () => {
 	const dispatch = useDispatch()
@@ -16,16 +18,26 @@ const CardShop = () => {
 	const visibleProducts = useSelector(selectVisibleProducts)
 	const currentPage = useSelector(selectCurrentPage)
 	const totalPages = useSelector(selectTotalPages)
+	const filters = useSelector(selectFilters)
 
 	useEffect(() => {
-		dispatch(fetchProducts())
-	}, [dispatch, currentPage])
+		if (filters.category || filters.query) {
+			dispatch(fetchFilteredProducts({ ...filters, page: currentPage }))
+		} else {
+			dispatch(fetchProducts({ page: currentPage }))
+		}
+	}, [dispatch, currentPage, filters])
 
 	const handleViewDetails = medicineId => {
 		navigate(`/medicine/${medicineId}`)
 	}
 	const handlePageChange = (event, page) => {
 		dispatch(setCurrentPage(page))
+		if (filters.category || filters.query) {
+			dispatch(fetchFilteredProducts({ ...filters, page }))
+		} else {
+			dispatch(fetchProducts({ page }))
+		}
 	}
 
 	return (

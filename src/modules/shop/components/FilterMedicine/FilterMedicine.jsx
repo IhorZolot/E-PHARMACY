@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { toast } from 'react-toastify'
 
 import { selectCategories } from '@redux/Products/selectors'
 import { fetchCategoriesProducts, fetchFilteredProducts } from '@redux/Products/operations'
 import { SpriteSVG } from '@assets/icons/spriteSVG'
 import styles from './FilterMedicine.module.scss'
+import { setCurrentPage, setFilters } from '../../../../redux/Products/productsSlice'
 
 const FilterMedicine = () => {
 	const dispatch = useDispatch()
@@ -18,14 +20,19 @@ const FilterMedicine = () => {
 
 	const onsubmit = e => {
 		e.preventDefault()
-		const filters = {}
-		if (selectedCategory) {
-			filters.category = selectedCategory
+		if (!selectedCategory.trim() && !valueFilter.trim()) {
+			toast.error('Please enter filter value!')
+			return
 		}
-		if (valueFilter) {
-			filters.query = valueFilter
+		const filters = {
+			category: selectedCategory,
+			query: valueFilter,
 		}
-		dispatch(fetchFilteredProducts(filters))
+		dispatch(setFilters(filters))
+		dispatch(setCurrentPage(1))
+
+		dispatch(fetchFilteredProducts({ ...filters, page: 1 }))
+		toast.success('Filter applied successfully!')
 	}
 
 	return (
@@ -61,7 +68,7 @@ const FilterMedicine = () => {
 			</div>
 			<button className={styles.filterButton}>
 				<SpriteSVG name='filter' />
-				Filter
+				<p>Filter</p>
 			</button>
 		</form>
 	)
