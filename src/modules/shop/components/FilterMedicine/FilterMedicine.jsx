@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
 
-import { selectCategories } from '@redux/Products/selectors'
 import { fetchCategoriesProducts, fetchFilteredProducts } from '@redux/Products/operations'
+import { setCurrentPage, setFilters } from '@redux/Products/productsSlice'
+import { selectCategories } from '@redux/Products/selectors'
 import { SpriteSVG } from '@assets/icons/spriteSVG'
 import styles from './FilterMedicine.module.scss'
-import { setCurrentPage, setFilters } from '../../../../redux/Products/productsSlice'
 
 const FilterMedicine = () => {
 	const dispatch = useDispatch()
@@ -30,11 +30,9 @@ const FilterMedicine = () => {
 		}
 		dispatch(setFilters(filters))
 		dispatch(setCurrentPage(1))
-
 		dispatch(fetchFilteredProducts({ ...filters, page: 1 }))
 		toast.success('Filter applied successfully!')
 	}
-
 	return (
 		<form className={styles.filterSection} onSubmit={onsubmit}>
 			<div>

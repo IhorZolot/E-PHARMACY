@@ -39,7 +39,6 @@ const CardShop = () => {
 			dispatch(fetchProducts({ page }))
 		}
 	}
-
 	return (
 		<div className={styles.cardShopSection}>
 			{visibleProducts?.map(product => (
