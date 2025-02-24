@@ -1,4 +1,4 @@
-@import 'sharedStyles';
+@use 'sharedStyles' as *;
 
 .statisticsBox {
 	display: grid;
@@ -36,31 +36,32 @@
 		color: $text-button-cancel-color;
 	}
 }
-.statisticsBox li:hover{border-color: #4CAF50; 
+.statisticsBox li:hover {
+	border-color: #4caf50;
 }
-.statisticsBox li.active  {
-	border-color: #4CAF50; 
+.statisticsBox li.active {
+	border-color: #4caf50;
 }
 
 @media screen and (min-width: $breakpoint-tablet) {
 	.statisticsBox {
 		grid-template-columns: repeat(3, 1fr);
-	justify-content: center;
-	gap: 20px;
-	li {
-		p {
-			font-size: $font-size-xxl;
+		justify-content: center;
+		gap: 20px;
+		li {
+			p {
+				font-size: $font-size-xxl;
+			}
 		}
 	}
-}
-.statisticsBox li {
-	min-width: 180px;
-}
+	.statisticsBox li {
+		min-width: 180px;
+	}
 }
 @media screen and (min-width: $breakpoint-desktop) {
 	.statisticsBox {
 		li {
 			min-width: 240px;
+		}
 	}
-}
 }

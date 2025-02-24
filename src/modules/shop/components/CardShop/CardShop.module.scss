@@ -1,11 +1,10 @@
-@import 'sharedStyles';
-.cardShopSection{
+@use 'sharedStyles' as *;
+.cardShopSection {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
 	justify-content: center;
 	align-items: center;
-
 }
 
 .paginationBox {
@@ -17,17 +16,17 @@
 	gap: 10px;
 }
 .pagination {
-  :global(.MuiPaginationItem-root) {
-    color: #59b17a;
-  }
-  :global(.MuiPaginationItem-root.Mui-selected) {
-    background-color: #59b17a;
-    color: white;
-  }
-  :global(.MuiPaginationItem-root:hover) {
-    background-color: #9baba1;
-    color: white;
-  }
+	:global(.MuiPaginationItem-root) {
+		color: #59b17a;
+	}
+	:global(.MuiPaginationItem-root.Mui-selected) {
+		background-color: #59b17a;
+		color: white;
+	}
+	:global(.MuiPaginationItem-root:hover) {
+		background-color: #9baba1;
+		color: white;
+	}
 }
 
 .cardShop {
@@ -99,9 +98,8 @@
 	color: $text-color-main;
 }
 
-
 @media screen and (min-width: $breakpoint-tablet) {
-	.cardShopSection{
+	.cardShopSection {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 	}
@@ -110,12 +108,12 @@
 		height: 260px;
 	}
 	.paginationBox {
-		grid-column: 1 / -1; 
-		justify-self: center; 
+		grid-column: 1 / -1;
+		justify-self: center;
 	}
 }
 @media screen and (min-width: $breakpoint-desktop) {
-	.cardShopSection{
+	.cardShopSection {
 		grid-template-columns: repeat(4, 1fr);
 	}
 }

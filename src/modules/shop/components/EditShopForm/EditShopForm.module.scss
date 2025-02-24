@@ -1,4 +1,4 @@
-@import 'sharedStyles';
+@use 'sharedStyles' as *;
 
 .editShopForm {
 	display: flex;
@@ -95,17 +95,17 @@
 		gap: 15px;
 	}
 	.delivery {
-    grid-column: 1 / 2; 
+		grid-column: 1 / 2;
 		margin-bottom: 40px;
-  }
-  button {
-    grid-column: 1 / 2; 
-    justify-self: start; 
-  }
+	}
+	button {
+		grid-column: 1 / 2;
+		justify-self: start;
+	}
 }
 @media screen and (min-width: $breakpoint-desktop) {
 	.delivery {
 		margin-top: 20px;
 		margin-bottom: 50px;
-  }
+	}
 }

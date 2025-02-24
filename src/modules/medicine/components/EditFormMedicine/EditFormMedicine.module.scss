@@ -1,6 +1,6 @@
 @use '../ModalButton//mixinsModalButton.scss' as m;
 
-@import 'sharedStyles';
+@use 'sharedStyles' as *;
 
 .editFormMedicine {
 	display: flex;
@@ -51,7 +51,7 @@
 		border: 1px solid $main-color;
 	}
 }
-.inputBox{
+.inputBox {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
@@ -125,12 +125,10 @@
 			width: 230px;
 			height: 44px;
 		}
-
 	}
-	.inputBox{
+	.inputBox {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 6px;
-		
 	}
 }

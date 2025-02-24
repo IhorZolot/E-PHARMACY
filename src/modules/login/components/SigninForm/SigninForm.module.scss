@@ -1,4 +1,4 @@
-@import 'sharedStyles';
+@use 'sharedStyles' as *;
 
 .formBox {
 	display: flex;
@@ -59,7 +59,7 @@ button:hover {
 @media screen and (min-width: 768px) {
 	.formBox {
 		gap: 20px;
-		
+
 		input {
 			max-width: 323px;
 		}
@@ -71,4 +71,4 @@ button:hover {
 }
 
 @media screen and (min-width: 1024px) {
-}	
+}

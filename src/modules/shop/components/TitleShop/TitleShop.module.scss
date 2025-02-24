@@ -1,8 +1,8 @@
-@import 'sharedStyles';
+@use 'sharedStyles' as *;
 
 .shopTitle {
 	margin-bottom: 30px;
-	padding:0 20px;;
+	padding: 0 20px;
 	h2 {
 		font-weight: $font-weight-bold;
 		font-size: $font-size-xl;

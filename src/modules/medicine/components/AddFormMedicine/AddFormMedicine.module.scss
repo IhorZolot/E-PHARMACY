@@ -1,5 +1,5 @@
 @use '../ModalButton/mixinsModalButton.scss' as m;
-@import 'sharedStyles';
+@use 'sharedStyles' as *;
 
 .addFormMedicine {
 	display: flex;
@@ -28,7 +28,7 @@
 		border: $border-input;
 		border-radius: 60px;
 		padding: 12px 20px;
-    box-sizing: border-box;
+		box-sizing: border-box;
 		font-weight: 400;
 		font-size: $font-size-xs;
 		line-height: 150%;
@@ -49,7 +49,7 @@
 		border: 1px solid $main-color;
 	}
 }
-.addInputBox{
+.addInputBox {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
@@ -66,7 +66,7 @@
 		display: block;
 		border-radius: 20px;
 		margin: 0 auto;
-    object-fit: cover;
+		object-fit: cover;
 		margin-bottom: 15px;
 		width: 40%;
 	}
@@ -129,12 +129,10 @@
 			width: 230px;
 			height: 44px;
 		}
-
 	}
-	.addInputBox{
+	.addInputBox {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 6px;
-		
 	}
 }

@@ -1,4 +1,4 @@
-@import 'sharedStyles';
+@use 'sharedStyles' as *;
 
 .detailsBox {
 	border-radius: 27px;
@@ -11,7 +11,6 @@
 	display: flex;
 	gap: 10px;
 	margin-bottom: 20px;
-
 }
 
 .button {
@@ -50,6 +49,6 @@
 }
 @media screen and (min-width: $breakpoint-tablet) {
 	.detailsBox {
-	width: 704px;
+		width: 704px;
 	}
 }

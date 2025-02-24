@@ -1,4 +1,4 @@
-@import 'sharedStyles';
+@use 'sharedStyles' as *;
 
 .cardShop {
 	display: flex;
@@ -86,9 +86,9 @@
 		justify-content: space-between;
 	}
 	.buttonShopBox {
-	position: absolute;
-	bottom: 20px;
-	right: 20px;
+		position: absolute;
+		bottom: 20px;
+		right: 20px;
 	}
 }
 
@@ -96,7 +96,7 @@
 	.cardShop {
 		flex-direction: column;
 	}
-	
+
 	.infoShop {
 		max-width: 335px;
 	}

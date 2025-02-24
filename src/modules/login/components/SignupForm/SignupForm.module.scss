@@ -1,4 +1,4 @@
-@import 'sharedStyles';
+@use 'sharedStyles' as *;
 
 .formBox {
 	display: flex;
@@ -22,15 +22,13 @@
 			line-height: 150%;
 			color: rgba(29, 30, 33, 0.4);
 			outline: none;
-		
 		}
-		 div {
+		div {
 			position: relative;
 			display: flex;
 			flex-direction: column;
 			gap: 5px;
 			width: 100%;
-
 		}
 		span {
 			position: absolute;
@@ -40,7 +38,6 @@
 			font-size: 10px;
 			color: red;
 		}
-		
 	}
 	button {
 		border-radius: 60px;
@@ -85,12 +82,12 @@ button:hover {
 
 @media (min-width: 768px) {
 	.formBox {
-		align-items: flex-start; 
+		align-items: flex-start;
 		justify-content: flex-start;
 		.inputBox {
 			display: grid;
-			grid-template-columns: repeat(2, 1fr); 
-			gap: 14px; 
+			grid-template-columns: repeat(2, 1fr);
+			gap: 14px;
 			input {
 				width: 240px;
 			}
@@ -98,13 +95,11 @@ button:hover {
 		button {
 			width: auto;
 			margin-top: 50px;
-			padding: 13px 116px; 
+			padding: 13px 116px;
 			margin-left: 0;
-			
 		}
 		a {
 			margin-left: 70px;
 		}
-		
 	}
 }

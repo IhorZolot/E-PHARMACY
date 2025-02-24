@@ -1,5 +1,5 @@
 @use '../ModalButton/mixinsModalButton.scss' as m;
-@import 'sharedStyles';
+@use 'sharedStyles' as *;
 
 .delFormMedicineBox {
 	display: flex;

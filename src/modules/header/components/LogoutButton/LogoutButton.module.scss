@@ -1,4 +1,5 @@
-@import 'sharedStyles';
+@use 'sharedStyles' as *;
+
 .logoutButton {
 	display: flex;
 	justify-content: center;
