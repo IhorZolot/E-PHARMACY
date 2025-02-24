@@ -45,16 +45,6 @@
 		color: $placeholder-color;
 	}
 }
-.createShopForm button {
-	border-radius: 60px;
-	padding: 13px 26px;
-	background: $main-color;
-	font-weight: $font-weight-medium;
-	font-size: $font-size-sm;
-	line-height: 129%;
-	color: $background-color;
-	max-width: 155px;
-}
 
 .delivery {
 	position: relative;
@@ -98,11 +88,11 @@
 		}
 	}
 	.delivery {
-    grid-column: 1 / 2; 
-  }
+		grid-column: 1 / 2;
+	}
 }
 @media screen and (min-width: $breakpoint-desktop) {
 	.delivery {
 		margin-bottom: 70px;
-  }
+	}
 }

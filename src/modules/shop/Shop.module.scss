@@ -25,37 +25,6 @@
 	position: relative;
 	padding: 20px;
 }
-.buttonEdit {
-	border: 1.15px solid #f1f1f1;
-	border-radius: 30px;
-	padding: 10px 24px;
-	background: $button-color-edit;
-	font-weight: $font-weight-regular;
-	font-size: $font-size-xs;
-	line-height: 150%;
-	letter-spacing: -0.02em;
-	text-align: center;
-	color: $main-color;
-	&:hover {
-		background: $main-color-active;
-		color: $text-white-color;
-	}
-}
-.buttonAdd {
-	border: 1.15px solid #f1f1f1;
-	border-radius: 30px;
-	padding: 10px 24px;
-	background: $main-color;
-	font-weight: $font-weight-regular;
-	font-size: $font-size-xs;
-	line-height: 150%;
-	letter-spacing: -0.02em;
-	text-align: center;
-	color: $background-color;
-	&:hover {
-		background: $main-color-active;
-	}
-}
 
 @media screen and (min-width: $breakpoint-tablet) {
 	.shopSection {

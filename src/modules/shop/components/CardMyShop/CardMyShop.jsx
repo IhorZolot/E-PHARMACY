@@ -4,16 +4,16 @@ import { useParams } from 'react-router-dom'
 import { Pagination, Stack } from '@mui/material'
 
 import styles from './CardMyShop.module.scss'
-import { ButtonCard } from '../ButtonCard'
 import { fetchShopProducts } from '@redux/ShopProducts/operations'
 import { selectShopProducts } from '@redux/ShopProducts/selectors'
+import { selectCurrentShopPage, selectTotalShopPages } from '@redux/ShopProducts/selectors'
 import useModal from '@hooks/useModal'
 import { EditFormMedicine } from '../../../medicine/components/EditFormMedicine'
 import { DelFormMedicine } from '../../../medicine/components/DelFormMedicine'
 import Loader from '@shared/components/Loader/Loader'
-import { selectCurrentShopPage, selectTotalShopPages } from '@redux/ShopProducts/selectors'
 import { setCurrentShopPage } from '@redux/ShopProducts/shopProductsSlice'
 import Modal from '@shared/components/Modal/Modal'
+import { Button } from '@shared/components/Button'
 
 const CardMyShop = () => {
 	const shopProducts = useSelector(selectShopProducts)
@@ -70,10 +70,10 @@ const CardMyShop = () => {
 							<p className={styles.suppliersShop}>{product.category}</p>
 						</div>
 						<div className={styles.buttonShopBox}>
-							<ButtonCard onClick={() => handleEditProduct(product)}>Edit</ButtonCard>
-							<ButtonCard isStyle onClick={() => handleDeleteProduct(product)}>
+							<Button onClick={() => handleEditProduct(product)}>Edit</Button>
+							<Button isGray onClick={() => handleDeleteProduct(product)}>
 								Delete
-							</ButtonCard>
+							</Button>
 						</div>
 					</div>
 				</div>

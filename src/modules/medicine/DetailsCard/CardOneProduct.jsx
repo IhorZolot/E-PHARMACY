@@ -9,9 +9,9 @@ import { addProductToShopThunk } from '@redux/ShopProducts/operations'
 import { validationAddMedicineSchema } from '../components/AddFormMedicine/helpers/validationAddMedicineSchema'
 import styles from './CardOneProduct.module.scss'
 import altImage from '@assets/images/altImage.png'
-import ButtonCard from '../../shop/components/ButtonCard/ButtonCard'
 import { selectShopId } from '@redux/Shops/selectors'
 import Loader from '@shared/components/Loader/Loader'
+import Button from '@shared/components/Button/Button'
 
 const CardOneProduct = () => {
 	const { medicineId } = useParams()
@@ -54,7 +54,7 @@ const CardOneProduct = () => {
 					<p className={styles.priceShop}>${product?.price}</p>
 				</div>
 				<div className={styles.buttonShopBox}>
-					<ButtonCard onClick={addProductToShop}>Add to shop</ButtonCard>
+					<Button onClick={addProductToShop}>Add to shop</Button>
 				</div>
 			</div>
 		</div>

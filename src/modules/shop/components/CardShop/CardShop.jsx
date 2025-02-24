@@ -6,10 +6,10 @@ import { useEffect } from 'react'
 import { selectTotalPages, selectVisibleProducts } from '@redux/Products/selectors'
 import { fetchFilteredProducts } from '@redux/Products/operations'
 import { fetchProducts } from '@redux/Products/operations'
-import ButtonCard from '../ButtonCard/ButtonCard'
 import styles from './CardShop.module.scss'
 import { setCurrentPage } from '@redux/Products/productsSlice'
 import { selectCurrentPage, selectFilters } from '@redux/Products/selectors'
+import { Button } from '@shared/components/Button'
 
 const CardShop = () => {
 	const dispatch = useDispatch()
@@ -53,7 +53,7 @@ const CardShop = () => {
 							<p className={styles.priceShop}>${product.price}</p>
 						</div>
 						<div className={styles.buttonShopBox}>
-							<ButtonCard onClick={() => handleViewDetails(product._id)}>Add to shop</ButtonCard>
+							<Button onClick={() => handleViewDetails(product._id)}>Add to shop</Button>
 							<button className={styles.buttonDetails} onClick={() => handleViewDetails(product._id)}>
 								Details
 							</button>

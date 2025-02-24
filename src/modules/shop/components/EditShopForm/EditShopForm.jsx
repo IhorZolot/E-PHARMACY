@@ -9,6 +9,7 @@ import { fetchShopsById, updateShopThunk } from '@redux/Shops/operations'
 import { selectShop, selectIsStatus } from '@redux/Shops/selectors'
 import { schemaEditForm } from './helpers/validationEditSchema'
 import styles from './EditShopForm.module.scss'
+import Button from '@shared/components/Button/Button'
 
 const EditShopForm = () => {
 	const dispatch = useDispatch()
@@ -110,7 +111,7 @@ const EditShopForm = () => {
 					{errors.delivery && <span>{errors.delivery.message}</span>}
 				</div>
 			</div>
-			<button>Save</button>
+			<Button>Save</Button>
 		</form>
 	)
 }

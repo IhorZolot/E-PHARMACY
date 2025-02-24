@@ -22,12 +22,10 @@ const Shop = () => {
 				<div className={styles.shopBox}>
 					<TitleMedShop />
 					<div className={styles.sectorButtons}>
-						<Button onClick={() => navigate(`/shop/${shopId}/update`)} className={styles.buttonEdit}>
+						<Button isGray onClick={() => navigate(`/shop/${shopId}/update`)}>
 							Edit data
 						</Button>
-						<Button onClick={toggleModal} className={styles.buttonAdd}>
-							Add medicine
-						</Button>
+						<Button onClick={toggleModal}>Add medicine</Button>
 					</div>
 				</div>
 				<DrugLinkSector />

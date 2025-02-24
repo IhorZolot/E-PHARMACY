@@ -7,6 +7,7 @@ import { setCurrentPage, setFilters } from '@redux/Products/productsSlice'
 import { selectCategories } from '@redux/Products/selectors'
 import { SpriteSVG } from '@assets/icons/spriteSVG'
 import styles from './FilterMedicine.module.scss'
+import Button from '@shared/components/Button/Button'
 
 const FilterMedicine = () => {
 	const dispatch = useDispatch()
@@ -64,10 +65,10 @@ const FilterMedicine = () => {
 					<SpriteSVG name='search' />
 				</div>
 			</div>
-			<button className={styles.filterButton}>
+			<Button type='submit' variant='gray'>
 				<SpriteSVG name='filter' />
-				<p>Filter</p>
-			</button>
+				Filter
+			</Button>
 		</form>
 	)
 }

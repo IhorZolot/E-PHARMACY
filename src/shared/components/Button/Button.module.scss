@@ -1,1 +1,47 @@
 @import 'sharedStyles';
+
+.buttonGreen {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	max-width: 148px;
+	border: $border-bottom;
+	border-radius: 30px;
+	padding: 10px 28px;
+	background: $main-color;
+	font-weight: $font-weight-regular;
+	font-size: $font-size-xs;
+	line-height: 150%;
+	letter-spacing: -0.02em;
+	text-align: center;
+	color: $background-color;
+	&:hover {
+		background: $main-color-active;
+		transition: color 0.3s ease;
+		transform: scale(1.1);
+	}
+}
+
+.buttonGrey {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	border: $border-bottom;
+	border-radius: 30px;
+	padding: 10px 28px;
+	background: $button-color-edit;
+	font-weight: $font-weight-regular;
+	font-size: $font-size-xs;
+	line-height: 150%;
+	letter-spacing: -0.02em;
+	text-align: center;
+	color: $main-color;
+	&:hover {
+		background: $main-color-active;
+		color: $text-white-color;
+		transition: color 0.3s ease;
+		transform: scale(1.1);
+	}
+}
