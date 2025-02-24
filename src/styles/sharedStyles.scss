@@ -1,3 +1,3 @@
-@import './_vars.scss';
-@import './_breakpoints.scss';
-@import './_container.scss';
+@forward './_vars';
+@forward './_breakpoints';
+@forward './_container';
